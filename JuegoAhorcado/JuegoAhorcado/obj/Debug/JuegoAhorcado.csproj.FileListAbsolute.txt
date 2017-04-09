@@ -1,0 +1,11 @@
+c:\users\pablo\documents\visual studio 2013\Projects\JuegoAhorcado\JuegoAhorcado\bin\Debug\JuegoAhorcado.exe.config
+c:\users\pablo\documents\visual studio 2013\Projects\JuegoAhorcado\JuegoAhorcado\bin\Debug\JuegoAhorcado.exe
+c:\users\pablo\documents\visual studio 2013\Projects\JuegoAhorcado\JuegoAhorcado\bin\Debug\JuegoAhorcado.pdb
+c:\users\pablo\documents\visual studio 2013\Projects\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.csprojResolveAssemblyReference.cache
+c:\users\pablo\documents\visual studio 2013\Projects\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmPrincipal.resources
+c:\users\pablo\documents\visual studio 2013\Projects\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmSala.resources
+c:\users\pablo\documents\visual studio 2013\Projects\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.Properties.Resources.resources
+c:\users\pablo\documents\visual studio 2013\Projects\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.csproj.GenerateResource.Cache
+c:\users\pablo\documents\visual studio 2013\Projects\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.exe
+c:\users\pablo\documents\visual studio 2013\Projects\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.pdb
+c:\users\pablo\documents\visual studio 2013\Projects\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmJuego.resources
