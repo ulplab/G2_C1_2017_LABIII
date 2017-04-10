@@ -31,65 +31,75 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmJuego));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnLetra = new System.Windows.Forms.Button();
-            this.btnArriesgar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.tbLetra = new System.Windows.Forms.TextBox();
-            this.tbPalabra = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.lbPrimera = new System.Windows.Forms.Label();
-            this.lbSegunda = new System.Windows.Forms.Label();
-            this.lbTercera = new System.Windows.Forms.Label();
-            this.lbCuarta = new System.Windows.Forms.Label();
-            this.lbQuinta = new System.Windows.Forms.Label();
-            this.lbSexta = new System.Windows.Forms.Label();
-            this.lbSeptima = new System.Windows.Forms.Label();
-            this.lbOctava = new System.Windows.Forms.Label();
-            this.lbNovena = new System.Windows.Forms.Label();
-            this.lbDecima = new System.Windows.Forms.Label();
-            this.pnJ1P1 = new System.Windows.Forms.Panel();
-            this.pnJ2P1 = new System.Windows.Forms.Panel();
-            this.pnJ3P1 = new System.Windows.Forms.Panel();
-            this.pnJ4P1 = new System.Windows.Forms.Panel();
-            this.pnJ4P2 = new System.Windows.Forms.Panel();
-            this.pnJ3P2 = new System.Windows.Forms.Panel();
-            this.pnJ2P2 = new System.Windows.Forms.Panel();
-            this.pnJ1P2 = new System.Windows.Forms.Panel();
-            this.pnJ4P3 = new System.Windows.Forms.Panel();
-            this.pnJ3P3 = new System.Windows.Forms.Panel();
-            this.pnJ2P3 = new System.Windows.Forms.Panel();
-            this.pnJ1P3 = new System.Windows.Forms.Panel();
-            this.pnJ4P4 = new System.Windows.Forms.Panel();
-            this.pnJ3P4 = new System.Windows.Forms.Panel();
-            this.pnJ2P4 = new System.Windows.Forms.Panel();
-            this.pnJ1P4 = new System.Windows.Forms.Panel();
-            this.pnJ4P5 = new System.Windows.Forms.Panel();
-            this.pnJ3P5 = new System.Windows.Forms.Panel();
-            this.pnJ2P5 = new System.Windows.Forms.Panel();
-            this.pnJ1P5 = new System.Windows.Forms.Panel();
-            this.pnJ4P6 = new System.Windows.Forms.Panel();
-            this.pnJ3P6 = new System.Windows.Forms.Panel();
-            this.pnJ2P6 = new System.Windows.Forms.Panel();
-            this.pnJ1P6 = new System.Windows.Forms.Panel();
-            this.pnJ4P7 = new System.Windows.Forms.Panel();
-            this.pnJ3P7 = new System.Windows.Forms.Panel();
-            this.pnJ2P7 = new System.Windows.Forms.Panel();
-            this.pnJ1P7 = new System.Windows.Forms.Panel();
-            this.pnJ4P8 = new System.Windows.Forms.Panel();
-            this.pnJ3P8 = new System.Windows.Forms.Panel();
-            this.pnJ2P8 = new System.Windows.Forms.Panel();
-            this.pnJ1P8 = new System.Windows.Forms.Panel();
-            this.pnJ4P9 = new System.Windows.Forms.Panel();
-            this.pnJ3P9 = new System.Windows.Forms.Panel();
-            this.pnJ2P9 = new System.Windows.Forms.Panel();
-            this.pnJ1P9 = new System.Windows.Forms.Panel();
-            this.pnJ4P10 = new System.Windows.Forms.Panel();
-            this.pnJ3P10 = new System.Windows.Forms.Panel();
-            this.pnJ2P10 = new System.Windows.Forms.Panel();
-            this.pnJ1P10 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.tbPalabra = new System.Windows.Forms.TextBox();
+            this.tbLetra = new System.Windows.Forms.TextBox();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnArriesgar = new System.Windows.Forms.Button();
+            this.btnLetra = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnJ4P10 = new System.Windows.Forms.Panel();
+            this.pnJ4P9 = new System.Windows.Forms.Panel();
+            this.pnJ3P10 = new System.Windows.Forms.Panel();
+            this.pnJ4P8 = new System.Windows.Forms.Panel();
+            this.pnJ2P10 = new System.Windows.Forms.Panel();
+            this.pnJ3P9 = new System.Windows.Forms.Panel();
+            this.pnJ1P10 = new System.Windows.Forms.Panel();
+            this.pnJ4P7 = new System.Windows.Forms.Panel();
+            this.pnJ2P9 = new System.Windows.Forms.Panel();
+            this.pnJ3P8 = new System.Windows.Forms.Panel();
+            this.pnJ1P9 = new System.Windows.Forms.Panel();
+            this.pnJ4P6 = new System.Windows.Forms.Panel();
+            this.pnJ2P8 = new System.Windows.Forms.Panel();
+            this.pnJ3P7 = new System.Windows.Forms.Panel();
+            this.pnJ1P8 = new System.Windows.Forms.Panel();
+            this.pnJ4P5 = new System.Windows.Forms.Panel();
+            this.pnJ2P7 = new System.Windows.Forms.Panel();
+            this.pnJ3P6 = new System.Windows.Forms.Panel();
+            this.pnJ1P7 = new System.Windows.Forms.Panel();
+            this.pnJ4P4 = new System.Windows.Forms.Panel();
+            this.pnJ2P6 = new System.Windows.Forms.Panel();
+            this.pnJ3P5 = new System.Windows.Forms.Panel();
+            this.pnJ1P6 = new System.Windows.Forms.Panel();
+            this.pnJ4P3 = new System.Windows.Forms.Panel();
+            this.pnJ2P5 = new System.Windows.Forms.Panel();
+            this.pnJ3P4 = new System.Windows.Forms.Panel();
+            this.pnJ1P5 = new System.Windows.Forms.Panel();
+            this.pnJ3P3 = new System.Windows.Forms.Panel();
+            this.pnJ2P4 = new System.Windows.Forms.Panel();
+            this.pnJ2P3 = new System.Windows.Forms.Panel();
+            this.pnJ1P4 = new System.Windows.Forms.Panel();
+            this.pnJ1P3 = new System.Windows.Forms.Panel();
+            this.pnJ4P2 = new System.Windows.Forms.Panel();
+            this.pnJ4P1 = new System.Windows.Forms.Panel();
+            this.pnJ3P2 = new System.Windows.Forms.Panel();
+            this.pnJ3P1 = new System.Windows.Forms.Panel();
+            this.pnJ2P2 = new System.Windows.Forms.Panel();
+            this.pnJ2P1 = new System.Windows.Forms.Panel();
+            this.pnJ1P2 = new System.Windows.Forms.Panel();
+            this.pnJ1P1 = new System.Windows.Forms.Panel();
+            this.lbDecima = new System.Windows.Forms.Label();
+            this.lbNovena = new System.Windows.Forms.Label();
+            this.lbOctava = new System.Windows.Forms.Label();
+            this.lbSeptima = new System.Windows.Forms.Label();
+            this.lbSexta = new System.Windows.Forms.Label();
+            this.lbQuinta = new System.Windows.Forms.Label();
+            this.lbCuarta = new System.Windows.Forms.Label();
+            this.lbTercera = new System.Windows.Forms.Label();
+            this.lbSegunda = new System.Windows.Forms.Label();
+            this.lbPrimera = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -115,6 +125,23 @@
             this.panel3.Size = new System.Drawing.Size(231, 261);
             this.panel3.TabIndex = 2;
             // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(3, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(226, 131);
+            this.label2.TabIndex = 1;
+            this.label2.Text = resources.GetString("label2.Text");
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 190);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(226, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ACA PODRIA IR EL VIEJO QUE SE AHORCA";
+            // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -128,23 +155,27 @@
             this.panel4.Size = new System.Drawing.Size(433, 172);
             this.panel4.TabIndex = 1;
             // 
-            // btnLetra
+            // tbPalabra
             // 
-            this.btnLetra.Location = new System.Drawing.Point(18, 109);
-            this.btnLetra.Name = "btnLetra";
-            this.btnLetra.Size = new System.Drawing.Size(95, 52);
-            this.btnLetra.TabIndex = 0;
-            this.btnLetra.Text = "PRUEBA LETRA";
-            this.btnLetra.UseVisualStyleBackColor = true;
+            this.tbPalabra.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPalabra.Location = new System.Drawing.Point(119, 13);
+            this.tbPalabra.MaxLength = 10;
+            this.tbPalabra.Multiline = true;
+            this.tbPalabra.Name = "tbPalabra";
+            this.tbPalabra.Size = new System.Drawing.Size(293, 80);
+            this.tbPalabra.TabIndex = 4;
+            this.tbPalabra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnArriesgar
+            // tbLetra
             // 
-            this.btnArriesgar.Location = new System.Drawing.Point(119, 109);
-            this.btnArriesgar.Name = "btnArriesgar";
-            this.btnArriesgar.Size = new System.Drawing.Size(128, 52);
-            this.btnArriesgar.TabIndex = 1;
-            this.btnArriesgar.Text = "ARRIESGAR";
-            this.btnArriesgar.UseVisualStyleBackColor = true;
+            this.tbLetra.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbLetra.Location = new System.Drawing.Point(18, 13);
+            this.tbLetra.MaxLength = 1;
+            this.tbLetra.Multiline = true;
+            this.tbLetra.Name = "tbLetra";
+            this.tbLetra.Size = new System.Drawing.Size(95, 80);
+            this.tbLetra.TabIndex = 3;
+            this.tbLetra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnSalir
             // 
@@ -155,40 +186,39 @@
             this.btnSalir.Text = "SALIR";
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
-            // tbLetra
+            // btnArriesgar
             // 
-            this.tbLetra.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLetra.Location = new System.Drawing.Point(18, 13);
-            this.tbLetra.Multiline = true;
-            this.tbLetra.Name = "tbLetra";
-            this.tbLetra.Size = new System.Drawing.Size(95, 80);
-            this.tbLetra.TabIndex = 3;
-            this.tbLetra.Text = "S";
-            this.tbLetra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnArriesgar.Location = new System.Drawing.Point(119, 109);
+            this.btnArriesgar.Name = "btnArriesgar";
+            this.btnArriesgar.Size = new System.Drawing.Size(128, 52);
+            this.btnArriesgar.TabIndex = 1;
+            this.btnArriesgar.Text = "ARRIESGAR";
+            this.btnArriesgar.UseVisualStyleBackColor = true;
+            this.btnArriesgar.Click += new System.EventHandler(this.btnArriesgar_Click);
             // 
-            // tbPalabra
+            // btnLetra
             // 
-            this.tbPalabra.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPalabra.Location = new System.Drawing.Point(119, 13);
-            this.tbPalabra.Multiline = true;
-            this.tbPalabra.Name = "tbPalabra";
-            this.tbPalabra.Size = new System.Drawing.Size(293, 80);
-            this.tbPalabra.TabIndex = 4;
-            this.tbPalabra.Text = "ACA SE TIRA LA PALABRA COMPLETA";
-            this.tbPalabra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 190);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(226, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ACA PODRIA IR EL VIEJO QUE SE AHORCA";
+            this.btnLetra.Location = new System.Drawing.Point(18, 109);
+            this.btnLetra.Name = "btnLetra";
+            this.btnLetra.Size = new System.Drawing.Size(95, 52);
+            this.btnLetra.TabIndex = 0;
+            this.btnLetra.Text = "PRUEBA LETRA";
+            this.btnLetra.UseVisualStyleBackColor = true;
+            this.btnLetra.Click += new System.EventHandler(this.btnLetra_Click);
             // 
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this.label8);
+            this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.label10);
+            this.panel5.Controls.Add(this.label11);
+            this.panel5.Controls.Add(this.label12);
             this.panel5.Controls.Add(this.pnJ4P10);
             this.panel5.Controls.Add(this.pnJ4P9);
             this.panel5.Controls.Add(this.pnJ3P10);
@@ -244,415 +274,15 @@
             this.panel5.Size = new System.Drawing.Size(433, 119);
             this.panel5.TabIndex = 1;
             // 
-            // lbPrimera
-            // 
-            this.lbPrimera.Location = new System.Drawing.Point(3, 0);
-            this.lbPrimera.Name = "lbPrimera";
-            this.lbPrimera.Size = new System.Drawing.Size(41, 57);
-            this.lbPrimera.TabIndex = 0;
-            this.lbPrimera.Text = "_____";
-            this.lbPrimera.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbSegunda
-            // 
-            this.lbSegunda.Location = new System.Drawing.Point(45, 0);
-            this.lbSegunda.Name = "lbSegunda";
-            this.lbSegunda.Size = new System.Drawing.Size(41, 57);
-            this.lbSegunda.TabIndex = 1;
-            this.lbSegunda.Text = "_____";
-            this.lbSegunda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbTercera
-            // 
-            this.lbTercera.Location = new System.Drawing.Point(87, 0);
-            this.lbTercera.Name = "lbTercera";
-            this.lbTercera.Size = new System.Drawing.Size(41, 57);
-            this.lbTercera.TabIndex = 2;
-            this.lbTercera.Text = "_____";
-            this.lbTercera.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbCuarta
-            // 
-            this.lbCuarta.Location = new System.Drawing.Point(129, 0);
-            this.lbCuarta.Name = "lbCuarta";
-            this.lbCuarta.Size = new System.Drawing.Size(41, 57);
-            this.lbCuarta.TabIndex = 3;
-            this.lbCuarta.Text = "_____";
-            this.lbCuarta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbQuinta
-            // 
-            this.lbQuinta.Location = new System.Drawing.Point(171, 0);
-            this.lbQuinta.Name = "lbQuinta";
-            this.lbQuinta.Size = new System.Drawing.Size(41, 57);
-            this.lbQuinta.TabIndex = 4;
-            this.lbQuinta.Text = "_____";
-            this.lbQuinta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbSexta
-            // 
-            this.lbSexta.Location = new System.Drawing.Point(213, 0);
-            this.lbSexta.Name = "lbSexta";
-            this.lbSexta.Size = new System.Drawing.Size(41, 57);
-            this.lbSexta.TabIndex = 5;
-            this.lbSexta.Text = "_____";
-            this.lbSexta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbSeptima
-            // 
-            this.lbSeptima.Location = new System.Drawing.Point(255, 0);
-            this.lbSeptima.Name = "lbSeptima";
-            this.lbSeptima.Size = new System.Drawing.Size(41, 57);
-            this.lbSeptima.TabIndex = 6;
-            this.lbSeptima.Text = "_____";
-            this.lbSeptima.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbOctava
-            // 
-            this.lbOctava.Location = new System.Drawing.Point(297, 0);
-            this.lbOctava.Name = "lbOctava";
-            this.lbOctava.Size = new System.Drawing.Size(41, 57);
-            this.lbOctava.TabIndex = 7;
-            this.lbOctava.Text = "_____";
-            this.lbOctava.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbNovena
-            // 
-            this.lbNovena.Location = new System.Drawing.Point(339, 0);
-            this.lbNovena.Name = "lbNovena";
-            this.lbNovena.Size = new System.Drawing.Size(41, 57);
-            this.lbNovena.TabIndex = 8;
-            this.lbNovena.Text = "_____";
-            this.lbNovena.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbDecima
-            // 
-            this.lbDecima.Location = new System.Drawing.Point(381, 0);
-            this.lbDecima.Name = "lbDecima";
-            this.lbDecima.Size = new System.Drawing.Size(41, 57);
-            this.lbDecima.TabIndex = 9;
-            this.lbDecima.Text = "_____";
-            this.lbDecima.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnJ1P1
-            // 
-            this.pnJ1P1.BackColor = System.Drawing.Color.OrangeRed;
-            this.pnJ1P1.Enabled = false;
-            this.pnJ1P1.Location = new System.Drawing.Point(18, 59);
-            this.pnJ1P1.Name = "pnJ1P1";
-            this.pnJ1P1.Size = new System.Drawing.Size(12, 12);
-            this.pnJ1P1.TabIndex = 10;
-            this.pnJ1P1.Visible = false;
-            // 
-            // pnJ2P1
-            // 
-            this.pnJ2P1.BackColor = System.Drawing.Color.Yellow;
-            this.pnJ2P1.Enabled = false;
-            this.pnJ2P1.Location = new System.Drawing.Point(18, 74);
-            this.pnJ2P1.Name = "pnJ2P1";
-            this.pnJ2P1.Size = new System.Drawing.Size(12, 12);
-            this.pnJ2P1.TabIndex = 11;
-            this.pnJ2P1.Visible = false;
-            // 
-            // pnJ3P1
-            // 
-            this.pnJ3P1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pnJ3P1.Enabled = false;
-            this.pnJ3P1.Location = new System.Drawing.Point(18, 89);
-            this.pnJ3P1.Name = "pnJ3P1";
-            this.pnJ3P1.Size = new System.Drawing.Size(12, 12);
-            this.pnJ3P1.TabIndex = 11;
-            this.pnJ3P1.Visible = false;
-            // 
-            // pnJ4P1
-            // 
-            this.pnJ4P1.BackColor = System.Drawing.Color.SeaGreen;
-            this.pnJ4P1.Enabled = false;
-            this.pnJ4P1.Location = new System.Drawing.Point(18, 104);
-            this.pnJ4P1.Name = "pnJ4P1";
-            this.pnJ4P1.Size = new System.Drawing.Size(12, 12);
-            this.pnJ4P1.TabIndex = 11;
-            this.pnJ4P1.Visible = false;
-            // 
-            // pnJ4P2
-            // 
-            this.pnJ4P2.BackColor = System.Drawing.Color.SeaGreen;
-            this.pnJ4P2.Enabled = false;
-            this.pnJ4P2.Location = new System.Drawing.Point(58, 105);
-            this.pnJ4P2.Name = "pnJ4P2";
-            this.pnJ4P2.Size = new System.Drawing.Size(12, 12);
-            this.pnJ4P2.TabIndex = 13;
-            this.pnJ4P2.Visible = false;
-            // 
-            // pnJ3P2
-            // 
-            this.pnJ3P2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pnJ3P2.Enabled = false;
-            this.pnJ3P2.Location = new System.Drawing.Point(58, 90);
-            this.pnJ3P2.Name = "pnJ3P2";
-            this.pnJ3P2.Size = new System.Drawing.Size(12, 12);
-            this.pnJ3P2.TabIndex = 14;
-            this.pnJ3P2.Visible = false;
-            // 
-            // pnJ2P2
-            // 
-            this.pnJ2P2.BackColor = System.Drawing.Color.Yellow;
-            this.pnJ2P2.Enabled = false;
-            this.pnJ2P2.Location = new System.Drawing.Point(58, 75);
-            this.pnJ2P2.Name = "pnJ2P2";
-            this.pnJ2P2.Size = new System.Drawing.Size(12, 12);
-            this.pnJ2P2.TabIndex = 15;
-            this.pnJ2P2.Visible = false;
-            // 
-            // pnJ1P2
-            // 
-            this.pnJ1P2.BackColor = System.Drawing.Color.OrangeRed;
-            this.pnJ1P2.Enabled = false;
-            this.pnJ1P2.Location = new System.Drawing.Point(58, 60);
-            this.pnJ1P2.Name = "pnJ1P2";
-            this.pnJ1P2.Size = new System.Drawing.Size(12, 12);
-            this.pnJ1P2.TabIndex = 12;
-            this.pnJ1P2.Visible = false;
-            // 
-            // pnJ4P3
-            // 
-            this.pnJ4P3.BackColor = System.Drawing.Color.SeaGreen;
-            this.pnJ4P3.Enabled = false;
-            this.pnJ4P3.Location = new System.Drawing.Point(101, 105);
-            this.pnJ4P3.Name = "pnJ4P3";
-            this.pnJ4P3.Size = new System.Drawing.Size(12, 12);
-            this.pnJ4P3.TabIndex = 17;
-            this.pnJ4P3.Visible = false;
-            // 
-            // pnJ3P3
-            // 
-            this.pnJ3P3.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pnJ3P3.Enabled = false;
-            this.pnJ3P3.Location = new System.Drawing.Point(101, 90);
-            this.pnJ3P3.Name = "pnJ3P3";
-            this.pnJ3P3.Size = new System.Drawing.Size(12, 12);
-            this.pnJ3P3.TabIndex = 18;
-            this.pnJ3P3.Visible = false;
-            // 
-            // pnJ2P3
-            // 
-            this.pnJ2P3.BackColor = System.Drawing.Color.Yellow;
-            this.pnJ2P3.Enabled = false;
-            this.pnJ2P3.Location = new System.Drawing.Point(101, 75);
-            this.pnJ2P3.Name = "pnJ2P3";
-            this.pnJ2P3.Size = new System.Drawing.Size(12, 12);
-            this.pnJ2P3.TabIndex = 19;
-            this.pnJ2P3.Visible = false;
-            // 
-            // pnJ1P3
-            // 
-            this.pnJ1P3.BackColor = System.Drawing.Color.OrangeRed;
-            this.pnJ1P3.Enabled = false;
-            this.pnJ1P3.Location = new System.Drawing.Point(101, 60);
-            this.pnJ1P3.Name = "pnJ1P3";
-            this.pnJ1P3.Size = new System.Drawing.Size(12, 12);
-            this.pnJ1P3.TabIndex = 16;
-            this.pnJ1P3.Visible = false;
-            // 
-            // pnJ4P4
-            // 
-            this.pnJ4P4.BackColor = System.Drawing.Color.SeaGreen;
-            this.pnJ4P4.Enabled = false;
-            this.pnJ4P4.Location = new System.Drawing.Point(143, 105);
-            this.pnJ4P4.Name = "pnJ4P4";
-            this.pnJ4P4.Size = new System.Drawing.Size(12, 12);
-            this.pnJ4P4.TabIndex = 13;
-            this.pnJ4P4.Visible = false;
-            // 
-            // pnJ3P4
-            // 
-            this.pnJ3P4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pnJ3P4.Enabled = false;
-            this.pnJ3P4.Location = new System.Drawing.Point(143, 90);
-            this.pnJ3P4.Name = "pnJ3P4";
-            this.pnJ3P4.Size = new System.Drawing.Size(12, 12);
-            this.pnJ3P4.TabIndex = 14;
-            this.pnJ3P4.Visible = false;
-            // 
-            // pnJ2P4
-            // 
-            this.pnJ2P4.BackColor = System.Drawing.Color.Yellow;
-            this.pnJ2P4.Enabled = false;
-            this.pnJ2P4.Location = new System.Drawing.Point(143, 75);
-            this.pnJ2P4.Name = "pnJ2P4";
-            this.pnJ2P4.Size = new System.Drawing.Size(12, 12);
-            this.pnJ2P4.TabIndex = 15;
-            this.pnJ2P4.Visible = false;
-            // 
-            // pnJ1P4
-            // 
-            this.pnJ1P4.BackColor = System.Drawing.Color.OrangeRed;
-            this.pnJ1P4.Enabled = false;
-            this.pnJ1P4.Location = new System.Drawing.Point(143, 60);
-            this.pnJ1P4.Name = "pnJ1P4";
-            this.pnJ1P4.Size = new System.Drawing.Size(12, 12);
-            this.pnJ1P4.TabIndex = 12;
-            this.pnJ1P4.Visible = false;
-            // 
-            // pnJ4P5
-            // 
-            this.pnJ4P5.BackColor = System.Drawing.Color.SeaGreen;
-            this.pnJ4P5.Enabled = false;
-            this.pnJ4P5.Location = new System.Drawing.Point(184, 104);
-            this.pnJ4P5.Name = "pnJ4P5";
-            this.pnJ4P5.Size = new System.Drawing.Size(12, 12);
-            this.pnJ4P5.TabIndex = 13;
-            this.pnJ4P5.Visible = false;
-            // 
-            // pnJ3P5
-            // 
-            this.pnJ3P5.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pnJ3P5.Enabled = false;
-            this.pnJ3P5.Location = new System.Drawing.Point(184, 89);
-            this.pnJ3P5.Name = "pnJ3P5";
-            this.pnJ3P5.Size = new System.Drawing.Size(12, 12);
-            this.pnJ3P5.TabIndex = 14;
-            this.pnJ3P5.Visible = false;
-            // 
-            // pnJ2P5
-            // 
-            this.pnJ2P5.BackColor = System.Drawing.Color.Yellow;
-            this.pnJ2P5.Enabled = false;
-            this.pnJ2P5.Location = new System.Drawing.Point(184, 74);
-            this.pnJ2P5.Name = "pnJ2P5";
-            this.pnJ2P5.Size = new System.Drawing.Size(12, 12);
-            this.pnJ2P5.TabIndex = 15;
-            this.pnJ2P5.Visible = false;
-            // 
-            // pnJ1P5
-            // 
-            this.pnJ1P5.BackColor = System.Drawing.Color.OrangeRed;
-            this.pnJ1P5.Enabled = false;
-            this.pnJ1P5.Location = new System.Drawing.Point(184, 59);
-            this.pnJ1P5.Name = "pnJ1P5";
-            this.pnJ1P5.Size = new System.Drawing.Size(12, 12);
-            this.pnJ1P5.TabIndex = 12;
-            this.pnJ1P5.Visible = false;
-            // 
-            // pnJ4P6
-            // 
-            this.pnJ4P6.BackColor = System.Drawing.Color.SeaGreen;
-            this.pnJ4P6.Enabled = false;
-            this.pnJ4P6.Location = new System.Drawing.Point(226, 105);
-            this.pnJ4P6.Name = "pnJ4P6";
-            this.pnJ4P6.Size = new System.Drawing.Size(12, 12);
-            this.pnJ4P6.TabIndex = 13;
-            this.pnJ4P6.Visible = false;
-            // 
-            // pnJ3P6
-            // 
-            this.pnJ3P6.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pnJ3P6.Enabled = false;
-            this.pnJ3P6.Location = new System.Drawing.Point(226, 90);
-            this.pnJ3P6.Name = "pnJ3P6";
-            this.pnJ3P6.Size = new System.Drawing.Size(12, 12);
-            this.pnJ3P6.TabIndex = 14;
-            this.pnJ3P6.Visible = false;
-            // 
-            // pnJ2P6
-            // 
-            this.pnJ2P6.BackColor = System.Drawing.Color.Yellow;
-            this.pnJ2P6.Enabled = false;
-            this.pnJ2P6.Location = new System.Drawing.Point(226, 75);
-            this.pnJ2P6.Name = "pnJ2P6";
-            this.pnJ2P6.Size = new System.Drawing.Size(12, 12);
-            this.pnJ2P6.TabIndex = 15;
-            this.pnJ2P6.Visible = false;
-            // 
-            // pnJ1P6
-            // 
-            this.pnJ1P6.BackColor = System.Drawing.Color.OrangeRed;
-            this.pnJ1P6.Enabled = false;
-            this.pnJ1P6.Location = new System.Drawing.Point(226, 60);
-            this.pnJ1P6.Name = "pnJ1P6";
-            this.pnJ1P6.Size = new System.Drawing.Size(12, 12);
-            this.pnJ1P6.TabIndex = 12;
-            this.pnJ1P6.Visible = false;
-            // 
-            // pnJ4P7
-            // 
-            this.pnJ4P7.BackColor = System.Drawing.Color.SeaGreen;
-            this.pnJ4P7.Enabled = false;
-            this.pnJ4P7.Location = new System.Drawing.Point(269, 105);
-            this.pnJ4P7.Name = "pnJ4P7";
-            this.pnJ4P7.Size = new System.Drawing.Size(12, 12);
-            this.pnJ4P7.TabIndex = 13;
-            this.pnJ4P7.Visible = false;
-            // 
-            // pnJ3P7
-            // 
-            this.pnJ3P7.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pnJ3P7.Enabled = false;
-            this.pnJ3P7.Location = new System.Drawing.Point(269, 90);
-            this.pnJ3P7.Name = "pnJ3P7";
-            this.pnJ3P7.Size = new System.Drawing.Size(12, 12);
-            this.pnJ3P7.TabIndex = 14;
-            this.pnJ3P7.Visible = false;
-            // 
-            // pnJ2P7
-            // 
-            this.pnJ2P7.BackColor = System.Drawing.Color.Yellow;
-            this.pnJ2P7.Enabled = false;
-            this.pnJ2P7.Location = new System.Drawing.Point(269, 75);
-            this.pnJ2P7.Name = "pnJ2P7";
-            this.pnJ2P7.Size = new System.Drawing.Size(12, 12);
-            this.pnJ2P7.TabIndex = 15;
-            this.pnJ2P7.Visible = false;
-            // 
-            // pnJ1P7
-            // 
-            this.pnJ1P7.BackColor = System.Drawing.Color.OrangeRed;
-            this.pnJ1P7.Enabled = false;
-            this.pnJ1P7.Location = new System.Drawing.Point(269, 60);
-            this.pnJ1P7.Name = "pnJ1P7";
-            this.pnJ1P7.Size = new System.Drawing.Size(12, 12);
-            this.pnJ1P7.TabIndex = 12;
-            this.pnJ1P7.Visible = false;
-            // 
-            // pnJ4P8
-            // 
-            this.pnJ4P8.BackColor = System.Drawing.Color.SeaGreen;
-            this.pnJ4P8.Enabled = false;
-            this.pnJ4P8.Location = new System.Drawing.Point(310, 105);
-            this.pnJ4P8.Name = "pnJ4P8";
-            this.pnJ4P8.Size = new System.Drawing.Size(12, 12);
-            this.pnJ4P8.TabIndex = 13;
-            this.pnJ4P8.Visible = false;
-            // 
-            // pnJ3P8
-            // 
-            this.pnJ3P8.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pnJ3P8.Enabled = false;
-            this.pnJ3P8.Location = new System.Drawing.Point(310, 90);
-            this.pnJ3P8.Name = "pnJ3P8";
-            this.pnJ3P8.Size = new System.Drawing.Size(12, 12);
-            this.pnJ3P8.TabIndex = 14;
-            this.pnJ3P8.Visible = false;
-            // 
-            // pnJ2P8
-            // 
-            this.pnJ2P8.BackColor = System.Drawing.Color.Yellow;
-            this.pnJ2P8.Enabled = false;
-            this.pnJ2P8.Location = new System.Drawing.Point(310, 75);
-            this.pnJ2P8.Name = "pnJ2P8";
-            this.pnJ2P8.Size = new System.Drawing.Size(12, 12);
-            this.pnJ2P8.TabIndex = 15;
-            this.pnJ2P8.Visible = false;
-            // 
-            // pnJ1P8
-            // 
-            this.pnJ1P8.BackColor = System.Drawing.Color.OrangeRed;
-            this.pnJ1P8.Enabled = false;
-            this.pnJ1P8.Location = new System.Drawing.Point(310, 60);
-            this.pnJ1P8.Name = "pnJ1P8";
-            this.pnJ1P8.Size = new System.Drawing.Size(12, 12);
-            this.pnJ1P8.TabIndex = 12;
-            this.pnJ1P8.Visible = false;
+            // pnJ4P10
+            // 
+            this.pnJ4P10.BackColor = System.Drawing.Color.SeaGreen;
+            this.pnJ4P10.Enabled = false;
+            this.pnJ4P10.Location = new System.Drawing.Point(400, 105);
+            this.pnJ4P10.Name = "pnJ4P10";
+            this.pnJ4P10.Size = new System.Drawing.Size(12, 12);
+            this.pnJ4P10.TabIndex = 13;
+            this.pnJ4P10.Visible = false;
             // 
             // pnJ4P9
             // 
@@ -664,46 +294,6 @@
             this.pnJ4P9.TabIndex = 13;
             this.pnJ4P9.Visible = false;
             // 
-            // pnJ3P9
-            // 
-            this.pnJ3P9.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pnJ3P9.Enabled = false;
-            this.pnJ3P9.Location = new System.Drawing.Point(353, 90);
-            this.pnJ3P9.Name = "pnJ3P9";
-            this.pnJ3P9.Size = new System.Drawing.Size(12, 12);
-            this.pnJ3P9.TabIndex = 14;
-            this.pnJ3P9.Visible = false;
-            // 
-            // pnJ2P9
-            // 
-            this.pnJ2P9.BackColor = System.Drawing.Color.Yellow;
-            this.pnJ2P9.Enabled = false;
-            this.pnJ2P9.Location = new System.Drawing.Point(353, 75);
-            this.pnJ2P9.Name = "pnJ2P9";
-            this.pnJ2P9.Size = new System.Drawing.Size(12, 12);
-            this.pnJ2P9.TabIndex = 15;
-            this.pnJ2P9.Visible = false;
-            // 
-            // pnJ1P9
-            // 
-            this.pnJ1P9.BackColor = System.Drawing.Color.OrangeRed;
-            this.pnJ1P9.Enabled = false;
-            this.pnJ1P9.Location = new System.Drawing.Point(353, 60);
-            this.pnJ1P9.Name = "pnJ1P9";
-            this.pnJ1P9.Size = new System.Drawing.Size(12, 12);
-            this.pnJ1P9.TabIndex = 12;
-            this.pnJ1P9.Visible = false;
-            // 
-            // pnJ4P10
-            // 
-            this.pnJ4P10.BackColor = System.Drawing.Color.SeaGreen;
-            this.pnJ4P10.Enabled = false;
-            this.pnJ4P10.Location = new System.Drawing.Point(400, 105);
-            this.pnJ4P10.Name = "pnJ4P10";
-            this.pnJ4P10.Size = new System.Drawing.Size(12, 12);
-            this.pnJ4P10.TabIndex = 13;
-            this.pnJ4P10.Visible = false;
-            // 
             // pnJ3P10
             // 
             this.pnJ3P10.BackColor = System.Drawing.Color.DodgerBlue;
@@ -713,6 +303,16 @@
             this.pnJ3P10.Size = new System.Drawing.Size(12, 12);
             this.pnJ3P10.TabIndex = 14;
             this.pnJ3P10.Visible = false;
+            // 
+            // pnJ4P8
+            // 
+            this.pnJ4P8.BackColor = System.Drawing.Color.SeaGreen;
+            this.pnJ4P8.Enabled = false;
+            this.pnJ4P8.Location = new System.Drawing.Point(310, 105);
+            this.pnJ4P8.Name = "pnJ4P8";
+            this.pnJ4P8.Size = new System.Drawing.Size(12, 12);
+            this.pnJ4P8.TabIndex = 13;
+            this.pnJ4P8.Visible = false;
             // 
             // pnJ2P10
             // 
@@ -724,6 +324,16 @@
             this.pnJ2P10.TabIndex = 15;
             this.pnJ2P10.Visible = false;
             // 
+            // pnJ3P9
+            // 
+            this.pnJ3P9.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pnJ3P9.Enabled = false;
+            this.pnJ3P9.Location = new System.Drawing.Point(353, 90);
+            this.pnJ3P9.Name = "pnJ3P9";
+            this.pnJ3P9.Size = new System.Drawing.Size(12, 12);
+            this.pnJ3P9.TabIndex = 14;
+            this.pnJ3P9.Visible = false;
+            // 
             // pnJ1P10
             // 
             this.pnJ1P10.BackColor = System.Drawing.Color.OrangeRed;
@@ -734,13 +344,535 @@
             this.pnJ1P10.TabIndex = 12;
             this.pnJ1P10.Visible = false;
             // 
-            // label2
+            // pnJ4P7
             // 
-            this.label2.Location = new System.Drawing.Point(3, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(226, 131);
-            this.label2.TabIndex = 1;
-            this.label2.Text = resources.GetString("label2.Text");
+            this.pnJ4P7.BackColor = System.Drawing.Color.SeaGreen;
+            this.pnJ4P7.Enabled = false;
+            this.pnJ4P7.Location = new System.Drawing.Point(269, 105);
+            this.pnJ4P7.Name = "pnJ4P7";
+            this.pnJ4P7.Size = new System.Drawing.Size(12, 12);
+            this.pnJ4P7.TabIndex = 13;
+            this.pnJ4P7.Visible = false;
+            // 
+            // pnJ2P9
+            // 
+            this.pnJ2P9.BackColor = System.Drawing.Color.Yellow;
+            this.pnJ2P9.Enabled = false;
+            this.pnJ2P9.Location = new System.Drawing.Point(353, 75);
+            this.pnJ2P9.Name = "pnJ2P9";
+            this.pnJ2P9.Size = new System.Drawing.Size(12, 12);
+            this.pnJ2P9.TabIndex = 15;
+            this.pnJ2P9.Visible = false;
+            // 
+            // pnJ3P8
+            // 
+            this.pnJ3P8.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pnJ3P8.Enabled = false;
+            this.pnJ3P8.Location = new System.Drawing.Point(310, 90);
+            this.pnJ3P8.Name = "pnJ3P8";
+            this.pnJ3P8.Size = new System.Drawing.Size(12, 12);
+            this.pnJ3P8.TabIndex = 14;
+            this.pnJ3P8.Visible = false;
+            // 
+            // pnJ1P9
+            // 
+            this.pnJ1P9.BackColor = System.Drawing.Color.OrangeRed;
+            this.pnJ1P9.Enabled = false;
+            this.pnJ1P9.Location = new System.Drawing.Point(353, 60);
+            this.pnJ1P9.Name = "pnJ1P9";
+            this.pnJ1P9.Size = new System.Drawing.Size(12, 12);
+            this.pnJ1P9.TabIndex = 12;
+            this.pnJ1P9.Visible = false;
+            // 
+            // pnJ4P6
+            // 
+            this.pnJ4P6.BackColor = System.Drawing.Color.SeaGreen;
+            this.pnJ4P6.Enabled = false;
+            this.pnJ4P6.Location = new System.Drawing.Point(226, 105);
+            this.pnJ4P6.Name = "pnJ4P6";
+            this.pnJ4P6.Size = new System.Drawing.Size(12, 12);
+            this.pnJ4P6.TabIndex = 13;
+            this.pnJ4P6.Visible = false;
+            // 
+            // pnJ2P8
+            // 
+            this.pnJ2P8.BackColor = System.Drawing.Color.Yellow;
+            this.pnJ2P8.Enabled = false;
+            this.pnJ2P8.Location = new System.Drawing.Point(310, 75);
+            this.pnJ2P8.Name = "pnJ2P8";
+            this.pnJ2P8.Size = new System.Drawing.Size(12, 12);
+            this.pnJ2P8.TabIndex = 15;
+            this.pnJ2P8.Visible = false;
+            // 
+            // pnJ3P7
+            // 
+            this.pnJ3P7.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pnJ3P7.Enabled = false;
+            this.pnJ3P7.Location = new System.Drawing.Point(269, 90);
+            this.pnJ3P7.Name = "pnJ3P7";
+            this.pnJ3P7.Size = new System.Drawing.Size(12, 12);
+            this.pnJ3P7.TabIndex = 14;
+            this.pnJ3P7.Visible = false;
+            // 
+            // pnJ1P8
+            // 
+            this.pnJ1P8.BackColor = System.Drawing.Color.OrangeRed;
+            this.pnJ1P8.Enabled = false;
+            this.pnJ1P8.Location = new System.Drawing.Point(310, 60);
+            this.pnJ1P8.Name = "pnJ1P8";
+            this.pnJ1P8.Size = new System.Drawing.Size(12, 12);
+            this.pnJ1P8.TabIndex = 12;
+            this.pnJ1P8.Visible = false;
+            // 
+            // pnJ4P5
+            // 
+            this.pnJ4P5.BackColor = System.Drawing.Color.SeaGreen;
+            this.pnJ4P5.Enabled = false;
+            this.pnJ4P5.Location = new System.Drawing.Point(184, 104);
+            this.pnJ4P5.Name = "pnJ4P5";
+            this.pnJ4P5.Size = new System.Drawing.Size(12, 12);
+            this.pnJ4P5.TabIndex = 13;
+            this.pnJ4P5.Visible = false;
+            // 
+            // pnJ2P7
+            // 
+            this.pnJ2P7.BackColor = System.Drawing.Color.Yellow;
+            this.pnJ2P7.Enabled = false;
+            this.pnJ2P7.Location = new System.Drawing.Point(269, 75);
+            this.pnJ2P7.Name = "pnJ2P7";
+            this.pnJ2P7.Size = new System.Drawing.Size(12, 12);
+            this.pnJ2P7.TabIndex = 15;
+            this.pnJ2P7.Visible = false;
+            // 
+            // pnJ3P6
+            // 
+            this.pnJ3P6.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pnJ3P6.Enabled = false;
+            this.pnJ3P6.Location = new System.Drawing.Point(226, 90);
+            this.pnJ3P6.Name = "pnJ3P6";
+            this.pnJ3P6.Size = new System.Drawing.Size(12, 12);
+            this.pnJ3P6.TabIndex = 14;
+            this.pnJ3P6.Visible = false;
+            // 
+            // pnJ1P7
+            // 
+            this.pnJ1P7.BackColor = System.Drawing.Color.OrangeRed;
+            this.pnJ1P7.Enabled = false;
+            this.pnJ1P7.Location = new System.Drawing.Point(269, 60);
+            this.pnJ1P7.Name = "pnJ1P7";
+            this.pnJ1P7.Size = new System.Drawing.Size(12, 12);
+            this.pnJ1P7.TabIndex = 12;
+            this.pnJ1P7.Visible = false;
+            // 
+            // pnJ4P4
+            // 
+            this.pnJ4P4.BackColor = System.Drawing.Color.SeaGreen;
+            this.pnJ4P4.Enabled = false;
+            this.pnJ4P4.Location = new System.Drawing.Point(143, 105);
+            this.pnJ4P4.Name = "pnJ4P4";
+            this.pnJ4P4.Size = new System.Drawing.Size(12, 12);
+            this.pnJ4P4.TabIndex = 13;
+            this.pnJ4P4.Visible = false;
+            // 
+            // pnJ2P6
+            // 
+            this.pnJ2P6.BackColor = System.Drawing.Color.Yellow;
+            this.pnJ2P6.Enabled = false;
+            this.pnJ2P6.Location = new System.Drawing.Point(226, 75);
+            this.pnJ2P6.Name = "pnJ2P6";
+            this.pnJ2P6.Size = new System.Drawing.Size(12, 12);
+            this.pnJ2P6.TabIndex = 15;
+            this.pnJ2P6.Visible = false;
+            // 
+            // pnJ3P5
+            // 
+            this.pnJ3P5.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pnJ3P5.Enabled = false;
+            this.pnJ3P5.Location = new System.Drawing.Point(184, 89);
+            this.pnJ3P5.Name = "pnJ3P5";
+            this.pnJ3P5.Size = new System.Drawing.Size(12, 12);
+            this.pnJ3P5.TabIndex = 14;
+            this.pnJ3P5.Visible = false;
+            // 
+            // pnJ1P6
+            // 
+            this.pnJ1P6.BackColor = System.Drawing.Color.OrangeRed;
+            this.pnJ1P6.Enabled = false;
+            this.pnJ1P6.Location = new System.Drawing.Point(226, 60);
+            this.pnJ1P6.Name = "pnJ1P6";
+            this.pnJ1P6.Size = new System.Drawing.Size(12, 12);
+            this.pnJ1P6.TabIndex = 12;
+            this.pnJ1P6.Visible = false;
+            // 
+            // pnJ4P3
+            // 
+            this.pnJ4P3.BackColor = System.Drawing.Color.SeaGreen;
+            this.pnJ4P3.Enabled = false;
+            this.pnJ4P3.Location = new System.Drawing.Point(101, 105);
+            this.pnJ4P3.Name = "pnJ4P3";
+            this.pnJ4P3.Size = new System.Drawing.Size(12, 12);
+            this.pnJ4P3.TabIndex = 17;
+            this.pnJ4P3.Visible = false;
+            // 
+            // pnJ2P5
+            // 
+            this.pnJ2P5.BackColor = System.Drawing.Color.Yellow;
+            this.pnJ2P5.Enabled = false;
+            this.pnJ2P5.Location = new System.Drawing.Point(184, 74);
+            this.pnJ2P5.Name = "pnJ2P5";
+            this.pnJ2P5.Size = new System.Drawing.Size(12, 12);
+            this.pnJ2P5.TabIndex = 15;
+            this.pnJ2P5.Visible = false;
+            // 
+            // pnJ3P4
+            // 
+            this.pnJ3P4.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pnJ3P4.Enabled = false;
+            this.pnJ3P4.Location = new System.Drawing.Point(143, 90);
+            this.pnJ3P4.Name = "pnJ3P4";
+            this.pnJ3P4.Size = new System.Drawing.Size(12, 12);
+            this.pnJ3P4.TabIndex = 14;
+            this.pnJ3P4.Visible = false;
+            // 
+            // pnJ1P5
+            // 
+            this.pnJ1P5.BackColor = System.Drawing.Color.OrangeRed;
+            this.pnJ1P5.Enabled = false;
+            this.pnJ1P5.Location = new System.Drawing.Point(184, 59);
+            this.pnJ1P5.Name = "pnJ1P5";
+            this.pnJ1P5.Size = new System.Drawing.Size(12, 12);
+            this.pnJ1P5.TabIndex = 12;
+            this.pnJ1P5.Visible = false;
+            // 
+            // pnJ3P3
+            // 
+            this.pnJ3P3.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pnJ3P3.Enabled = false;
+            this.pnJ3P3.Location = new System.Drawing.Point(101, 90);
+            this.pnJ3P3.Name = "pnJ3P3";
+            this.pnJ3P3.Size = new System.Drawing.Size(12, 12);
+            this.pnJ3P3.TabIndex = 18;
+            this.pnJ3P3.Visible = false;
+            // 
+            // pnJ2P4
+            // 
+            this.pnJ2P4.BackColor = System.Drawing.Color.Yellow;
+            this.pnJ2P4.Enabled = false;
+            this.pnJ2P4.Location = new System.Drawing.Point(143, 75);
+            this.pnJ2P4.Name = "pnJ2P4";
+            this.pnJ2P4.Size = new System.Drawing.Size(12, 12);
+            this.pnJ2P4.TabIndex = 15;
+            this.pnJ2P4.Visible = false;
+            // 
+            // pnJ2P3
+            // 
+            this.pnJ2P3.BackColor = System.Drawing.Color.Yellow;
+            this.pnJ2P3.Enabled = false;
+            this.pnJ2P3.Location = new System.Drawing.Point(101, 75);
+            this.pnJ2P3.Name = "pnJ2P3";
+            this.pnJ2P3.Size = new System.Drawing.Size(12, 12);
+            this.pnJ2P3.TabIndex = 19;
+            this.pnJ2P3.Visible = false;
+            // 
+            // pnJ1P4
+            // 
+            this.pnJ1P4.BackColor = System.Drawing.Color.OrangeRed;
+            this.pnJ1P4.Enabled = false;
+            this.pnJ1P4.Location = new System.Drawing.Point(143, 60);
+            this.pnJ1P4.Name = "pnJ1P4";
+            this.pnJ1P4.Size = new System.Drawing.Size(12, 12);
+            this.pnJ1P4.TabIndex = 12;
+            this.pnJ1P4.Visible = false;
+            // 
+            // pnJ1P3
+            // 
+            this.pnJ1P3.BackColor = System.Drawing.Color.OrangeRed;
+            this.pnJ1P3.Enabled = false;
+            this.pnJ1P3.Location = new System.Drawing.Point(101, 60);
+            this.pnJ1P3.Name = "pnJ1P3";
+            this.pnJ1P3.Size = new System.Drawing.Size(12, 12);
+            this.pnJ1P3.TabIndex = 16;
+            this.pnJ1P3.Visible = false;
+            // 
+            // pnJ4P2
+            // 
+            this.pnJ4P2.BackColor = System.Drawing.Color.SeaGreen;
+            this.pnJ4P2.Enabled = false;
+            this.pnJ4P2.Location = new System.Drawing.Point(58, 105);
+            this.pnJ4P2.Name = "pnJ4P2";
+            this.pnJ4P2.Size = new System.Drawing.Size(12, 12);
+            this.pnJ4P2.TabIndex = 13;
+            this.pnJ4P2.Visible = false;
+            // 
+            // pnJ4P1
+            // 
+            this.pnJ4P1.BackColor = System.Drawing.Color.SeaGreen;
+            this.pnJ4P1.Enabled = false;
+            this.pnJ4P1.Location = new System.Drawing.Point(18, 104);
+            this.pnJ4P1.Name = "pnJ4P1";
+            this.pnJ4P1.Size = new System.Drawing.Size(12, 12);
+            this.pnJ4P1.TabIndex = 11;
+            this.pnJ4P1.Visible = false;
+            // 
+            // pnJ3P2
+            // 
+            this.pnJ3P2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pnJ3P2.Enabled = false;
+            this.pnJ3P2.Location = new System.Drawing.Point(58, 90);
+            this.pnJ3P2.Name = "pnJ3P2";
+            this.pnJ3P2.Size = new System.Drawing.Size(12, 12);
+            this.pnJ3P2.TabIndex = 14;
+            this.pnJ3P2.Visible = false;
+            // 
+            // pnJ3P1
+            // 
+            this.pnJ3P1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pnJ3P1.Enabled = false;
+            this.pnJ3P1.Location = new System.Drawing.Point(18, 89);
+            this.pnJ3P1.Name = "pnJ3P1";
+            this.pnJ3P1.Size = new System.Drawing.Size(12, 12);
+            this.pnJ3P1.TabIndex = 11;
+            this.pnJ3P1.Visible = false;
+            // 
+            // pnJ2P2
+            // 
+            this.pnJ2P2.BackColor = System.Drawing.Color.Yellow;
+            this.pnJ2P2.Enabled = false;
+            this.pnJ2P2.Location = new System.Drawing.Point(58, 75);
+            this.pnJ2P2.Name = "pnJ2P2";
+            this.pnJ2P2.Size = new System.Drawing.Size(12, 12);
+            this.pnJ2P2.TabIndex = 15;
+            this.pnJ2P2.Visible = false;
+            // 
+            // pnJ2P1
+            // 
+            this.pnJ2P1.BackColor = System.Drawing.Color.Yellow;
+            this.pnJ2P1.Enabled = false;
+            this.pnJ2P1.Location = new System.Drawing.Point(18, 74);
+            this.pnJ2P1.Name = "pnJ2P1";
+            this.pnJ2P1.Size = new System.Drawing.Size(12, 12);
+            this.pnJ2P1.TabIndex = 11;
+            this.pnJ2P1.Visible = false;
+            // 
+            // pnJ1P2
+            // 
+            this.pnJ1P2.BackColor = System.Drawing.Color.OrangeRed;
+            this.pnJ1P2.Enabled = false;
+            this.pnJ1P2.Location = new System.Drawing.Point(58, 60);
+            this.pnJ1P2.Name = "pnJ1P2";
+            this.pnJ1P2.Size = new System.Drawing.Size(12, 12);
+            this.pnJ1P2.TabIndex = 12;
+            this.pnJ1P2.Visible = false;
+            // 
+            // pnJ1P1
+            // 
+            this.pnJ1P1.BackColor = System.Drawing.Color.OrangeRed;
+            this.pnJ1P1.Enabled = false;
+            this.pnJ1P1.Location = new System.Drawing.Point(18, 59);
+            this.pnJ1P1.Name = "pnJ1P1";
+            this.pnJ1P1.Size = new System.Drawing.Size(12, 12);
+            this.pnJ1P1.TabIndex = 10;
+            this.pnJ1P1.Visible = false;
+            // 
+            // lbDecima
+            // 
+            this.lbDecima.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDecima.Location = new System.Drawing.Point(381, 0);
+            this.lbDecima.Name = "lbDecima";
+            this.lbDecima.Size = new System.Drawing.Size(41, 50);
+            this.lbDecima.TabIndex = 9;
+            this.lbDecima.Text = "S";
+            this.lbDecima.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbDecima.Visible = false;
+            // 
+            // lbNovena
+            // 
+            this.lbNovena.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNovena.Location = new System.Drawing.Point(339, 0);
+            this.lbNovena.Name = "lbNovena";
+            this.lbNovena.Size = new System.Drawing.Size(41, 50);
+            this.lbNovena.TabIndex = 8;
+            this.lbNovena.Text = "O";
+            this.lbNovena.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbNovena.Visible = false;
+            // 
+            // lbOctava
+            // 
+            this.lbOctava.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOctava.Location = new System.Drawing.Point(297, 0);
+            this.lbOctava.Name = "lbOctava";
+            this.lbOctava.Size = new System.Drawing.Size(41, 50);
+            this.lbOctava.TabIndex = 7;
+            this.lbOctava.Text = "T";
+            this.lbOctava.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbOctava.Visible = false;
+            // 
+            // lbSeptima
+            // 
+            this.lbSeptima.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSeptima.Location = new System.Drawing.Point(255, 0);
+            this.lbSeptima.Name = "lbSeptima";
+            this.lbSeptima.Size = new System.Drawing.Size(41, 50);
+            this.lbSeptima.TabIndex = 6;
+            this.lbSeptima.Text = "N";
+            this.lbSeptima.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbSeptima.Visible = false;
+            // 
+            // lbSexta
+            // 
+            this.lbSexta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSexta.Location = new System.Drawing.Point(213, 0);
+            this.lbSexta.Name = "lbSexta";
+            this.lbSexta.Size = new System.Drawing.Size(41, 50);
+            this.lbSexta.TabIndex = 5;
+            this.lbSexta.Text = "I";
+            this.lbSexta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbSexta.Visible = false;
+            // 
+            // lbQuinta
+            // 
+            this.lbQuinta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuinta.Location = new System.Drawing.Point(171, 0);
+            this.lbQuinta.Name = "lbQuinta";
+            this.lbQuinta.Size = new System.Drawing.Size(41, 50);
+            this.lbQuinta.TabIndex = 4;
+            this.lbQuinta.Text = "R";
+            this.lbQuinta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbQuinta.Visible = false;
+            // 
+            // lbCuarta
+            // 
+            this.lbCuarta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCuarta.Location = new System.Drawing.Point(129, 0);
+            this.lbCuarta.Name = "lbCuarta";
+            this.lbCuarta.Size = new System.Drawing.Size(41, 50);
+            this.lbCuarta.TabIndex = 3;
+            this.lbCuarta.Text = "E";
+            this.lbCuarta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbCuarta.Visible = false;
+            // 
+            // lbTercera
+            // 
+            this.lbTercera.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTercera.Location = new System.Drawing.Point(87, 0);
+            this.lbTercera.Name = "lbTercera";
+            this.lbTercera.Size = new System.Drawing.Size(41, 50);
+            this.lbTercera.TabIndex = 2;
+            this.lbTercera.Text = "B";
+            this.lbTercera.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbTercera.Visible = false;
+            // 
+            // lbSegunda
+            // 
+            this.lbSegunda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSegunda.Location = new System.Drawing.Point(45, 0);
+            this.lbSegunda.Name = "lbSegunda";
+            this.lbSegunda.Size = new System.Drawing.Size(41, 50);
+            this.lbSegunda.TabIndex = 1;
+            this.lbSegunda.Text = "A";
+            this.lbSegunda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbSegunda.Visible = false;
+            // 
+            // lbPrimera
+            // 
+            this.lbPrimera.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPrimera.Location = new System.Drawing.Point(3, 0);
+            this.lbPrimera.Name = "lbPrimera";
+            this.lbPrimera.Size = new System.Drawing.Size(41, 50);
+            this.lbPrimera.TabIndex = 0;
+            this.lbPrimera.Text = "L";
+            this.lbPrimera.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbPrimera.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(381, 42);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 15);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "_____";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(339, 42);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 15);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "_____";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(297, 42);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 15);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "_____";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(255, 42);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 15);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "_____";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(213, 42);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 15);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "_____";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(171, 42);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 15);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "_____";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(129, 42);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 15);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "_____";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.Location = new System.Drawing.Point(87, 42);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 15);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "_____";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.Location = new System.Drawing.Point(45, 42);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 15);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "_____";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(3, 42);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 15);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "_____";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmJuego
             // 
@@ -825,5 +957,15 @@
         private System.Windows.Forms.Panel pnJ2P2;
         private System.Windows.Forms.Panel pnJ1P2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
     }
 }

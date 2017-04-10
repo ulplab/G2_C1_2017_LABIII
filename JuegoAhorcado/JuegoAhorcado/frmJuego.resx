@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label2.Text" xml:space="preserve">
-    <value>Los colores son para ir habilitando a medida que van acertando los rivales para saber que posicion adivino pero no mostrar la letra, en principio estan invisibles y la idea seria habilitarlos a medida que se va adivinando y la palabra se va completando para el propio jugador solo la ve uno xq la aplicacion la van a acceder varios y cada uno va a tener su ventana de juego</value>
+    <value>(PALABRA DE PRUEBA)Los colores son para ir habilitando a medida que van acertando los rivales para saber que posicion adivino pero no mostrar la letra, en principio estan invisibles y la idea seria habilitarlos a medida que se va adivinando y la palabra se va completando para el propio jugador solo la ve uno xq la aplicacion la van a acceder varios y cada uno va a tener su ventana de juego</value>
   </data>
 </root>
