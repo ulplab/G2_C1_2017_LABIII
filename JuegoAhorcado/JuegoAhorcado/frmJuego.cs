@@ -13,6 +13,7 @@ namespace JuegoAhorcado
     public partial class frmJuego : Form
     {
         String jugador;
+        int cuentaPerdidas;
         public frmJuego(String jugador)
         {
             InitializeComponent();
@@ -154,6 +155,37 @@ namespace JuegoAhorcado
             {
                 pnJ1P10.Visible = true;
                 lbDecima.Visible = true;
+            }
+            if (lbPrimera.Text != tbLetra.Text.ToUpper() && lbSegunda.Text != tbLetra.Text.ToUpper() && lbTercera.Text != tbLetra.Text.ToUpper() && lbCuarta.Text != tbLetra.Text.ToUpper() && lbQuinta.Text != tbLetra.Text.ToUpper() && lbSexta.Text != tbLetra.Text.ToUpper() && lbSeptima.Text != tbLetra.Text.ToUpper() && lbOctava.Text != tbLetra.Text.ToUpper() && lbNovena.Text != tbLetra.Text.ToUpper() && lbDecima.Text != tbLetra.Text.ToUpper())
+            {
+                if(pbPiernaDerPintada.Visible==false)
+                {
+                    pbPiernaDerPintada.Visible = true;
+                    pbPiernaDer.Visible = false;
+                }
+                else if(pbPiernaDerPintada.Visible==true && pbPiernaIzqPintada.Visible==false)
+                {
+                    pbPiernaIzqPintada.Visible = true;
+                    pbPiernaIzq.Visible = false;
+                }
+                else if (pbPiernaDerPintada.Visible == true && pbPiernaIzqPintada.Visible == true && pbBrazoDerPintado.Visible==false)
+                {
+                    pbBrazoDerPintado.Visible = true;
+                    pbBrazoDer.Visible = false;
+                }
+                else if (pbPiernaDerPintada.Visible == true && pbPiernaIzqPintada.Visible == true && pbBrazoDerPintado.Visible == true && pbBrazoIzqPintado.Visible==false)
+                {
+                    pbBrazoIzqPintado.Visible = true;
+                    pbBrazoIzq.Visible = false;
+                }
+                else if (pbPiernaDerPintada.Visible == true && pbPiernaIzqPintada.Visible == true && pbBrazoIzqPintado.Visible == true && pbBrazoDerPintado.Visible == true && pbCabezaPintada.Visible==false)
+                {
+                    pbCabezaPintada.Visible = true;
+                    pbCabeza.Visible = false;
+                    MessageBox.Show("TE RE MIL AHORCASTE");
+                    btnLetra.Enabled = false;
+                    btnArriesgar.Enabled = false;
+                }
             }
             tbLetra.Clear();
             tbLetra.Focus();

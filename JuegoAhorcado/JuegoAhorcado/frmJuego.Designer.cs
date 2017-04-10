@@ -30,9 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmJuego));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pbPiernaDerPintada = new System.Windows.Forms.PictureBox();
+            this.pbBrazoDerPintado = new System.Windows.Forms.PictureBox();
+            this.pbPiernaIzqPintada = new System.Windows.Forms.PictureBox();
+            this.pbBrazoIzqPintado = new System.Windows.Forms.PictureBox();
+            this.pbCabezaPintada = new System.Windows.Forms.PictureBox();
+            this.pbPiernaDer = new System.Windows.Forms.PictureBox();
+            this.pbBrazoDer = new System.Windows.Forms.PictureBox();
+            this.pbPiernaIzq = new System.Windows.Forms.PictureBox();
+            this.pbBrazoIzq = new System.Windows.Forms.PictureBox();
+            this.pbCabeza = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tbPalabra = new System.Windows.Forms.TextBox();
             this.tbLetra = new System.Windows.Forms.TextBox();
@@ -40,6 +47,16 @@
             this.btnArriesgar = new System.Windows.Forms.Button();
             this.btnLetra = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.pnJ4P10 = new System.Windows.Forms.Panel();
             this.pnJ4P9 = new System.Windows.Forms.Panel();
             this.pnJ3P10 = new System.Windows.Forms.Panel();
@@ -90,57 +107,134 @@
             this.lbTercera = new System.Windows.Forms.Label();
             this.lbSegunda = new System.Windows.Forms.Label();
             this.lbPrimera = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPiernaDerPintada)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBrazoDerPintado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPiernaIzqPintada)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBrazoIzqPintado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCabezaPintada)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPiernaDer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBrazoDer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPiernaIzq)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBrazoIzq)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCabeza)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.pbPiernaDerPintada);
+            this.panel2.Controls.Add(this.pbBrazoDerPintado);
+            this.panel2.Controls.Add(this.pbPiernaIzqPintada);
+            this.panel2.Controls.Add(this.pbBrazoIzqPintado);
+            this.panel2.Controls.Add(this.pbCabezaPintada);
+            this.panel2.Controls.Add(this.pbPiernaDer);
+            this.panel2.Controls.Add(this.pbBrazoDer);
+            this.panel2.Controls.Add(this.pbPiernaIzq);
+            this.panel2.Controls.Add(this.pbBrazoIzq);
+            this.panel2.Controls.Add(this.pbCabeza);
             this.panel2.Location = new System.Drawing.Point(451, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(257, 297);
+            this.panel2.Size = new System.Drawing.Size(119, 297);
             this.panel2.TabIndex = 1;
             // 
-            // panel3
+            // pbPiernaDerPintada
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(12, 14);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(231, 261);
-            this.panel3.TabIndex = 2;
+            this.pbPiernaDerPintada.Image = ((System.Drawing.Image)(resources.GetObject("pbPiernaDerPintada.Image")));
+            this.pbPiernaDerPintada.Location = new System.Drawing.Point(58, 213);
+            this.pbPiernaDerPintada.Name = "pbPiernaDerPintada";
+            this.pbPiernaDerPintada.Size = new System.Drawing.Size(42, 69);
+            this.pbPiernaDerPintada.TabIndex = 15;
+            this.pbPiernaDerPintada.TabStop = false;
+            this.pbPiernaDerPintada.Visible = false;
             // 
-            // label2
+            // pbBrazoDerPintado
             // 
-            this.label2.Location = new System.Drawing.Point(3, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(226, 131);
-            this.label2.TabIndex = 1;
-            this.label2.Text = resources.GetString("label2.Text");
+            this.pbBrazoDerPintado.Image = ((System.Drawing.Image)(resources.GetObject("pbBrazoDerPintado.Image")));
+            this.pbBrazoDerPintado.Location = new System.Drawing.Point(58, 149);
+            this.pbBrazoDerPintado.Name = "pbBrazoDerPintado";
+            this.pbBrazoDerPintado.Size = new System.Drawing.Size(42, 69);
+            this.pbBrazoDerPintado.TabIndex = 14;
+            this.pbBrazoDerPintado.TabStop = false;
+            this.pbBrazoDerPintado.Visible = false;
             // 
-            // label1
+            // pbPiernaIzqPintada
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 190);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(226, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ACA PODRIA IR EL VIEJO QUE SE AHORCA";
+            this.pbPiernaIzqPintada.Image = ((System.Drawing.Image)(resources.GetObject("pbPiernaIzqPintada.Image")));
+            this.pbPiernaIzqPintada.Location = new System.Drawing.Point(18, 213);
+            this.pbPiernaIzqPintada.Name = "pbPiernaIzqPintada";
+            this.pbPiernaIzqPintada.Size = new System.Drawing.Size(45, 65);
+            this.pbPiernaIzqPintada.TabIndex = 13;
+            this.pbPiernaIzqPintada.TabStop = false;
+            this.pbPiernaIzqPintada.Visible = false;
+            // 
+            // pbBrazoIzqPintado
+            // 
+            this.pbBrazoIzqPintado.Image = ((System.Drawing.Image)(resources.GetObject("pbBrazoIzqPintado.Image")));
+            this.pbBrazoIzqPintado.Location = new System.Drawing.Point(18, 149);
+            this.pbBrazoIzqPintado.Name = "pbBrazoIzqPintado";
+            this.pbBrazoIzqPintado.Size = new System.Drawing.Size(45, 69);
+            this.pbBrazoIzqPintado.TabIndex = 12;
+            this.pbBrazoIzqPintado.TabStop = false;
+            this.pbBrazoIzqPintado.Visible = false;
+            // 
+            // pbCabezaPintada
+            // 
+            this.pbCabezaPintada.Image = ((System.Drawing.Image)(resources.GetObject("pbCabezaPintada.Image")));
+            this.pbCabezaPintada.Location = new System.Drawing.Point(28, -1);
+            this.pbCabezaPintada.Name = "pbCabezaPintada";
+            this.pbCabezaPintada.Size = new System.Drawing.Size(61, 156);
+            this.pbCabezaPintada.TabIndex = 11;
+            this.pbCabezaPintada.TabStop = false;
+            this.pbCabezaPintada.Visible = false;
+            // 
+            // pbPiernaDer
+            // 
+            this.pbPiernaDer.Image = ((System.Drawing.Image)(resources.GetObject("pbPiernaDer.Image")));
+            this.pbPiernaDer.Location = new System.Drawing.Point(58, 213);
+            this.pbPiernaDer.Name = "pbPiernaDer";
+            this.pbPiernaDer.Size = new System.Drawing.Size(42, 69);
+            this.pbPiernaDer.TabIndex = 10;
+            this.pbPiernaDer.TabStop = false;
+            // 
+            // pbBrazoDer
+            // 
+            this.pbBrazoDer.Image = ((System.Drawing.Image)(resources.GetObject("pbBrazoDer.Image")));
+            this.pbBrazoDer.Location = new System.Drawing.Point(58, 149);
+            this.pbBrazoDer.Name = "pbBrazoDer";
+            this.pbBrazoDer.Size = new System.Drawing.Size(42, 69);
+            this.pbBrazoDer.TabIndex = 9;
+            this.pbBrazoDer.TabStop = false;
+            // 
+            // pbPiernaIzq
+            // 
+            this.pbPiernaIzq.Image = ((System.Drawing.Image)(resources.GetObject("pbPiernaIzq.Image")));
+            this.pbPiernaIzq.Location = new System.Drawing.Point(18, 213);
+            this.pbPiernaIzq.Name = "pbPiernaIzq";
+            this.pbPiernaIzq.Size = new System.Drawing.Size(45, 65);
+            this.pbPiernaIzq.TabIndex = 8;
+            this.pbPiernaIzq.TabStop = false;
+            // 
+            // pbBrazoIzq
+            // 
+            this.pbBrazoIzq.Image = ((System.Drawing.Image)(resources.GetObject("pbBrazoIzq.Image")));
+            this.pbBrazoIzq.Location = new System.Drawing.Point(18, 149);
+            this.pbBrazoIzq.Name = "pbBrazoIzq";
+            this.pbBrazoIzq.Size = new System.Drawing.Size(45, 69);
+            this.pbBrazoIzq.TabIndex = 6;
+            this.pbBrazoIzq.TabStop = false;
+            // 
+            // pbCabeza
+            // 
+            this.pbCabeza.Image = ((System.Drawing.Image)(resources.GetObject("pbCabeza.Image")));
+            this.pbCabeza.Location = new System.Drawing.Point(28, -1);
+            this.pbCabeza.Name = "pbCabeza";
+            this.pbCabeza.Size = new System.Drawing.Size(61, 156);
+            this.pbCabeza.TabIndex = 5;
+            this.pbCabeza.TabStop = false;
             // 
             // panel4
             // 
@@ -273,6 +367,96 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(433, 119);
             this.panel5.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(381, 42);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 15);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "_____";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(339, 42);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 15);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "_____";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(297, 42);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 15);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "_____";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(255, 42);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 15);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "_____";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(213, 42);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 15);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "_____";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(171, 42);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 15);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "_____";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(129, 42);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 15);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "_____";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.Location = new System.Drawing.Point(87, 42);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 15);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "_____";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.Location = new System.Drawing.Point(45, 42);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 15);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "_____";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(3, 42);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 15);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "_____";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnJ4P10
             // 
@@ -784,109 +968,27 @@
             this.lbPrimera.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbPrimera.Visible = false;
             // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(381, 42);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 15);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "_____";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(339, 42);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 15);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "_____";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.Location = new System.Drawing.Point(297, 42);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 15);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "_____";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(255, 42);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 15);
-            this.label6.TabIndex = 26;
-            this.label6.Text = "_____";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.Location = new System.Drawing.Point(213, 42);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 15);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "_____";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.Location = new System.Drawing.Point(171, 42);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 15);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "_____";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.Location = new System.Drawing.Point(129, 42);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 15);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "_____";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.Location = new System.Drawing.Point(87, 42);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 15);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "_____";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            this.label11.Location = new System.Drawing.Point(45, 42);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 15);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "_____";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label12
-            // 
-            this.label12.Location = new System.Drawing.Point(3, 42);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 15);
-            this.label12.TabIndex = 20;
-            this.label12.Text = "_____";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // frmJuego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 316);
+            this.ClientSize = new System.Drawing.Size(574, 316);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Name = "frmJuego";
             this.Text = "JUEGO AHORCADO";
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPiernaDerPintada)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBrazoDerPintado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPiernaIzqPintada)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBrazoIzqPintado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCabezaPintada)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPiernaDer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBrazoDer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPiernaIzq)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBrazoIzq)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCabeza)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -897,14 +999,12 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox tbPalabra;
         private System.Windows.Forms.TextBox tbLetra;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnArriesgar;
         private System.Windows.Forms.Button btnLetra;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel pnJ4P1;
         private System.Windows.Forms.Panel pnJ3P1;
@@ -956,7 +1056,6 @@
         private System.Windows.Forms.Panel pnJ3P2;
         private System.Windows.Forms.Panel pnJ2P2;
         private System.Windows.Forms.Panel pnJ1P2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -967,5 +1066,15 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.PictureBox pbPiernaDer;
+        private System.Windows.Forms.PictureBox pbBrazoDer;
+        private System.Windows.Forms.PictureBox pbPiernaIzq;
+        private System.Windows.Forms.PictureBox pbBrazoIzq;
+        private System.Windows.Forms.PictureBox pbCabeza;
+        private System.Windows.Forms.PictureBox pbPiernaDerPintada;
+        private System.Windows.Forms.PictureBox pbBrazoDerPintado;
+        private System.Windows.Forms.PictureBox pbPiernaIzqPintada;
+        private System.Windows.Forms.PictureBox pbBrazoIzqPintado;
+        private System.Windows.Forms.PictureBox pbCabezaPintada;
     }
 }
