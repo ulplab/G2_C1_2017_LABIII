@@ -29,8 +29,8 @@ namespace JuegoAhorcado
         {
             if(lbJ1S1.Text!=String.Empty ||lbJ2S1.Text!=String.Empty ||lbJ3S1.Text!=String.Empty ||lbJ4S1.Text!=String.Empty ||lbJ1S2.Text!=String.Empty ||lbJ2S2.Text!=String.Empty ||lbJ3S2.Text!=String.Empty ||lbJ4S2.Text!=String.Empty)
             {
-                frmJuego frmJuego = new frmJuego(jugador);
-                frmJuego.ShowDialog();
+                frmJuego.formJuegoJ1.Show();
+                frmJuegoJ2.formJuegoJ2.Show();
                 this.Hide();
             }
             else

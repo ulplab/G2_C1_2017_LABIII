@@ -23,6 +23,7 @@ namespace JuegoAhorcado
             {
                 frmSala frmSala = new frmSala(tbJugador.Text);
                 frmSala.ShowDialog();
+                this.Hide();
             }
             else
             {
