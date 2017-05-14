@@ -21,9 +21,9 @@ namespace JuegoAhorcado
         {
             if(tbJugador.Text!=String.Empty || tbJugador.Text.Length>4)
             {
-                frmSala frmSala = new frmSala(tbJugador.Text);
-                frmSala.ShowDialog();
+                frmSala frmS = new frmSala(tbJugador.Text);
                 this.Hide();
+                frmS.ShowDialog();
             }
             else
             {

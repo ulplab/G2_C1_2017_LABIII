@@ -10,3 +10,15 @@ c:\users\pablo\documents\visual studio 2013\Projects\JuegoAhorcado\JuegoAhorcado
 c:\users\pablo\documents\visual studio 2013\Projects\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.pdb
 c:\users\pablo\documents\visual studio 2013\Projects\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmJuego.resources
 C:\Users\pablo\Documents\Visual Studio 2013\Projects\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmJuegoJ2.resources
+C:\Users\Jois\Source\Repos\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmJuego.resources
+C:\Users\Jois\Source\Repos\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmJuegoJ2.resources
+C:\Users\Jois\Source\Repos\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmPrincipal.resources
+C:\Users\Jois\Source\Repos\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmSala.resources
+C:\Users\Jois\Source\Repos\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.Properties.Resources.resources
+C:\Users\Jois\Source\Repos\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.csproj.GenerateResource.Cache
+C:\Users\Jois\Source\Repos\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\bin\Debug\JuegoAhorcado.exe.config
+C:\Users\Jois\Source\Repos\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\bin\Debug\JuegoAhorcado.exe
+C:\Users\Jois\Source\Repos\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\bin\Debug\JuegoAhorcado.pdb
+C:\Users\Jois\Source\Repos\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.exe
+C:\Users\Jois\Source\Repos\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.pdb
+C:\Users\Jois\Source\Repos\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.csprojResolveAssemblyReference.cache

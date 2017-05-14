@@ -44,17 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsControlador.cs" />
     <Compile Include="frmJuego.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmJuego.Designer.cs">
       <DependentUpon>frmJuego.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmJuegoJ2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmJuegoJ2.Designer.cs">
-      <DependentUpon>frmJuegoJ2.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -68,13 +63,11 @@
     <Compile Include="frmSala.Designer.cs">
       <DependentUpon>frmSala.cs</DependentUpon>
     </Compile>
+    <Compile Include="ICom.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmJuego.resx">
       <DependentUpon>frmJuego.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmJuegoJ2.resx">
-      <DependentUpon>frmJuegoJ2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
