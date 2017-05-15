@@ -32,14 +32,17 @@ namespace JuegoAhorcado
         {
             if(lbJ1S1.Text!=String.Empty ||lbJ2S1.Text!=String.Empty ||lbJ3S1.Text!=String.Empty ||lbJ4S1.Text!=String.Empty ||lbJ1S2.Text!=String.Empty ||lbJ2S2.Text!=String.Empty ||lbJ3S2.Text!=String.Empty ||lbJ4S2.Text!=String.Empty)
             {
-                clsControlador control = new clsControlador("laberintos");
+                clsJuego sala = new clsJuego("laberintos");
                 
                 clsJugador p1 = new clsJugador(jugador, color);
                 clsJugador p2 = new clsJugador("maria", Color.Black);
 
-                frmJuego frmP1 = new frmJuego(p1, control);
+                sala.agregarJugador(p1);
+                sala.agregarJugador(p2);
+
+                frmJuego frmP1 = new frmJuego(p1, sala);
                 frmP1.Show();
-                frmJuego frmP2 = new frmJuego(p2, control);
+                frmJuego frmP2 = new frmJuego(p2, sala);
                 frmP2.Show();
                 this.Hide();
             }

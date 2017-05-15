@@ -46,7 +46,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnArriesgar = new System.Windows.Forms.Button();
             this.btnLetra = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnlPalabra = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -79,7 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbBrazoIzq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCabeza)).BeginInit();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.pnlPalabra.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -260,33 +260,33 @@
             this.btnLetra.UseVisualStyleBackColor = true;
             this.btnLetra.Click += new System.EventHandler(this.btnLetra_Click);
             // 
-            // panel5
+            // pnlPalabra
             // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.label9);
-            this.panel5.Controls.Add(this.label10);
-            this.panel5.Controls.Add(this.label11);
-            this.panel5.Controls.Add(this.label12);
-            this.panel5.Controls.Add(this.lbDecima);
-            this.panel5.Controls.Add(this.lbNovena);
-            this.panel5.Controls.Add(this.lbOctava);
-            this.panel5.Controls.Add(this.lbSeptima);
-            this.panel5.Controls.Add(this.lbSexta);
-            this.panel5.Controls.Add(this.lbQuinta);
-            this.panel5.Controls.Add(this.lbCuarta);
-            this.panel5.Controls.Add(this.lbTercera);
-            this.panel5.Controls.Add(this.lbSegunda);
-            this.panel5.Controls.Add(this.lbPrimera);
-            this.panel5.Location = new System.Drawing.Point(12, 12);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(433, 119);
-            this.panel5.TabIndex = 1;
+            this.pnlPalabra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlPalabra.Controls.Add(this.label3);
+            this.pnlPalabra.Controls.Add(this.label4);
+            this.pnlPalabra.Controls.Add(this.label5);
+            this.pnlPalabra.Controls.Add(this.label6);
+            this.pnlPalabra.Controls.Add(this.label7);
+            this.pnlPalabra.Controls.Add(this.label8);
+            this.pnlPalabra.Controls.Add(this.label9);
+            this.pnlPalabra.Controls.Add(this.label10);
+            this.pnlPalabra.Controls.Add(this.label11);
+            this.pnlPalabra.Controls.Add(this.label12);
+            this.pnlPalabra.Controls.Add(this.lbDecima);
+            this.pnlPalabra.Controls.Add(this.lbNovena);
+            this.pnlPalabra.Controls.Add(this.lbOctava);
+            this.pnlPalabra.Controls.Add(this.lbSeptima);
+            this.pnlPalabra.Controls.Add(this.lbSexta);
+            this.pnlPalabra.Controls.Add(this.lbQuinta);
+            this.pnlPalabra.Controls.Add(this.lbCuarta);
+            this.pnlPalabra.Controls.Add(this.lbTercera);
+            this.pnlPalabra.Controls.Add(this.lbSegunda);
+            this.pnlPalabra.Controls.Add(this.lbPrimera);
+            this.pnlPalabra.Location = new System.Drawing.Point(12, 12);
+            this.pnlPalabra.Name = "pnlPalabra";
+            this.pnlPalabra.Size = new System.Drawing.Size(433, 119);
+            this.pnlPalabra.TabIndex = 1;
             // 
             // label3
             // 
@@ -385,6 +385,7 @@
             this.lbDecima.Name = "lbDecima";
             this.lbDecima.Size = new System.Drawing.Size(41, 50);
             this.lbDecima.TabIndex = 9;
+            this.lbDecima.Tag = "10";
             this.lbDecima.Text = "S";
             this.lbDecima.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbDecima.Visible = false;
@@ -396,6 +397,7 @@
             this.lbNovena.Name = "lbNovena";
             this.lbNovena.Size = new System.Drawing.Size(41, 50);
             this.lbNovena.TabIndex = 8;
+            this.lbNovena.Tag = "9";
             this.lbNovena.Text = "O";
             this.lbNovena.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbNovena.Visible = false;
@@ -407,6 +409,7 @@
             this.lbOctava.Name = "lbOctava";
             this.lbOctava.Size = new System.Drawing.Size(41, 50);
             this.lbOctava.TabIndex = 7;
+            this.lbOctava.Tag = "8";
             this.lbOctava.Text = "T";
             this.lbOctava.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbOctava.Visible = false;
@@ -418,6 +421,7 @@
             this.lbSeptima.Name = "lbSeptima";
             this.lbSeptima.Size = new System.Drawing.Size(41, 50);
             this.lbSeptima.TabIndex = 6;
+            this.lbSeptima.Tag = "7";
             this.lbSeptima.Text = "N";
             this.lbSeptima.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbSeptima.Visible = false;
@@ -429,6 +433,7 @@
             this.lbSexta.Name = "lbSexta";
             this.lbSexta.Size = new System.Drawing.Size(41, 50);
             this.lbSexta.TabIndex = 5;
+            this.lbSexta.Tag = "6";
             this.lbSexta.Text = "I";
             this.lbSexta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbSexta.Visible = false;
@@ -440,6 +445,7 @@
             this.lbQuinta.Name = "lbQuinta";
             this.lbQuinta.Size = new System.Drawing.Size(41, 50);
             this.lbQuinta.TabIndex = 4;
+            this.lbQuinta.Tag = "5";
             this.lbQuinta.Text = "R";
             this.lbQuinta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbQuinta.Visible = false;
@@ -451,6 +457,7 @@
             this.lbCuarta.Name = "lbCuarta";
             this.lbCuarta.Size = new System.Drawing.Size(41, 50);
             this.lbCuarta.TabIndex = 3;
+            this.lbCuarta.Tag = "4";
             this.lbCuarta.Text = "E";
             this.lbCuarta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbCuarta.Visible = false;
@@ -462,7 +469,7 @@
             this.lbTercera.Name = "lbTercera";
             this.lbTercera.Size = new System.Drawing.Size(41, 50);
             this.lbTercera.TabIndex = 2;
-            this.lbTercera.Text = "B";
+            this.lbTercera.Tag = "3";
             this.lbTercera.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbTercera.Visible = false;
             // 
@@ -473,7 +480,7 @@
             this.lbSegunda.Name = "lbSegunda";
             this.lbSegunda.Size = new System.Drawing.Size(41, 50);
             this.lbSegunda.TabIndex = 1;
-            this.lbSegunda.Text = "A";
+            this.lbSegunda.Tag = "2";
             this.lbSegunda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbSegunda.Visible = false;
             // 
@@ -484,7 +491,7 @@
             this.lbPrimera.Name = "lbPrimera";
             this.lbPrimera.Size = new System.Drawing.Size(41, 50);
             this.lbPrimera.TabIndex = 0;
-            this.lbPrimera.Text = "L";
+            this.lbPrimera.Tag = "1";
             this.lbPrimera.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbPrimera.Visible = false;
             // 
@@ -493,7 +500,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(574, 316);
-            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.pnlPalabra);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Name = "frmJuego";
@@ -512,7 +519,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCabeza)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
+            this.pnlPalabra.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -526,7 +533,7 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnArriesgar;
         private System.Windows.Forms.Button btnLetra;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel pnlPalabra;
         private System.Windows.Forms.Label lbDecima;
         private System.Windows.Forms.Label lbNovena;
         private System.Windows.Forms.Label lbOctava;

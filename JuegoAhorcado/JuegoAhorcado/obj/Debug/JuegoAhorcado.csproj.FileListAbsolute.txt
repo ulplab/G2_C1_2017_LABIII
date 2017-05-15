@@ -11,7 +11,6 @@ c:\users\pablo\documents\visual studio 2013\Projects\JuegoAhorcado\JuegoAhorcado
 c:\users\pablo\documents\visual studio 2013\Projects\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmJuego.resources
 C:\Users\pablo\Documents\Visual Studio 2013\Projects\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmJuegoJ2.resources
 C:\Users\Jois\Source\Repos\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmJuego.resources
-C:\Users\Jois\Source\Repos\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmJuegoJ2.resources
 C:\Users\Jois\Source\Repos\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmPrincipal.resources
 C:\Users\Jois\Source\Repos\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmSala.resources
 C:\Users\Jois\Source\Repos\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.Properties.Resources.resources

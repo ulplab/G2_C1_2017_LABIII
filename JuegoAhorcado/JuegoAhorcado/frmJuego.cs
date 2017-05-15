@@ -13,7 +13,9 @@ namespace JuegoAhorcado
     public partial class frmJuego : Form
     {
         clsJugador player;
-        char letra;
+        string palabra;
+        string env_palabra;
+        char env_letra;
         ICom com;
 
         public frmJuego()
@@ -25,225 +27,91 @@ namespace JuegoAhorcado
             InitializeComponent();
             com = c;
             player = p;
+            palabra = c.Palabra;
 
         }
         private void btnArriesgar_Click(object sender, EventArgs e)
         {
-            if (tbPalabra.Text.ToUpper() == devuelvePalabra())
+            if (tbPalabra.Text != " " && tbPalabra.Text != "") // Checkear bien que no hayan varios espacios
             {
-                MessageBox.Show("CORRECTO");
-                habilitaPalabra();
+                env_palabra = tbPalabra.Text.ToUpper();
+                if (!com.enviaPalabra(player, env_palabra))
+                {
+                    pintarTodo();
+                }
             }
-            else
-                MessageBox.Show("TE RE MIL AHORCASTE");
-        }
-        private string devuelvePalabra()
-        {
-            return lbPrimera.Text + lbSegunda.Text + lbTercera.Text + lbCuarta.Text + lbQuinta.Text + lbSexta.Text + lbSeptima.Text + lbOctava.Text + lbNovena.Text + lbDecima.Text;
-        }
-        private void habilitaPalabra()
-        {
-            lbPrimera.Visible = true;
-            lbSegunda.Visible = true;
-            lbTercera.Visible = true;
-            lbCuarta.Visible = true;
-            lbQuinta.Visible = true;
-            lbSexta.Visible = true;
-            lbSeptima.Visible = true;
-            lbOctava.Visible = true;
-            lbNovena.Visible = true;
-            lbDecima.Visible = true;
-        }
-        
+        }        
         private void btnLetra_Click(object sender, EventArgs e)
         {
-            /*if(lbPrimera.Text==tbLetra.Text.ToUpper())
+            if (tbLetra.Text != " " && tbLetra.Text != "")
             {
-                lbPrimera.Visible = true;
+                env_letra = tbLetra.Text.ToUpper()[0];
+                if (!com.enviaLetra(player, env_letra))
+                    pintarUna();
+                tbLetra.Clear();
+                tbLetra.Focus();
             }
-            if (lbSegunda.Text == tbLetra.Text.ToUpper())
-            {
-                lbSegunda.Visible = true;
-            }
-            if (lbTercera.Text == tbLetra.Text.ToUpper())
-            {
-                lbTercera.Visible = true;
-            }
-            if (lbCuarta.Text == tbLetra.Text.ToUpper())
-            {
-                lbCuarta.Visible = true;
-            }
-            if (lbQuinta.Text == tbLetra.Text.ToUpper())
-            {
-                lbQuinta.Visible = true;
-            }
-            if (lbSexta.Text == tbLetra.Text.ToUpper())
-            {
-                lbSexta.Visible = true;
-            }
-            if (lbSeptima.Text == tbLetra.Text.ToUpper())
-            {
-                lbSeptima.Visible = true;
-            }
-            if (lbOctava.Text == tbLetra.Text.ToUpper())
-            {
-                lbOctava.Visible = true;
-            }
-            if (lbNovena.Text == tbLetra.Text.ToUpper())
-            {
-                lbNovena.Visible = true;
-            }
-            if (lbDecima.Text == tbLetra.Text.ToUpper())
-            {
-                lbDecima.Visible = true;
-            }
-            if (lbPrimera.Text != tbLetra.Text.ToUpper() && lbSegunda.Text != tbLetra.Text.ToUpper() && lbTercera.Text != tbLetra.Text.ToUpper() && lbCuarta.Text != tbLetra.Text.ToUpper() && lbQuinta.Text != tbLetra.Text.ToUpper() && lbSexta.Text != tbLetra.Text.ToUpper() && lbSeptima.Text != tbLetra.Text.ToUpper() && lbOctava.Text != tbLetra.Text.ToUpper() && lbNovena.Text != tbLetra.Text.ToUpper() && lbDecima.Text != tbLetra.Text.ToUpper())
-            {
-                if(pbPiernaDerPintada.Visible==false)
-                {
-                    pbPiernaDerPintada.Visible = true;
-                    pbPiernaDer.Visible = false;
-                }
-                else if(pbPiernaDerPintada.Visible==true && pbPiernaIzqPintada.Visible==false)
-                {
-                    pbPiernaIzqPintada.Visible = true;
-                    pbPiernaIzq.Visible = false;
-                }
-                else if (pbPiernaDerPintada.Visible == true && pbPiernaIzqPintada.Visible == true && pbBrazoDerPintado.Visible==false)
-                {
-                    pbBrazoDerPintado.Visible = true;
-                    pbBrazoDer.Visible = false;
-                }
-                else if (pbPiernaDerPintada.Visible == true && pbPiernaIzqPintada.Visible == true && pbBrazoDerPintado.Visible == true && pbBrazoIzqPintado.Visible==false)
-                {
-                    pbBrazoIzqPintado.Visible = true;
-                    pbBrazoIzq.Visible = false;
-                }
-                else if (pbPiernaDerPintada.Visible == true && pbPiernaIzqPintada.Visible == true && pbBrazoIzqPintado.Visible == true && pbBrazoDerPintado.Visible == true && pbCabezaPintada.Visible==false)
-                {
-                    pbCabezaPintada.Visible = true;
-                    pbCabeza.Visible = false;
-                    MessageBox.Show("TE RE MIL AHORCASTE");
-                    btnLetra.Enabled = false;
-                    btnArriesgar.Enabled = false;
-                }
-            }
-            */
-            letra= tbLetra.Text.ToUpper()[0];
-            if (!com.enviaLetra(player, letra))
-                pintar();
-            tbLetra.Clear();
-            tbLetra.Focus();
         }
         private void frmJuego_Load(object sender, EventArgs e)
         {
-            com.recibe += new ev_recibir(mostrarLetras);
+            this.Text = "Juego Ahorcado - PLAYER " + player.Nick;
+            com.recibe += new ev_recibir(habilitaLetra);//com.recibe += new ev_recibir(mostrarLetras);
+            com.finJuego += new ev_fin(habilitaPalabra);
         }
 
 
 
-        private void habilitaLetra(Boolean t, int pos)
+
+
+        private void habilitaLetra(clsJugador p, string pal)
         {
-            if (pos == 1)
+            for(int i = 0; i <= palabra.LastIndexOf(pal[0]); i++)
             {
-                lbPrimera.Visible = t;
-            }
-            if (pos == 2)
-            {
-                lbSegunda.Visible = t;
-            }
-            if (pos == 3)
-            {
-               
-                lbTercera.Visible = t;
-            }
-            if (pos == 4)
-            {
-                
-                lbCuarta.Visible = t;
-            }
-            if (pos == 5)
-            {
-                lbQuinta.Visible = t;
-            }
-            if (pos == 6)
-            {
-                lbSexta.Visible = t;
-            }
-            if (pos == 7)
-            {
-                lbSeptima.Visible = t;
-            }
-            if (pos == 8)
-            {
-                lbOctava.Visible = t;
-            }
-            if (pos == 9)
-            {
-                lbNovena.Visible = t;
-            }
-            if (pos == 10)
-            {
-                lbDecima.Visible = t;
+                if (palabra[i] == pal[0])
+                {
+                    i++;
+                    foreach (Control c in pnlPalabra.Controls)
+                    {
+                        if (c is Label && !(c as Label).Text.Contains("_"))
+                        {
+                            Label l = (Label)c;
+                            if (l.Visible == false && l.Tag.ToString() == i.ToString())
+                            {
+                                l.ForeColor = p.Color;
+                                l.Text = pal;
+                                l.Visible = true;
+                            }
+                        }
+                    }
+                }
             }
         }
-
-
-        public void mostrarLetras(clsJugador p, string l)
+        
+        private void habilitaPalabra(Color cp)
         {
-            if (lbPrimera.Text == l.ToUpper() && lbPrimera.Visible == false)
+            if (cp != Color.Transparent)
             {
-                lbPrimera.ForeColor = p.Color;
-                lbPrimera.Visible = true;
+                // Habilitar los tb/lbl
+                foreach (Control c in pnlPalabra.Controls)
+                {
+                    if (c is Label && !(c as Label).Text.Contains("_"))
+                    {
+                        Label l = (Label)c;
+                        int posicionLetra = (int.Parse(l.Tag.ToString())) - 1;
+                        if (l.Visible == false && posicionLetra < com.Palabra.Length)
+                        {
+                            l.ForeColor = cp;
+                            l.Text = com.Palabra[posicionLetra].ToString();
+                            l.Visible = true;
+                        }
+                    }
+                }
             }
-            if (lbSegunda.Text == l.ToUpper() && lbSegunda.Visible == false)
-            {
-                lbSegunda.ForeColor = p.Color;
-                lbSegunda.Visible = true;
-            }
-            if (lbTercera.Text == l.ToUpper() && lbTercera.Visible == false)
-            {
-                lbTercera.ForeColor = p.Color; 
-                lbTercera.Visible = true;
-            }
-            if (lbCuarta.Text == l.ToUpper() && lbCuarta.Visible == false)
-            {
-                lbCuarta.ForeColor = p.Color;
-                lbCuarta.Visible = true;
-            }
-            if (lbQuinta.Text == l.ToUpper() && lbQuinta.Visible == false)
-            {
-                lbQuinta.ForeColor = p.Color;
-                lbQuinta.Visible = true;
-            }
-            if (lbSexta.Text == l.ToUpper() && lbSexta.Visible==false)
-            {
-                lbSexta.ForeColor = p.Color;
-                lbSexta.Visible = true;
-            }
-            if (lbSeptima.Text == l.ToUpper() && lbSeptima.Visible==false)
-            {
-                lbSeptima.ForeColor = p.Color;
-                lbSeptima.Visible = true;
-            }
-            if (lbOctava.Text == l.ToUpper() && lbOctava.Visible==false)
-            {
-                lbOctava.ForeColor = p.Color;
-                lbOctava.Visible = true;
-            }
-            if (lbNovena.Text == l.ToUpper() && lbNovena.Visible==false)
-            {
-                lbNovena.ForeColor = p.Color;
-                lbNovena.Visible = true;
-            }
-            if (lbDecima.Text == l.ToUpper() && lbDecima.Visible==false)
-            {
-                lbDecima.ForeColor = p.Color;
-                lbDecima.Visible = true;
-            }
+            else
+                MessageBox.Show("Se acabo che...");
         }
-
-        public void pintar()
+        
+        public void pintarUna()
         {
             if (pbPiernaDerPintada.Visible == false)
             {
@@ -269,10 +137,28 @@ namespace JuegoAhorcado
             {
                 pbCabezaPintada.Visible = true;
                 pbCabeza.Visible = false;
-                MessageBox.Show("TE RE MIL AHORCASTE");
-                btnLetra.Enabled = false;
-                btnArriesgar.Enabled = false;
+                ahorcar();
             }
         }
+
+        public void pintarTodo()
+        {
+            pbPiernaDerPintada.Visible = true;
+            pbPiernaIzqPintada.Visible = true;
+            pbBrazoDerPintado.Visible = true;
+            pbBrazoIzqPintado.Visible = true;
+            pbCabezaPintada.Visible = true;
+            ahorcar();
+        }
+
+        private void ahorcar()
+        {
+            btnLetra.Enabled = false;
+            btnArriesgar.Enabled = false;
+            MessageBox.Show("TE RE MIL AHORCASTE");
+            //com.recibe -= new ev_recibir(mostrarLetras);
+            com.recibe -= new ev_recibir(habilitaLetra);
+        }
+
     }
 }

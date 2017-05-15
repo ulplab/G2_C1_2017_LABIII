@@ -12,7 +12,8 @@ namespace JuegoAhorcado
         string nick;
         int puntaje;
         Color color;
-        int vidas;
+        //int vidas;
+        //int sala;
 
         public string Nick
         {
@@ -53,7 +54,7 @@ namespace JuegoAhorcado
             }
         }
 
-        public int Vidas
+        /*public int Vidas
         {
             get
             {
@@ -64,33 +65,56 @@ namespace JuegoAhorcado
             {
                 vidas = value;
             }
-        }
+        }*/
 
-        //int sala;
 
         public clsJugador(string s, Color c)
         {
             Nick = s;
             Color = c;
             Puntaje = 0;
-            Vidas = 5;
-        }
-
-        public void PierdeVida()
-        {
-            Vidas--;
+            //Vidas = 5;
         }
 
     }
 
 
-    public class clsControlador : ICom
+    public class clsJuego : ICom
     {
-        public string palabra;
+        private List<clsJugador> jugadores = new List<clsJugador>();
+        private string palabra;
 
-        public clsControlador(string p)
+        public string Palabra
+        {
+            get
+            {
+                return palabra;
+            }
+
+            set
+            {
+                palabra = value;
+            }
+        }
+
+        public clsJuego(string p)
         {
             palabra = p.ToUpper();
+        }
+
+        public void agregarJugador(clsJugador j)
+        {
+            jugadores.Add(j);
+        }
+
+        public void quitarJugador(clsJugador j)
+        {
+            if(jugadores.Exists(x=>x.Nick==j.Nick))
+            {
+                jugadores.Remove(j);
+            }
+            if (jugadores.Count() == 0)
+                finJuego(Color.Transparent);
         }
 
         public event ev_fin finJuego;
@@ -114,11 +138,14 @@ namespace JuegoAhorcado
         {
             if (palabra == s)
             {
-                finJuego();
+                finJuego(p.Color);
                 return true;
             }
             else
+            {
+                quitarJugador(p);
                 return false;
+            }
         }
     }
 }
