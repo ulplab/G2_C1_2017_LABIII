@@ -57,6 +57,19 @@ namespace JuegoAhorcado
             this.Text = "Juego Ahorcado - PLAYER " + player.Nick;
             com.recibe += new ev_recibir(habilitaLetra);//com.recibe += new ev_recibir(mostrarLetras);
             com.finJuego += new ev_fin(habilitaPalabra);
+         
+            for(int i = 0; i < palabra.Length; i++)
+            {
+                foreach (Control c in pnlPalabra.Controls)
+                {
+                    if (c is Label && (c as Label).Name.Equals("lblGuion" + i.ToString()))
+                    {
+                        c.Visible = true;
+                    }
+                 
+                }
+            }
+          
         }
 
 
@@ -65,17 +78,22 @@ namespace JuegoAhorcado
 
         private void habilitaLetra(clsJugador p, string pal)
         {
-            for(int i = 0; i <= palabra.LastIndexOf(pal[0]); i++)
+
+            for (int i = 0; i <= palabra.Length-1; i++)
             {
-                if (palabra[i] == pal[0])
+
+
+
+                if (palabra[i].ToString().Equals(pal))
                 {
-                    i++;
+                   
                     foreach (Control c in pnlPalabra.Controls)
                     {
-                        if (c is Label && !(c as Label).Text.Contains("_"))
+                        if (c is Label && !(c as Label).Text.Contains("_")&& (c as Label).Name.Equals("lb"+i.ToString()))
                         {
+                            
                             Label l = (Label)c;
-                            if (l.Visible == false && l.Tag.ToString() == i.ToString())
+                            if (l.Visible == false )
                             {
                                 l.ForeColor = p.Color;
                                 l.Text = pal;
@@ -86,11 +104,11 @@ namespace JuegoAhorcado
                 }
             }
         }
-        
+
         private void habilitaPalabra(Color cp)
         {
             if (cp != Color.Transparent)
-            {
+             {
                 // Habilitar los tb/lbl
                 foreach (Control c in pnlPalabra.Controls)
                 {

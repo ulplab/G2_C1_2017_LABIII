@@ -277,6 +277,7 @@
             this.Controls.Add(this.btnBack);
             this.Name = "frmSala";
             this.Text = "SELECCION DE SALA";
+            this.Load += new System.EventHandler(this.frmSala_Load);
             this.gbSala1.ResumeLayout(false);
             this.gbSala2.ResumeLayout(false);
             this.ResumeLayout(false);

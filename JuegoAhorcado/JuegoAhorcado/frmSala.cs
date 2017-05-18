@@ -14,6 +14,7 @@ namespace JuegoAhorcado
     {
         String jugador;
         Color color;
+        string[,] palabra;
 
 
         public frmSala(String jugador)
@@ -32,11 +33,11 @@ namespace JuegoAhorcado
         {
             if(lbJ1S1.Text!=String.Empty ||lbJ2S1.Text!=String.Empty ||lbJ3S1.Text!=String.Empty ||lbJ4S1.Text!=String.Empty ||lbJ1S2.Text!=String.Empty ||lbJ2S2.Text!=String.Empty ||lbJ3S2.Text!=String.Empty ||lbJ4S2.Text!=String.Empty)
             {
-                clsJuego sala = new clsJuego("laberintos");
+                clsJuego sala = new clsJuego();
                 
                 clsJugador p1 = new clsJugador(jugador, color);
                 clsJugador p2 = new clsJugador("maria", Color.Black);
-
+              sala.GeneraPalabra();//genero palabra para probar
                 sala.agregarJugador(p1);
                 sala.agregarJugador(p2);
 
@@ -155,6 +156,11 @@ namespace JuegoAhorcado
             btnP2S2.Enabled = false;
             btnP3S2.Enabled = false;
             //color = this.BackColor.Name;
+        }
+
+        private void frmSala_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
