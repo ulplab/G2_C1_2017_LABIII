@@ -81,7 +81,7 @@ namespace JuegoAhorcado
         }//quita todo el puntaje de palabrasArray y deja fuera de  juego y sin acertar = 5
         void LeerArchivo()
         {
-            file = new StreamReader(@"c:\diccionario.txt", Encoding.UTF8, true);
+            file = new StreamReader(@"C:\Proyecto Optativa2\G2_C1_2017_PC\diccionario.txt", Encoding.UTF8, true);
             string linea = "";
 
             while ((linea = file.ReadLine()) != null)

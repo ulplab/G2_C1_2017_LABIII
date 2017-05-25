@@ -21,9 +21,18 @@ namespace JuegoAhorcado
         {
             if(tbJugador.Text!=String.Empty || tbJugador.Text.Length>4)
             {
-                frmSala frmS = new frmSala(tbJugador.Text);
+                clsJuego sala = new clsJuego();
+                clsJugador p1 = new clsJugador(tbJugador.Text, Color.Orange);
+                clsJugador p2 = new clsJugador("maria", Color.Green);
+                sala.GeneraPalabra();//genero palabra para probar
+                sala.agregarJugador(p1);
+                sala.agregarJugador(p2);
+
+                frmJuego frmP1 = new frmJuego(p1, sala);
+                frmP1.Show();
+                frmJuego frmP2 = new frmJuego(p2, sala);
+                frmP2.Show();
                 this.Hide();
-                frmS.ShowDialog();
             }
             else
             {
