@@ -1,19 +1,17 @@
-﻿using System.Drawing;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using System.Data;
+using System.Drawing;
 using System.Text.RegularExpressions;
 
-namespace JuegoAhorcado
+namespace ServidorJA
 {
-   
 
 
-    public class clsJuego : ICom
+    public class clsJuego
     {
         List<String> diccionario = new List<string>();//contiene el diccionario en memoria
         List<clsJugador> jugadores = new List<clsJugador>();
@@ -22,7 +20,7 @@ namespace JuegoAhorcado
         StreamReader file;
         const int CHANCES = 5;// son las chances que tiene el jugador para adivinar la palabra,en caso de "ARRIESGAR" pierde toda las chances
         String[,] palabraArray;//variable multidimensional palabra que va a contener la palabra y por cada caracter el usuario q adivino el mismo y su numero de usuario
-        
+
 
 
 
@@ -39,54 +37,71 @@ namespace JuegoAhorcado
             }
         }
 
+        public List<clsJugador> Jugadores
+        {
+            get
+            {
+                return jugadores;
+            }
+
+            set
+            {
+                jugadores = value;
+            }
+        }
+
         public clsJuego()
         {
-            
+
 
             LeerArchivo();
-        
+
 
 
         }
 
         public void agregarJugador(clsJugador j)
         {
-            jugadores.Add(j);
+            Jugadores.Add(j);
         }
 
         public void quitarJugador(clsJugador j)
         {
-            if(jugadores.Exists(x=>x.Nick==j.Nick))
+            if (Jugadores.Exists(x => x.Nick == j.Nick))
             {
-                jugadores.Remove(j);
+                Jugadores.Remove(j);
             }
-            if (jugadores.Count() == 0)
-                finJuego(Color.Transparent);
+            if (Jugadores.Count() == 0)
+            {
+                //  finJuego(Color.Transparent);
+            }
+
+
         }
 
-        public event ev_fin finJuego;
-        public event ev_recibir recibe;
+        //public event ev_fin finJuego;
+        //public event ev_recibir recibe;
         void Perdio(string jugador)
         {
-            for (int i = 0; i <= (palabraArray.Length/2)-1; i++)
+            for (int i = 0; i <= (palabraArray.Length / 2) - 1; i++)
             {
-                if (palabraArray[i, 1]!=null && palabraArray[i, 1].Equals(jugador))
+                if (palabraArray[i, 1] != null && palabraArray[i, 1].Equals(jugador))
                 {
                     palabraArray[i, 1] = null;
                 }
             }
-            jugadores.ElementAt(BuscaIndiceJugador(jugador)).FueraDeJuego = true;
+            Jugadores.ElementAt(BuscaIndiceJugador(jugador)).FueraDeJuego = true;
             // jugadores.ElementAt(BuscaIndiceJugador(jugador)).SinAcertar = 5;
 
         }//quita todo el puntaje de palabrasArray y deja fuera de  juego y sin acertar = 5
         void LeerArchivo()
         {
-            file = new StreamReader(@"C:\Proyecto Optativa2\Juego\G2_C1_2017_PC\diccionario.txt", Encoding.UTF8, true);
+            file = new StreamReader(@"c:\diccionario.txt", Encoding.UTF8, true);
             string linea = "";
 
             while ((linea = file.ReadLine()) != null)
             {
-                if (linea.Length >= 6 && linea.Length<=14)
+                if (linea.Length >= 6 && linea.Length <= 14)
                 {
 
                     diccionario.Add(linea);
@@ -103,7 +118,7 @@ namespace JuegoAhorcado
         public void GeneraPalabra()
         {
 
-           
+
             int numero = GenerateRandom(0, diccionario.Count - 1);
             if (numerosUsados.IndexOf(numero) >= 0)
             {
@@ -117,7 +132,7 @@ namespace JuegoAhorcado
 
                 Palabra = diccionario.ElementAt(numero);
                 //elimino los acentos de las palabras
-                Palabra=Palabra.Replace('á', 'a');
+                Palabra = Palabra.Replace('á', 'a');
                 Palabra = Palabra.Replace('é', 'e');
                 Palabra = Palabra.Replace('í', 'i');
                 Palabra = Palabra.Replace('ó', 'o');
@@ -126,7 +141,7 @@ namespace JuegoAhorcado
                 //creo el arreglo con longitud equivalente a la palabra obtenida
                 palabraArray = new String[Palabra.Length, 2];
                 int contador = 0;
-                foreach (clsJugador j in jugadores)
+                foreach (clsJugador j in Jugadores)
                 {
                     j.SinAcertar = 0;
                     j.FueraDeJuego = false;
@@ -142,16 +157,16 @@ namespace JuegoAhorcado
 
             }
 
-           
+
 
         }//genera  una nueva palabra para palabraArray y vuelve las chances perdidas por los jugadores  a cero
         int BuscaIndiceJugador(String nombre)
         {
             int indice = 0;
-            int tamañoLista = jugadores.Count;
+            int tamañoLista = Jugadores.Count;
             while (indice != tamañoLista)
             {
-                if (jugadores.ElementAt(indice).Nick.Equals(nombre))
+                if (Jugadores.ElementAt(indice).Nick.Equals(nombre))
                 {
                     break;
                 }
@@ -167,7 +182,7 @@ namespace JuegoAhorcado
             }
 
         }
-        public bool enviaLetra(clsJugador jugador, char l)
+        public string enviaLetra(string nick, string l)
         {
             //if (palabra.IndexOf(l) != -1)
             //{
@@ -178,146 +193,50 @@ namespace JuegoAhorcado
             //{
             //    return false;
             //}
-            int indiceJugador = BuscaIndiceJugador(jugador.Nick);
-            bool retorno = false;
-            for (int i = 0; i <=( palabraArray.Length/2)-1; i++)
+
+            int indiceJugador = BuscaIndiceJugador(nick);
+            string retorno = "FALLO";
+            for (int i = 0; i <= (palabraArray.Length / 2) - 1; i++)
             {
                 if (palabraArray[i, 0].Equals(l.ToString()))
                 {
-                    palabraArray[i, 1] = jugador.Nick;
-                    retorno = true;
+                    palabraArray[i, 1] = nick;
+                    retorno = "ACERTADO";
                 }
             }
-            if (retorno == false)
-            { 
-                jugadores.ElementAt(indiceJugador).SinAcertar++;
-                if (jugadores.ElementAt(indiceJugador).SinAcertar == CHANCES)
+            if (retorno.Equals("FALLO"))
+            {
+                Jugadores.ElementAt(indiceJugador).SinAcertar++;
+                if (Jugadores.ElementAt(indiceJugador).SinAcertar == CHANCES)
                 {
 
-                    Perdio(jugador.Nick);
+                    Perdio(nick);
 
 
                 }
             }
-            else
-            {
-                recibe(jugador, l.ToString());
-            }
+            //else
+            //{
+            //   // recibe(jugador, l.ToString());
+            //}
             return retorno;
         }
 
-        public bool enviaPalabra(clsJugador p, string s)
+        public string enviaPalabra(string nick, string s)
         {
             if (palabra.Equals(s))
             {
-                p.Puntaje = 5;//cantidad de puntajes por acertar
-                finJuego(p.Color);
-                return true;
+                Jugadores.ElementAt(BuscaIndiceJugador(nick)).Puntaje = 5;
+
+                //p.Puntaje = 5;//cantidad de puntajes por acertar
+                //finJuego(p.Color);
+                return "ACERTADO";
             }
             else
             {
-                quitarJugador(p);
-                return false;
+                //quitarJugador(p);
+                return "FALLO";
             }
         }
     }
-    public class clsJugador
-    {
-        String nick;
-        int puntaje = 0;
-        int sinAcertar;
-        bool fueraDeJuego = false;
-        Color color;
-        public clsJugador(String nombre, Color color)
-        {
-            this.nick = nombre;
-            this.Color = color;
-
-        }
-
-        public string Nick
-        {
-            get
-            {
-                return nick;
-            }
-
-
-        }
-
-        public int Puntaje
-        {
-            get
-            {
-                return puntaje;
-            }
-
-            set
-            {
-                puntaje = value;
-            }
-        }
-
-        public int SinAcertar
-        {
-            get
-            {
-                return sinAcertar;
-            }
-
-            set
-            {
-                sinAcertar = value;
-            }
-        }
-
-        public bool FueraDeJuego
-        {
-            get
-            {
-                return fueraDeJuego;
-            }
-
-            set
-            {
-                fueraDeJuego = value;
-            }
-        }
-
-        public Color Color
-        {
-            get
-            {
-                return color;
-            }
-
-            set
-            {
-                color = value;
-            }
-        }
-        ////    Jugador PuntajeMasAlto()
-        //    {
-
-
-        //    }
-        //void GuardarPuntajesAltos()
-        //{
-        //    file = new StreamReader(@"c:\diccionario.txt", Encoding.UTF8, true);
-        //    string linea = "";
-
-        //    while ((linea = file.ReadLine()) != null)
-        //    {
-        //        if (linea.Length > 8)
-        //        {
-
-        //            diccionario.Add(linea);
-        //        }
-        //    }
-
-
-        //}
-
-    }
-
 }
