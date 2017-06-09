@@ -52,3 +52,5 @@ C:\Proyecto Optativa2\Juego\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\
 C:\Proyecto Optativa2\Juego\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmPrincipal.resources
 C:\Proyecto Optativa2\Juego\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.Properties.Resources.resources
 C:\Proyecto Optativa2\Juego\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.csproj.GenerateResource.Cache
+C:\Proyecto Optativa2\Juego\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\bin\Debug\Newtonsoft.Json.dll
+C:\Proyecto Optativa2\Juego\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\bin\Debug\Newtonsoft.Json.xml

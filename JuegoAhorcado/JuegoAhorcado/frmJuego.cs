@@ -10,55 +10,51 @@ using System.Windows.Forms;
 
 namespace JuegoAhorcado
 {
+    
+    public delegate void send(clsMensaje mensaje);
     public partial class frmJuego : Form
-    {
-        clsJugador player;
-        string palabra;
-        string env_palabra;
-        char env_letra;
-        ICom com;
-
-        public frmJuego()
+    {      
+        clsCliente cliente;
+        String nick;
+        public event send send;
+        public frmJuego(clsCliente cliente,String nick)
         {
             InitializeComponent();
+            this.nick=nick;
+            this.cliente = cliente;
         }
-        public frmJuego(clsJugador p, ICom c)
-        {
-            InitializeComponent();
-            com = c;
-            player = p;
-            palabra = c.Palabra;
 
-        }
+
         private void btnArriesgar_Click(object sender, EventArgs e)
         {
             if (tbPalabra.Text != " " && tbPalabra.Text != "") // Checkear bien que no hayan varios espacios
             {
-                env_palabra = tbPalabra.Text.ToUpper();
-                if (!com.enviaPalabra(player, env_palabra))
-                {
-                    pintarTodo();
-                }
+                tbPalabra.Text.ToUpper();
+                //if (!com.enviaPalabra(player, env_palabra))
+                //{
+                //    pintarTodo();
+                //}
             }
         }        
         private void btnLetra_Click(object sender, EventArgs e)
         {
             if (tbLetra.Text != " " && tbLetra.Text != "")
             {
-                env_letra = tbLetra.Text.ToUpper()[0];
-                if (!com.enviaLetra(player, env_letra))
-                    pintarUna();
+             cliente.Mensaje.LetraPalabra=tbLetra.Text.ToUpper();
+             cliente.Mensaje.Accion = Accion.ProbarLetra;
+             send(cliente.Mensaje);
+                
+                //if (!com.enviaLetra(player, env_letra))
+                //    pintarUna();
                 tbLetra.Clear();
                 tbLetra.Focus();
             }
         }
         private void frmJuego_Load(object sender, EventArgs e)
         {
-            this.Text = "Juego Ahorcado - PLAYER " + player.Nick;
-            com.recibe += new ev_recibir(habilitaLetra);//com.recibe += new ev_recibir(mostrarLetras);
-            com.finJuego += new ev_fin(habilitaPalabra);
-         
-            for(int i = 0; i < palabra.Length; i++)
+            this.Text = "Juego Ahorcado - PLAYER " + this.nick;
+
+            for (int i = 0; i < cliente.Mensaje.PalabraAhorcado.Length; i++)
             {
                 foreach (Control c in pnlPalabra.Controls)
                 {
@@ -66,25 +62,23 @@ namespace JuegoAhorcado
                     {
                         c.Visible = true;
                     }
-                 
+
                 }
+
             }
-          
         }
 
 
 
 
 
-        private void habilitaLetra(clsJugador p, string pal)
+        private void habilitaLetra( string pal)
         {
 
-            for (int i = 0; i <= palabra.Length-1; i++)
+            for (int i = 0; i <= pal.Length - 1; i++)
             {
-
-
-
-                if (palabra[i].ToString().Equals(pal))
+                
+                if (pal[i].ToString().Equals(pal))
                 {
                    
                     foreach (Control c in pnlPalabra.Controls)
@@ -95,7 +89,7 @@ namespace JuegoAhorcado
                             Label l = (Label)c;
                             if (l.Visible == false )
                             {
-                                l.ForeColor = p.Color;
+                              //  l.ForeColor = p.Color;
                                 l.Text = pal;
                                 l.Visible = true;
                             }
@@ -116,10 +110,10 @@ namespace JuegoAhorcado
                     {
                         Label l = (Label)c;
                         int posicionLetra = (int.Parse(l.Tag.ToString())) - 1;
-                        if (l.Visible == false && posicionLetra < com.Palabra.Length)
+                        if (l.Visible == false)
                         {
                             l.ForeColor = cp;
-                            l.Text = com.Palabra[posicionLetra].ToString();
+                            //l.Text = com.Palabra[posicionLetra].ToString();
                             l.Visible = true;
                         }
                     }
@@ -175,7 +169,12 @@ namespace JuegoAhorcado
             btnArriesgar.Enabled = false;
             MessageBox.Show("TE RE MIL AHORCASTE");
             //com.recibe -= new ev_recibir(mostrarLetras);
-            com.recibe -= new ev_recibir(habilitaLetra);
+           // com.recibe -= new ev_recibir(habilitaLetra);
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
     }

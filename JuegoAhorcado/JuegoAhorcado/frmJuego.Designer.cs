@@ -216,12 +216,13 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(579, 172);
             this.panel4.TabIndex = 1;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // tbPalabra
             // 
             this.tbPalabra.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPalabra.Location = new System.Drawing.Point(119, 13);
-            this.tbPalabra.MaxLength = 10;
+            this.tbPalabra.MaxLength = 14;
             this.tbPalabra.Multiline = true;
             this.tbPalabra.Name = "tbPalabra";
             this.tbPalabra.Size = new System.Drawing.Size(293, 80);
@@ -615,7 +616,7 @@
             // lb0
             // 
             this.lb0.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb0.Location = new System.Drawing.Point(6, 31);
+            this.lb0.Location = new System.Drawing.Point(5, 31);
             this.lb0.Name = "lb0";
             this.lb0.Size = new System.Drawing.Size(41, 50);
             this.lb0.TabIndex = 0;
