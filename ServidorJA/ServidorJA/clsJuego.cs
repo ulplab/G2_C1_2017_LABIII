@@ -55,7 +55,7 @@ namespace ServidorJA
 
 
             LeerArchivo();
-
+            GeneraPalabra();
 
 
         }

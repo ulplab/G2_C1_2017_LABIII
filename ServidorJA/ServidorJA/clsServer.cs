@@ -15,13 +15,13 @@ namespace ServidorJA
     
     class clsServer
     {
-        
+
         /*        
             TcpListener--------> Espera la conexion del Cliente.                                        
             TcpClient----------> Proporciona la Conexion entre el Servidor y el Cliente.                
             NetworkStream------> Se encarga de enviar mensajes atravez de los sockets.                  
         */
-
+        private String cantJugadores;
         private TcpListener server;
         private TcpClient client = new TcpClient();
         private IPEndPoint ipendpoint = new IPEndPoint(IPAddress.Any, 8000);
@@ -29,7 +29,7 @@ namespace ServidorJA
         //clsMensaje Mensaje = new clsMensaje();
         clsManejoPaquetes paquete = new clsManejoPaquetes();
         clsJuego juego = new clsJuego();
-
+        private bool controlInicio = false;
 
         Connection con;
         private struct Connection
@@ -42,25 +42,31 @@ namespace ServidorJA
 
         public clsServer()
         {
-            Inicio();
+            
+           
+            
+            controlInicio = true;
             paquete.Recibir += recibe;
             paquete.Enviar += Envia;
+            Inicio();
+
+
         }
 
         public void Inicio()
         {
-
+ 
             Console.WriteLine("Servidor escuchando en puerto 8000");
             server = new TcpListener(ipendpoint);
             server.Start();
             Console.WriteLine("SR ADMINISTRADOR :INGRESE CANTIDAD DE JUGADORES");
-            string cant_jugadores = Console.ReadLine();
+            cantJugadores = Console.ReadLine();
+
+
+
             while (true)
             {
-              
-
-                if (juego.Jugadores.Count < Convert.ToInt32(cant_jugadores) )
-                {
+                if (juego.Jugadores.Count < Convert.ToInt32(cantJugadores)) {
                     client = server.AcceptTcpClient();
                     con = new Connection();
                     con.stream = client.GetStream();
@@ -71,10 +77,8 @@ namespace ServidorJA
                     juego.agregarJugador(jugador);
                     list.Add(con);
                     Console.WriteLine("jugador " + con.nick + " se a conectado.");
-                    Console.WriteLine(con.nick + "Espere que faltan: " + (Convert.ToInt32(cant_jugadores) - juego.Jugadores.Count) + " jugadores para comenzar");
-                    con.streamw.Flush();
-                    con.streamw.WriteLine("WAIT");
-                   
+                    Console.WriteLine(con.nick + "Espere que faltan: " + (Convert.ToInt32(cantJugadores) - juego.Jugadores.Count) + " jugadores para comenzar");
+
 
                     Thread t = new Thread(DataIn);
 
@@ -82,36 +86,47 @@ namespace ServidorJA
                     t.Start();
 
                 }
-                else
-                {
-                    ////////////////////////////////////////////////////
-                    paquete.Mensajedeserializado.PalabraAhorcado = juego.Palabra;
-                    paquete.Mensajedeserializado.Retorno = "EXITO";
-                    paquete.enviarMensaje();
                    
-                }
+                
             }
-            //else
-            //{
-            //    ///mandarle al loco que quiere jugar que ya estan los cuatro jugadores 
-            //}
         }
         public void DataIn()
         {
+            bool control=false;
+            Connection hcon = con;
             try
             {
-                NetworkStream stream = client.GetStream();
-                StreamReader reader = new StreamReader(stream);
+                Console.WriteLine(juego.Palabra);
+
                 while (true) //client.Connected
                 {
-                    string recibe = reader.ReadLine();
-                    //clsMensaje mAux =
-                    paquete.recibirMensaje(recibe);
-                    // paquete.enviarMensaje();
+
+                    if (control==false && Convert.ToInt32(cantJugadores)>1)
+                    {
+
+                        hcon.streamw.WriteLine("WAIT");
+                        hcon.streamw.Flush();
+                        control = true;
+                    }
+                    else if(list.Count== Convert.ToInt32(cantJugadores))
+                    {
+                        
+                        paquete.Mensajedeserializado.PalabraAhorcado = juego.Palabra;
+                        paquete.Mensajedeserializado.Retorno = "EXITO";
+                        paquete.enviarMensaje();
+                    }
+                    //foreach (Connection c in list)
+                    //{
+                   
+                    //}
+                    ////    string recibe = reader.ReadLine();
+                    ////    //clsMensaje mAux =
+                    ////    paquete.recibirMensaje(recibe);
+                    //paquete.enviarMensaje();
 
                 }
-                reader.Close();
-                stream.Close();
+                //reader.Close();
+                //stream.Close();
             }
             catch (Exception ex)
             {

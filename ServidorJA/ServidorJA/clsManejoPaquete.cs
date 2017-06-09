@@ -15,8 +15,8 @@ namespace ServidorJA
 
 
 
-        string mensaje;
-        clsMensaje mensajedeserializado;
+        string msje;
+        clsMensaje mensajedeserializado = new clsMensaje();
 
         public clsMensaje Mensajedeserializado
         {
@@ -41,8 +41,8 @@ namespace ServidorJA
         public event delRec Recibir;
         public void recibirMensaje(string mensaje)
         {
-            this.mensaje = mensaje;
-            Mensajedeserializado = JsonConvert.DeserializeObject<clsMensaje>(this.mensaje);
+            this.msje = mensaje;
+            Mensajedeserializado = JsonConvert.DeserializeObject<clsMensaje>(this.msje);
             if (Recibir != null)
                 Recibir(Mensajedeserializado);
 
@@ -51,7 +51,7 @@ namespace ServidorJA
 
         public void enviarMensaje()
         {
-            string mensajeserializado = JsonConvert.SerializeObject(this.mensaje);
+            string mensajeserializado = JsonConvert.SerializeObject(this.mensajedeserializado);
             if (Enviar != null)
             {
                 Enviar(mensajeserializado,Mensajedeserializado);

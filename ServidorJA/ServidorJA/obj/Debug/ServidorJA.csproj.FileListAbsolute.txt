@@ -19,3 +19,10 @@ C:\Users\Marcos\Desktop\G2_C1_2017_PC-master\ServidorJA\ServidorJA\obj\Debug\Ser
 C:\Users\Marcos\Desktop\G2_C1_2017_PC-master\ServidorJA\ServidorJA\bin\Debug\ServidorJA.exe
 C:\Users\Marcos\Desktop\G2_C1_2017_PC-master\ServidorJA\ServidorJA\bin\Debug\ServidorJA.pdb
 C:\Users\Marcos\Desktop\G2_C1_2017_PC-master\ServidorJA\ServidorJA\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Marcos\Desktop\ServidorJA\ServidorJA\bin\Debug\ServidorJA.exe.config
+C:\Users\Marcos\Desktop\ServidorJA\ServidorJA\obj\Debug\ServidorJA.exe
+C:\Users\Marcos\Desktop\ServidorJA\ServidorJA\obj\Debug\ServidorJA.pdb
+C:\Users\Marcos\Desktop\ServidorJA\ServidorJA\bin\Debug\ServidorJA.exe
+C:\Users\Marcos\Desktop\ServidorJA\ServidorJA\bin\Debug\ServidorJA.pdb
+C:\Users\Marcos\Desktop\ServidorJA\ServidorJA\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Marcos\Desktop\ServidorJA\ServidorJA\obj\Debug\ServidorJA.csprojResolveAssemblyReference.cache
