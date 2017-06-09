@@ -8,9 +8,29 @@ using Newtonsoft.Json;
 namespace ServidorJA
 {
     public delegate void delRec(clsMensaje msg);
-    public delegate void delEnv(string strJSON);
+    public delegate void delEnv(string strJSON,clsMensaje a);
+    
     public class clsManejoPaquetes
     {
+
+
+
+        string mensaje;
+        clsMensaje mensajedeserializado;
+
+        public clsMensaje Mensajedeserializado
+        {
+            get
+            {
+                return mensajedeserializado;
+            }
+
+            set
+            {
+                mensajedeserializado = value;
+            }
+        }
+
         public clsManejoPaquetes()
         {
 
@@ -21,19 +41,21 @@ namespace ServidorJA
         public event delRec Recibir;
         public void recibirMensaje(string mensaje)
         {
-            clsMensaje mensajedeserializado = JsonConvert.DeserializeObject<clsMensaje>(mensaje);
+            this.mensaje = mensaje;
+            Mensajedeserializado = JsonConvert.DeserializeObject<clsMensaje>(this.mensaje);
             if (Recibir != null)
-                Recibir(mensajedeserializado);
+                Recibir(Mensajedeserializado);
+
+            enviarMensaje();
         }
 
-        public void enviarMensaje(clsMensaje msg)
+        public void enviarMensaje()
         {
-            string mensajeserializado = JsonConvert.SerializeObject(msg);
+            string mensajeserializado = JsonConvert.SerializeObject(this.mensaje);
             if (Enviar != null)
             {
-                Enviar(mensajeserializado);
+                Enviar(mensajeserializado,Mensajedeserializado);
             }
         }
-
-    }
+           }
 }

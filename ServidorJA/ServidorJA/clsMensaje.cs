@@ -6,28 +6,28 @@ using System.Threading.Tasks;
 
 namespace ServidorJA
 {
+    enum Accion
+    {
+        ProbarLetra,
+        ProbarPalabra,
+        NuevoJugador,
+        Baja,
+        ComienzoPartida,
+
+    }
+
     public class clsMensaje
     {
-        String accion;
+       
         String nick;
         String letraPalabra;
         String retorno;
         String palabraAhorcado;
-
+        String puntaje;
+        Accion accion;
         // static public event enviaLetra envLetra;
 
-        public string Accion
-        {
-            get
-            {
-                return accion;
-            }
-
-            set
-            {
-                accion = value;
-            }
-        }
+      
 
         public string Nick
         {
@@ -78,6 +78,32 @@ namespace ServidorJA
             set
             {
                 palabraAhorcado = value;
+            }
+        }
+
+        internal Accion Accion
+        {
+            get
+            {
+                return accion;
+            }
+
+            set
+            {
+                accion = value;
+            }
+        }
+
+        public string Puntaje
+        {
+            get
+            {
+                return puntaje;
+            }
+
+            set
+            {
+                puntaje = value;
             }
         }
     }
