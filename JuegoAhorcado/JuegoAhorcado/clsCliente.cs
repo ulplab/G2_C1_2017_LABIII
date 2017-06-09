@@ -18,6 +18,12 @@ namespace JuegoAhorcado
     public class clsCliente
     {
         String nick;
+
+        public String Nick
+        {
+            get { return nick; }
+            set { nick = value; }
+        }
         //clsJugador player;
         TcpClient client;
         static int port = 8000;
@@ -38,22 +44,31 @@ namespace JuegoAhorcado
         //public event ev_fin finJuego;
         //public event Action ev_palabra;
         //public event ev_enviar ev_send;
-        public clsCliente(String nick)
+        public clsCliente()
         {
-            this.nick = nick;
             //manda = new ev_enviar(frmJuego.enviarp);
             //manda = new ev_enviar(enviar);
             //manda = j.en;
             //serializador.Enviar += enviar;
-            Start();
-            leer();
+            
         }
         public void leer()
         {
-
-            string aux = streamr.ReadLine();
-            mensaje = serializador.recibirMensaje(aux);
-            streamw.Flush();
+            bool control=true;
+            while(control)
+            {
+                string aux = streamr.ReadLine();
+                mensaje = serializador.recibirMensaje(aux);
+               
+                streamw.Flush();
+                if (control)
+                {
+                    start(mensaje);
+                    control = false;
+                }
+                    
+            }
+            
         }
         public void Start()
         {
@@ -71,6 +86,7 @@ namespace JuegoAhorcado
             {
                 Console.WriteLine("Client Disconnected.");
             }
+            leer();
         }
 
 

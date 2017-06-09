@@ -12,18 +12,19 @@ namespace JuegoAhorcado
 {
     public partial class frmPrincipal : Form
     {
-        static clsCliente cliente;
+        static clsCliente cliente = new clsCliente();
         public frmPrincipal()
         {
             InitializeComponent();
-            
+            cliente.start += comenzar;
         }
         private void btnJugar_Click(object sender, EventArgs e)
         {
             if(tbJugador.Text!=String.Empty || tbJugador.Text.Length>4)
             {
-                cliente = new clsCliente(tbJugador.Text);
-                cliente.start += comenzar;
+                cliente.Nick = tbJugador.Text;
+                cliente.Start();
+               
             }
             else
             {

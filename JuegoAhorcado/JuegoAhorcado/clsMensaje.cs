@@ -11,27 +11,23 @@ namespace JuegoAhorcado
         ProbarLetra,
         ProbarPalabra,
         NuevoJugador,
-        Baja
+        Baja,
+        ComienzoPartida,
+
     }
+
     public class clsMensaje
     {
+
         String nick;
         String letraPalabra;
         String retorno;
         String palabraAhorcado;
+        String puntaje;
         Accion accion;
-
-        internal Accion Accion
-        {
-            get { return accion; }
-            set { accion = value; }
-        }
-
-
-
-
-
         // static public event enviaLetra envLetra;
+
+
 
         public string Nick
         {
@@ -85,5 +81,30 @@ namespace JuegoAhorcado
             }
         }
 
+        internal Accion Accion
+        {
+            get
+            {
+                return accion;
+            }
+
+            set
+            {
+                accion = value;
+            }
+        }
+
+        public string Puntaje
+        {
+            get
+            {
+                return puntaje;
+            }
+
+            set
+            {
+                puntaje = value;
+            }
+        }
     }
 }
