@@ -8,54 +8,42 @@ using Newtonsoft.Json;
 namespace ServidorJA
 {
     public delegate void delRec(clsMensaje msg);
-    public delegate void delEnv(string strJSON,clsMensaje a);
-    
+    //public delegate void delEnv(string strJSON,clsMensaje a);
     public class clsManejoPaquetes
     {
 
-
-
+        delRec Recibe;
         string msje;
-        clsMensaje mensajedeserializado = new clsMensaje();
+        clsMensaje msjPaquete = new clsMensaje();
 
-        public clsMensaje Mensajedeserializado
+        public clsMensaje MsjPaquete
         {
             get
             {
-                return mensajedeserializado;
+                return msjPaquete;
             }
 
             set
             {
-                mensajedeserializado = value;
+                msjPaquete = value;
             }
         }
 
         public clsManejoPaquetes()
         {
-
+            
         }
 
-        //una cola de string para deserializar
-        public event delEnv Enviar;
-        public event delRec Recibir;
-        public void recibirMensaje(string mensaje)
+        public clsMensaje recibirMensaje(string mensaje)
         {
             this.msje = mensaje;
-            Mensajedeserializado = JsonConvert.DeserializeObject<clsMensaje>(this.msje);
-            if (Recibir != null)
-                Recibir(Mensajedeserializado);
+            return JsonConvert.DeserializeObject<clsMensaje>(this.msje);
 
-            enviarMensaje();
         }
 
-        public void enviarMensaje()
+        public string enviarMensaje(clsMensaje msj)
         {
-            string mensajeserializado = JsonConvert.SerializeObject(this.mensajedeserializado);
-            if (Enviar != null)
-            {
-                Enviar(mensajeserializado,Mensajedeserializado);
-            }
+            return JsonConvert.SerializeObject(msj);
         }
-           }
+     }
 }

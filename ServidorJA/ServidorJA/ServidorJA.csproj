@@ -48,8 +48,10 @@
   <ItemGroup>
     <Compile Include="clsJuego.cs" />
     <Compile Include="clsJugador.cs" />
+    <Compile Include="clsCliente.cs" />
     <Compile Include="clsManejoPaquete.cs" />
     <Compile Include="clsMensaje.cs" />
+    <Compile Include="clsRouter.cs" />
     <Compile Include="clsServer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

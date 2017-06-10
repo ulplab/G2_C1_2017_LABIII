@@ -54,27 +54,27 @@ namespace JuegoAhorcado
         }
         public void leer()
         {
-            bool control=true;
-            while(control)
+            bool control = true;
+            while (true)
             {
                 string aux = streamr.ReadLine();
                 mensaje = serializador.recibirMensaje(aux);
-               
+
                 streamw.Flush();
-                if (control)
+                if (mensaje != null || control == true)
                 {
-                    start(mensaje);
+                    if (control == true || mensaje == null || mensaje.Accion == Accion.ComienzoPartida)
+                        start(mensaje);
                     control = false;
                 }
-                    
             }
-            
         }
+                    
         public void Start()
         {
             try
             {
-                client = new TcpClient("10.62.233.21", port);
+                client = new TcpClient("127.0.0.1", port);
                 Console.WriteLine("Client conectado.");
                 stream = client.GetStream();
                 streamw = new StreamWriter(stream);
@@ -86,7 +86,6 @@ namespace JuegoAhorcado
             {
                 Console.WriteLine("Client Disconnected.");
             }
-            leer();
         }
 
 

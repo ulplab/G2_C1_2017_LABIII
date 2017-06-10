@@ -52,12 +52,7 @@ namespace ServidorJA
 
         public clsJuego()
         {
-
-
             LeerArchivo();
-            GeneraPalabra();
-
-
         }
 
         public void agregarJugador(clsJugador j)

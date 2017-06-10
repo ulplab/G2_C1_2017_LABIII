@@ -24,7 +24,10 @@ namespace JuegoAhorcado
             {
                 cliente.Nick = tbJugador.Text;
                 cliente.Start();
-               
+                tbJugador.Enabled = false;
+                btnJugar.Enabled = false;
+                btnInstrucciones.Enabled = false;
+                btnExit.Enabled = false;
             }
             else
             {
