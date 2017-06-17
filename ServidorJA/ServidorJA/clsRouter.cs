@@ -26,12 +26,13 @@ namespace ServidorJA
 
         public void comienzaPartida()
         {
-            juego.GeneraPalabra();
+            juego.GeneraPalabra();  //Ultima version
             clsMensaje msj = new clsMensaje();
             foreach(clsCliente c in listaCliente)
             {
                  c.recMsj += recibe;
                 c.MsjPaquete = msjPaquete;
+                msj.Accion = Accion.ComienzoPartida;
                 msj.Retorno = "START";
                 msj.PalabraAhorcado = juego.Palabra;
                 c.enviar(msj);
@@ -40,7 +41,7 @@ namespace ServidorJA
 
         public void recibe(clsMensaje mensaje, String nombre)
         {
-           
+            Console.WriteLine(mensaje.Accion);
             switch(mensaje.Accion)
             {
                 case Accion.ProbarLetra:
@@ -77,9 +78,7 @@ namespace ServidorJA
         {
             foreach (clsCliente c in listaCliente)
             {
-             
                     c.enviar(mensaje);
-                
             }
 
         }

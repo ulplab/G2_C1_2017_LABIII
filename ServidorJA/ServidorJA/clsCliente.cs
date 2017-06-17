@@ -43,6 +43,14 @@ namespace ServidorJA
             set { nick = value; }
         }
 
+        private string estado;
+
+        public string Estado
+        {
+            get { return estado; }
+            set { estado = value; }
+        }
+
         public event recibir recMsj;
         private clsManejoPaquetes msjPaquete;
 
@@ -51,38 +59,26 @@ namespace ServidorJA
             get { return msjPaquete; }
             set { msjPaquete = value; }
         }
-        public clsCliente(NetworkStream ntStream, StreamWriter sw, StreamReader sr, String nick)
+        public clsCliente(NetworkStream ntStream, StreamWriter sw, StreamReader sr, String nick, String estado)
         {
             stream = ntStream;
-            sw = streamw;
-            sr = streamr;
+            streamw = sw;
+            streamr = sr;
             this.nick = nick;
             msjPaquete = new clsManejoPaquetes();
            clsMensaje m= new clsMensaje();
-            m.Retorno="WAIT";
-
-            enviar(m);
-            
+            m.Retorno=estado;
         }
 
         public void DataIn()
         {
-            
-            bool control = false;
             try
             {
-                while (true) //client.Connected
+                while (true) 
                 {
-                    if (control == false)
-                    {
-                        recMsj(msjPaquete.recibirMensaje(streamr.ReadLine()),nick);
-                        //streamw.WriteLine("WAIT");
-                        //streamw.Flush();
-                        //control = true;
-                    }
+                    String aux=streamr.ReadLine();
+                    recMsj(msjPaquete.recibirMensaje(aux), nick);
                 }
-                //reader.Close();
-                //stream.Close();
             }
             catch (Exception ex)
             {
@@ -92,10 +88,10 @@ namespace ServidorJA
 
         public void enviar(clsMensaje msj)
         {
-            
             streamw.WriteLine(msjPaquete.enviarMensaje(msj));
             streamw.Flush();
         }
+
 
     }
 }

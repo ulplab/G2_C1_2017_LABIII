@@ -12,16 +12,20 @@ namespace JuegoAhorcado
 {
     
     public delegate void send(clsMensaje mensaje);
+    public delegate void enviaLetra(clsMensaje mensaje);
     public partial class frmJuego : Form
     {      
         clsCliente cliente;
         String nick;
         public event send send;
+        public event enviaLetra enviaL;
+
         public frmJuego(clsCliente cliente,String nick)
         {
             InitializeComponent();
             this.nick=nick;
             this.cliente = cliente;
+            cliente.recibe += habilitaLetra;
         }
 
 
@@ -40,12 +44,12 @@ namespace JuegoAhorcado
         {
             if (tbLetra.Text != " " && tbLetra.Text != "")
             {
-             cliente.Mensaje.LetraPalabra=tbLetra.Text.ToUpper();
-             cliente.Mensaje.Accion = Accion.ProbarLetra;
-             send(cliente.Mensaje);
+                clsMensaje msj = new clsMensaje();
+                 msj.LetraPalabra=tbLetra.Text.ToUpper();
+                 msj.Accion=Accion.ProbarLetra;
+                 msj.Nick = cliente.Nick;
+                 cliente.enviar(msj);
                 
-                //if (!com.enviaLetra(player, env_letra))
-                //    pintarUna();
                 tbLetra.Clear();
                 tbLetra.Focus();
             }
@@ -67,36 +71,35 @@ namespace JuegoAhorcado
 
             }
         }
-
-
-
-
-
         private void habilitaLetra( string pal)
         {
-
             for (int i = 0; i <= pal.Length - 1; i++)
             {
-                
+
                 if (pal[i].ToString().Equals(pal))
                 {
-                   
+
                     foreach (Control c in pnlPalabra.Controls)
                     {
-                        if (c is Label && !(c as Label).Text.Contains("_")&& (c as Label).Name.Equals("lb"+i.ToString()))
+                        if (c is Label && !(c as Label).Text.Contains("_") && (c as Label).Name.Equals("lb" + i.ToString()))
                         {
-                            
+
                             Label l = (Label)c;
-                            if (l.Visible == false )
+                            if (l.Visible == false) //Ultima version
                             {
-                              //  l.ForeColor = p.Color;
-                                l.Text = pal;
-                                l.Visible = true;
+                                this.Invoke(new Action(() =>
+                                {
+                                    l.Text = pal;
+                                    l.Visible = true;
+                                }));
+                                //  l.ForeColor = p.Color;
+                                
                             }
                         }
                     }
                 }
             }
+            
         }
 
         private void habilitaPalabra(Color cp)

@@ -29,11 +29,6 @@ namespace ServidorJA
             }
         }
 
-        public clsManejoPaquetes()
-        {
-            
-        }
-
         public clsMensaje recibirMensaje(string mensaje)
         {
             this.msje = mensaje;

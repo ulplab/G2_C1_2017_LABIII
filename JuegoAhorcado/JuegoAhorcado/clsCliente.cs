@@ -11,8 +11,7 @@ using System.IO;
 namespace JuegoAhorcado
 {
     public delegate void enviar(string Json);
-    public delegate void recibir();
-    public delegate void Comienzo(clsMensaje cl);
+    public delegate void comienzo(clsMensaje cl);
 
 
     public class clsCliente
@@ -38,7 +37,8 @@ namespace JuegoAhorcado
         static private NetworkStream stream;
         static private StreamWriter streamw;
         static private StreamReader streamr;
-        public event Comienzo start;
+        public event comienzo start;
+        public event enviar recibe;
 
         //public event ev_recibir recibe;
         //public event ev_fin finJuego;
@@ -50,23 +50,16 @@ namespace JuegoAhorcado
             //manda = new ev_enviar(enviar);
             //manda = j.en;
             //serializador.Enviar += enviar;
+
             
         }
         public void leer()
         {
-            bool control = true;
             while (true)
             {
                 string aux = streamr.ReadLine();
                 mensaje = serializador.recibirMensaje(aux);
-
-                streamw.Flush();
-                if (mensaje != null || control == true)
-                {
-                    if (control == true || mensaje == null || mensaje.Accion == Accion.ComienzoPartida)
-                        start(mensaje);
-                    control = false;
-                }
+                recibe(mensaje.LetraPalabra);
             }
         }
                     
@@ -79,8 +72,15 @@ namespace JuegoAhorcado
                 stream = client.GetStream();
                 streamw = new StreamWriter(stream);
                 streamr = new StreamReader(stream);
-                streamw.WriteLine(nick);
+                streamw.WriteLine(nick); //Cambiar a JSON
                 streamw.Flush();
+
+
+                string aux = streamr.ReadLine();
+                mensaje = serializador.recibirMensaje(aux);
+                start(mensaje);
+                Thread t = new Thread(leer);
+                t.Start();
             }
             catch (SocketException ex)
             {
@@ -118,23 +118,13 @@ namespace JuegoAhorcado
             }
         }
 
-        public void enviar(string dato)
+        public void enviar(clsMensaje msj)
         {
-            NetworkStream stream;
-            StreamWriter sw;
             try
             {
-                stream = client.GetStream();
-                sw = new StreamWriter(stream);
-                if (client.Connected)
-                {
-                    clsMensaje msj = new clsMensaje();
-                    //string output = serializador.enviarMensaje(msj);
-                    //sw.WriteLine(output);
-                    sw.Flush();
-                }
-                sw.Close();
-                stream.Close();
+                string aux = serializador.enviarMensaje(msj);
+                streamw.WriteLine(aux);
+                streamw.Flush();
             }
             catch (Exception ex)
             {

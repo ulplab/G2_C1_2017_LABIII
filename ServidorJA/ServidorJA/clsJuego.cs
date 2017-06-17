@@ -53,6 +53,7 @@ namespace ServidorJA
         public clsJuego()
         {
             LeerArchivo();
+            //GeneraPalabra();
         }
 
         public void agregarJugador(clsJugador j)
@@ -73,9 +74,6 @@ namespace ServidorJA
 
 
         }
-
-        //public event ev_fin finJuego;
-        //public event ev_recibir recibe;
         void Perdio(string jugador)
         {
             for (int i = 0; i <= (palabraArray.Length / 2) - 1; i++)
@@ -201,19 +199,12 @@ namespace ServidorJA
             }
             if (retorno.Equals("FALLO"))
             {
-                Jugadores.ElementAt(indiceJugador).SinAcertar++;
-                if (Jugadores.ElementAt(indiceJugador).SinAcertar == CHANCES)
-                {
-
-                    Perdio(nick);
-
-
-                }
+                //Jugadores.ElementAt(indiceJugador).SinAcertar++;
+                //if (Jugadores.ElementAt(indiceJugador).SinAcertar == CHANCES)
+                //{
+                //    Perdio(nick);
+                //}
             }
-            //else
-            //{
-            //   // recibe(jugador, l.ToString());
-            //}
             return retorno;
         }
 

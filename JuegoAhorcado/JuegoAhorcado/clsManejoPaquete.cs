@@ -9,40 +9,36 @@ namespace JuegoAhorcado
 {
     public delegate void delRec(clsMensaje msg);
     public delegate void delEnv(string strJSON);
-    public class clsManejoPaquetes
+   public class clsManejoPaquetes
     {
-        clsMensaje mensaje = new clsMensaje();
-        public clsManejoPaquetes()
-        {
 
-        }
+        delRec Recibe;
+        string msje;
+        clsMensaje msjPaquete = new clsMensaje();
 
-        //una cola de string para deserializar
-        public event delEnv Enviar;
-        public event delRec Recibir;
-        public clsMensaje recibirMensaje(string m)
+        public clsMensaje MsjPaquete
         {
-            try
+            get
             {
-                mensaje = JsonConvert.DeserializeObject<clsMensaje>(m);
+                return msjPaquete;
             }
-            catch(Exception e)
+
+            set
             {
-                mensaje = null;
+                msjPaquete = value;
             }
-            return mensaje;
-            //if (Recibir != null)
-            //    Recibir(mensajedeserializado);
         }
 
-        public void enviarMensaje(clsMensaje msg)
+        public clsMensaje recibirMensaje(string mensaje)
         {
-            string mensajeserializado = JsonConvert.SerializeObject(msg);
-            //if (Enviar != null)
-            //{
-            //    Enviar(mensajeserializado);
-            //}
+            this.msje = mensaje;
+            return JsonConvert.DeserializeObject<clsMensaje>(this.msje);
+
         }
 
-    }
+        public string enviarMensaje(clsMensaje msj)
+        {
+            return JsonConvert.SerializeObject(msj);
+        }
+     }
 }

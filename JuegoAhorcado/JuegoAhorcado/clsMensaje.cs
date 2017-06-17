@@ -13,7 +13,6 @@ namespace JuegoAhorcado
         NuevoJugador,
         Baja,
         ComienzoPartida,
-
     }
 
     public class clsMensaje

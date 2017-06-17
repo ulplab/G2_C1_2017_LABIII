@@ -30,6 +30,7 @@ namespace ServidorJA
         clsManejoPaquetes paquete = new clsManejoPaquetes();
         clsJuego juego = new clsJuego();
         clsRouter router = new clsRouter();
+        clsCliente cliente;
         private bool controlInicio = false;
 
         Connection con;
@@ -58,7 +59,6 @@ namespace ServidorJA
             Console.WriteLine("Palabra a adivinar: " + juego.Palabra);
             Console.WriteLine("INGRESE CANTIDAD DE JUGADORES QUE DESEA TENER EN LA PARTIDA");
             cantJugadores = Console.ReadLine();
-            bool control = false;
 
             while (true)
             {
@@ -72,131 +72,87 @@ namespace ServidorJA
                     con.nick = con.streamr.ReadLine();
                     clsJugador jugador = new clsJugador(con.nick);
                     juego.agregarJugador(jugador);
-                    //list.Add(con);
-                    clsCliente cliente = new clsCliente(con.stream,con.streamw,con.streamr,con.nick);
-                    router.ListaCliente.Add(cliente);
                     Console.WriteLine("Jugador " + con.nick + " ya se unio a la partida");
                     if((Convert.ToInt32(cantJugadores) - juego.Jugadores.Count)!=0)
-                        Console.WriteLine(con.nick + "Espere que faltan: " + (Convert.ToInt32(cantJugadores) - juego.Jugadores.Count) + " jugadores para comenzar");
+                    {
+                        Console.WriteLine("Jugador: "+con.nick + " espere que faltan " + (Convert.ToInt32(cantJugadores) - juego.Jugadores.Count) + " jugadores para comenzar el juego");
+                        cliente = new clsCliente(con.stream, con.streamw, con.streamr, con.nick,"WAIT");
+                        router.ListaCliente.Add(cliente);
+                    }   
                     else
                     {
-
-                    //    if(control==false)
-                    //    {
-                    //        //Console.WriteLine("Juego listo para comenzar");
-                    //        //paquete.Mensajedeserializado.PalabraAhorcado = juego.Palabra;
-                    //        //paquete.Mensajedeserializado.Retorno = "EXITO";
-                    //        //paquete.enviarMensaje();
-                    //        //control = true;
-                    //    }  
+                        cliente = new clsCliente(con.stream, con.streamw, con.streamr, con.nick, "START");
+                        router.ListaCliente.Add(cliente);
+                        router.comienzaPartida();
                     }
                     Thread t = new Thread(cliente.DataIn);
                     t.Start();
                 }                
             }
         }
-        public void DataIn()
-        {
-            bool control=false;
-            Connection hcon = con;
-            try
-            {
-                while (true) //client.Connected
-                {
 
-                    if (control==false && Convert.ToInt32(cantJugadores)>1)
-                    {
-                        hcon.streamw.WriteLine("WAIT");
-                        hcon.streamw.Flush();
-                        control = true;
-                    }
-                    else if(list.Count== Convert.ToInt32(cantJugadores))
-                    {
-                        //paquete.Mensajedeserializado.PalabraAhorcado = juego.Palabra;
-                        //paquete.Mensajedeserializado.Retorno = "EXITO";
-                        //paquete.enviarMensaje();
-                    }
-                    //foreach (Connection c in list)
-                    //{
-                   
-                    //}
-                    ////    string recibe = reader.ReadLine();
-                    ////    //clsMensaje mAux =
-                    ////    paquete.recibirMensaje(recibe);
-                    //paquete.enviarMensaje();
+        //public void recibe(clsMensaje msje)
+        //{
+        //    switch (msje.Accion)
+        //    {  
+        //        case Accion.ProbarLetra:
+        //            msje.Retorno = juego.enviaLetra(msje.Nick, msje.LetraPalabra);
+        //            break;
 
-                }
-                //reader.Close();
-                //stream.Close();
-            }
-            catch (Exception ex)
-            {
-                Console.Write(ex.Message);
-            }
-        }
-
-        public void recibe(clsMensaje msje)
-        {
-            switch (msje.Accion)
-            {  
-                case Accion.ProbarLetra:
-                    msje.Retorno = juego.enviaLetra(msje.Nick, msje.LetraPalabra);
-                    break;
-
-                case Accion.ProbarPalabra:
-                    msje.Retorno = juego.enviaPalabra(msje.Nick, msje.LetraPalabra);
-                    break;
-                case Accion.ComienzoPartida:
-                    msje.Retorno = "START";
-                    msje.PalabraAhorcado = juego.Palabra;
-                        break;
+        //        case Accion.ProbarPalabra:
+        //            msje.Retorno = juego.enviaPalabra(msje.Nick, msje.LetraPalabra);
+        //            break;
+        //        case Accion.ComienzoPartida:
+        //            msje.Retorno = "START";
+        //            msje.PalabraAhorcado = juego.Palabra;
+        //                break;
                 
-                default: break;
-            }
+        //        default: break;
+        //    }
 
 
-        }
-        public void Envia(string mensaje, clsMensaje Mensaje)
-        {
-            switch(Mensaje.Retorno){
+        //}
+        //public void Envia(string mensaje, clsMensaje Mensaje)
+        //{
+        //    switch(Mensaje.Retorno){
 
-            case "FALLO":
+        //    case "FALLO":
 
-                 foreach (Connection c in list)
-                {
-                    if (c.nick.Equals(Mensaje.Nick))
-                    {
-                        c.streamw.WriteLine(mensaje);
-                        c.streamw.Flush();
-                        break;
-                    }
-                 }
-                 break;
-                case "EXITO":
-                    foreach (Connection c in list)
-                    {
-                        try
-                        {   
-                            c.streamw.WriteLine(mensaje);
-                            c.streamw.Flush();
-                        }
-                        catch
-                        {
-                        }
-                    }
-                    break;
+        //         foreach (Connection c in list)
+        //        {
+        //            if (c.nick.Equals(Mensaje.Nick))
+        //            {
+        //                c.streamw.WriteLine(mensaje);
+        //                c.streamw.Flush();
+        //                break;
+        //            }
+        //         }
+        //         break;
+        //        case "EXITO":
+        //            foreach (Connection c in list)
+        //            {
+        //                try
+        //                {   
+        //                    c.streamw.WriteLine(mensaje);
+        //                    c.streamw.Flush();
+        //                }
+        //                catch
+        //                {
+        //                }
+        //            }
+        //            break;
 
-                default: break;
-            }
-            if (Mensaje.Retorno.Equals("FALLO"))
-            {
+        //        default: break;
+        //    }
+        //    if (Mensaje.Retorno.Equals("FALLO"))
+        //    {
                
-            }
-            else
-            {
+        //    }
+        //    else
+        //    {
  
-            }
-        }
+        //    }
+        //}
     }
 }
         
