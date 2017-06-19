@@ -21,9 +21,7 @@ namespace ServidorJA
         const int CHANCES = 5;// son las chances que tiene el jugador para adivinar la palabra,en caso de "ARRIESGAR" pierde toda las chances
         String[,] palabraArray;//variable multidimensional palabra que va a contener la palabra y por cada caracter el usuario q adivino el mismo y su numero de usuario
 
-
-
-
+        #region Set y Get
         public string Palabra
         {
             get
@@ -49,7 +47,7 @@ namespace ServidorJA
                 jugadores = value;
             }
         }
-
+        #endregion
         public clsJuego()
         {
             LeerArchivo();
@@ -60,7 +58,6 @@ namespace ServidorJA
         {
             Jugadores.Add(j);
         }
-
         public void quitarJugador(clsJugador j)
         {
             if (Jugadores.Exists(x => x.Nick == j.Nick))
@@ -71,8 +68,6 @@ namespace ServidorJA
             {
                 //  finJuego(Color.Transparent);
             }
-
-
         }
         void Perdio(string jugador)
         {
@@ -110,19 +105,14 @@ namespace ServidorJA
         }//numero aleatorio para elegit palabra de diccionario al azar
         public void GeneraPalabra()
         {
-
-
             int numero = GenerateRandom(0, diccionario.Count - 1);
             if (numerosUsados.IndexOf(numero) >= 0)
             {
                 // si el numero ya fue usad
                 GeneraPalabra();
-
             }
-
             else
             {
-
                 Palabra = diccionario.ElementAt(numero);
                 //elimino los acentos de las palabras
                 Palabra = Palabra.Replace('á', 'a');
@@ -141,17 +131,11 @@ namespace ServidorJA
                 }
                 foreach (char i in Palabra)
                 {
-
                     palabraArray[contador, 0] = i.ToString();
                     palabraArray[contador, 1] = null;
                     contador++;
-
                 }
-
             }
-
-
-
         }//genera  una nueva palabra para palabraArray y vuelve las chances perdidas por los jugadores  a cero
         int BuscaIndiceJugador(String nombre)
         {
@@ -173,56 +157,49 @@ namespace ServidorJA
             {
                 return indice;
             }
-
         }
-        public string enviaLetra(string nick, string l)
+        public clsMensaje enviaLetra(string nick, string l)
         {
-            //if (palabra.IndexOf(l) != -1)
-            //{
-            //    recibe(p, l.ToString());
-            //    return true;
-            //}
-            //else
-            //{
-            //    return false;
-            //}
-
+            clsMensaje msjRetorno = new clsMensaje();
+            List<int> listaPosiciones = new List<int>();
             int indiceJugador = BuscaIndiceJugador(nick);
-            string retorno = "FALLO";
+            msjRetorno.Retorno = "FALLO";
             for (int i = 0; i <= (palabraArray.Length / 2) - 1; i++)
             {
                 if (palabraArray[i, 0].Equals(l.ToString()))
                 {
-                    palabraArray[i, 1] = nick;
-                    retorno = "ACERTADO";
+                    listaPosiciones.Add(i);
+                    msjRetorno.Retorno = "ACERTADO";
                 }
             }
-            if (retorno.Equals("FALLO"))
+            if ( msjRetorno.Retorno .Equals("FALLO"))
             {
-                //Jugadores.ElementAt(indiceJugador).SinAcertar++;
-                //if (Jugadores.ElementAt(indiceJugador).SinAcertar == CHANCES)
-                //{
-                //    Perdio(nick);
-                //}
+                Jugadores.ElementAt(indiceJugador).SinAcertar++;
+                if (Jugadores.ElementAt(indiceJugador).SinAcertar == CHANCES)
+                {
+                    Perdio(nick);
+                }
             }
-            return retorno;
+            msjRetorno.LetraPalabra = l;
+            msjRetorno.PosicionLetra = listaPosiciones;
+            return msjRetorno;
         }
-
-        public string enviaPalabra(string nick, string s)
+        public clsMensaje enviaPalabra(string nick, string s)
         {
+            clsMensaje msjRetorno = new clsMensaje();
             if (palabra.Equals(s))
             {
                 Jugadores.ElementAt(BuscaIndiceJugador(nick)).Puntaje = 5;
-
+                msjRetorno.Retorno = "ACERTADO";
                 //p.Puntaje = 5;//cantidad de puntajes por acertar
                 //finJuego(p.Color);
-                return "ACERTADO";
             }
             else
             {
-                //quitarJugador(p);
-                return "FALLO";
+                //quitarJugador(p); 
+                msjRetorno.Retorno = "'FALLO";
             }
+            return msjRetorno;
         }
     }
 }

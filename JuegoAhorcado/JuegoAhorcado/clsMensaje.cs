@@ -20,11 +20,11 @@ namespace JuegoAhorcado
 
         String nick;
         String letraPalabra;
+        List<int> posicionLetra;
         String retorno;
         String palabraAhorcado;
         String puntaje;
         Accion accion;
-        // static public event enviaLetra envLetra;
 
 
 
@@ -53,7 +53,11 @@ namespace JuegoAhorcado
                 letraPalabra = value;
             }
         }
-
+        public List<int> PosicionLetra
+        {
+            get { return posicionLetra; }
+            set { posicionLetra = value; }
+        }
         public string Retorno
         {
             get

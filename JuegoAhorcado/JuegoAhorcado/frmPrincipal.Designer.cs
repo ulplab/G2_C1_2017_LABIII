@@ -93,7 +93,6 @@
             this.Controls.Add(this.btnJugar);
             this.Name = "frmPrincipal";
             this.Text = "JUEGO AHORCADO";
-            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

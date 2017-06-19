@@ -216,7 +216,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(579, 172);
             this.panel4.TabIndex = 1;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // tbPalabra
             // 
@@ -324,9 +323,7 @@
             this.lb13.Size = new System.Drawing.Size(41, 50);
             this.lb13.TabIndex = 36;
             this.lb13.Tag = "";
-            this.lb13.Text = "S";
             this.lb13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lb13.Visible = false;
             // 
             // lblGuion12
             // 
@@ -347,9 +344,7 @@
             this.lb12.Size = new System.Drawing.Size(41, 50);
             this.lb12.TabIndex = 34;
             this.lb12.Tag = "";
-            this.lb12.Text = "S";
             this.lb12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lb12.Visible = false;
             // 
             // lblGuion11
             // 
@@ -370,9 +365,7 @@
             this.lb11.Size = new System.Drawing.Size(41, 50);
             this.lb11.TabIndex = 32;
             this.lb11.Tag = "";
-            this.lb11.Text = "S";
             this.lb11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lb11.Visible = false;
             // 
             // lblGuion10
             // 
@@ -393,9 +386,7 @@
             this.lb10.Size = new System.Drawing.Size(41, 50);
             this.lb10.TabIndex = 30;
             this.lb10.Tag = "";
-            this.lb10.Text = "S";
             this.lb10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lb10.Visible = false;
             // 
             // lblGuion9
             // 
@@ -515,9 +506,7 @@
             this.lb9.Size = new System.Drawing.Size(41, 50);
             this.lb9.TabIndex = 9;
             this.lb9.Tag = "";
-            this.lb9.Text = "S";
             this.lb9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lb9.Visible = false;
             // 
             // lb8
             // 
@@ -527,9 +516,7 @@
             this.lb8.Size = new System.Drawing.Size(41, 50);
             this.lb8.TabIndex = 8;
             this.lb8.Tag = "";
-            this.lb8.Text = "O";
             this.lb8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lb8.Visible = false;
             // 
             // lb7
             // 
@@ -539,9 +526,7 @@
             this.lb7.Size = new System.Drawing.Size(41, 50);
             this.lb7.TabIndex = 7;
             this.lb7.Tag = "";
-            this.lb7.Text = "T";
             this.lb7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lb7.Visible = false;
             // 
             // lb6
             // 
@@ -551,9 +536,7 @@
             this.lb6.Size = new System.Drawing.Size(41, 50);
             this.lb6.TabIndex = 6;
             this.lb6.Tag = "";
-            this.lb6.Text = "N";
             this.lb6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lb6.Visible = false;
             // 
             // lb5
             // 
@@ -563,9 +546,7 @@
             this.lb5.Size = new System.Drawing.Size(41, 50);
             this.lb5.TabIndex = 5;
             this.lb5.Tag = "";
-            this.lb5.Text = "I";
             this.lb5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lb5.Visible = false;
             // 
             // lb4
             // 
@@ -575,9 +556,7 @@
             this.lb4.Size = new System.Drawing.Size(41, 50);
             this.lb4.TabIndex = 4;
             this.lb4.Tag = "";
-            this.lb4.Text = "R";
             this.lb4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lb4.Visible = false;
             // 
             // lb3
             // 
@@ -587,9 +566,7 @@
             this.lb3.Size = new System.Drawing.Size(41, 50);
             this.lb3.TabIndex = 3;
             this.lb3.Tag = "";
-            this.lb3.Text = "E";
             this.lb3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lb3.Visible = false;
             // 
             // lb2
             // 
@@ -600,7 +577,6 @@
             this.lb2.TabIndex = 2;
             this.lb2.Tag = "";
             this.lb2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lb2.Visible = false;
             // 
             // lb1
             // 
@@ -611,7 +587,6 @@
             this.lb1.TabIndex = 1;
             this.lb1.Tag = "";
             this.lb1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lb1.Visible = false;
             // 
             // lb0
             // 
@@ -622,7 +597,6 @@
             this.lb0.TabIndex = 0;
             this.lb0.Tag = "";
             this.lb0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lb0.Visible = false;
             // 
             // frmJuego
             // 

@@ -11,59 +11,54 @@ using System.IO;
 namespace JuegoAhorcado
 {
     public delegate void enviar(string Json);
-    public delegate void comienzo(clsMensaje cl);
+    public delegate void enviaFrmJuego(clsMensaje msj);
+    public delegate void comienzo(clsMensaje msj);
 
 
     public class clsCliente
     {
-        String nick;
-
+        //clsJugador player;
+        TcpClient client;
+        static int port = 8000;
+        clsMensaje mensaje;
+        private String nick;
         public String Nick
         {
             get { return nick; }
             set { nick = value; }
         }
-        //clsJugador player;
-        TcpClient client;
-        static int port = 8000;
-        clsMensaje mensaje;
-
         public clsMensaje Mensaje
         {
             get { return mensaje; }
             set { mensaje = value; }
         }
+
         clsManejoPaquetes serializador = new clsManejoPaquetes();
         static private NetworkStream stream;
         static private StreamWriter streamw;
         static private StreamReader streamr;
         public event comienzo start;
-        public event enviar recibe;
-
-        //public event ev_recibir recibe;
-        //public event ev_fin finJuego;
-        //public event Action ev_palabra;
-        //public event ev_enviar ev_send;
-        public clsCliente()
-        {
-            //manda = new ev_enviar(frmJuego.enviarp);
-            //manda = new ev_enviar(enviar);
-            //manda = j.en;
-            //serializador.Enviar += enviar;
-
-            
-        }
+        public event enviaFrmJuego acertoLetra;
+        public event enviaFrmJuego falloLetra;
+        public event enviaFrmJuego acertoPalabra;
+        public event enviaFrmJuego falloPalabra;
         public void leer()
         {
             while (true)
             {
                 string aux = streamr.ReadLine();
-                mensaje = serializador.recibirMensaje(aux);
-                recibe(mensaje.LetraPalabra);
+                mensaje = serializador.recibirMensaje(aux);  //pto de corte sab 17
+                if (mensaje.Retorno != "FALLO" && mensaje.Accion==Accion.ProbarLetra)
+                    acertoLetra(mensaje); 
+                else
+                    falloLetra(mensaje);
+                if (mensaje.Retorno != "FALLO" && mensaje.Accion == Accion.ProbarPalabra)
+                    acertoPalabra(mensaje);
+                else
+                    falloPalabra(mensaje);
             }
-        }
-                    
-        public void Start()
+        }            
+        public void Iniciar()
         {
             try
             {
@@ -72,7 +67,9 @@ namespace JuegoAhorcado
                 stream = client.GetStream();
                 streamw = new StreamWriter(stream);
                 streamr = new StreamReader(stream);
-                streamw.WriteLine(nick); //Cambiar a JSON
+                clsMensaje msjNick = new clsMensaje();
+                msjNick.Nick=nick;
+                streamw.WriteLine(serializador.enviarMensaje(msjNick)); 
                 streamw.Flush();
 
 
@@ -84,11 +81,9 @@ namespace JuegoAhorcado
             }
             catch (SocketException ex)
             {
-                Console.WriteLine("Client Disconnected.");
+                Console.WriteLine(ex+"Client Disconnected.");
             }
         }
-
-
         public void DataIn()
         {
             try
@@ -109,15 +104,12 @@ namespace JuegoAhorcado
                     //        break;
                     //}
                 }
-                reader.Close();
-                stream.Close();
             }
             catch (Exception ex)
             {
                 Console.Write(ex.Message);
             }
         }
-
         public void enviar(clsMensaje msj)
         {
             try

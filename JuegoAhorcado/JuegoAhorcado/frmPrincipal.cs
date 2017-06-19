@@ -24,7 +24,7 @@ namespace JuegoAhorcado
             if(tbJugador.Text!=String.Empty || tbJugador.Text.Length>4)
             {
                 cliente.Nick = tbJugador.Text;
-                Thread comienzo = new Thread(cliente.Start);
+                Thread comienzo = new Thread(cliente.Iniciar);
                 comienzo.Start();
                 tbJugador.Enabled = false;
                 btnJugar.Enabled = false;
@@ -52,9 +52,5 @@ namespace JuegoAhorcado
                 MessageBox.Show("ESPERA DEMAS JUGADORES");
         }
 
-        private void frmPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

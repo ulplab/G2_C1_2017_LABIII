@@ -28,8 +28,8 @@ namespace ServidorJA
         private List<Connection> list = new List<Connection>();
         //clsMensaje Mensaje = new clsMensaje();
         clsManejoPaquetes paquete = new clsManejoPaquetes();
-        clsJuego juego = new clsJuego();
-        clsRouter router = new clsRouter();
+        static clsJuego juego = new clsJuego();
+        clsRouter router = new clsRouter(juego);
         clsCliente cliente;
         private bool controlInicio = false;
 
@@ -39,7 +39,7 @@ namespace ServidorJA
             public NetworkStream stream;
             public StreamWriter streamw;
             public StreamReader streamr;
-            public string nick;
+            public string recibe;
         }
 
         public clsServer()
@@ -56,7 +56,6 @@ namespace ServidorJA
             Console.WriteLine("Servidor escuchando en puerto 8000");
             server = new TcpListener(ipendpoint);
             server.Start();
-            Console.WriteLine("Palabra a adivinar: " + juego.Palabra);
             Console.WriteLine("INGRESE CANTIDAD DE JUGADORES QUE DESEA TENER EN LA PARTIDA");
             cantJugadores = Console.ReadLine();
 
@@ -69,19 +68,21 @@ namespace ServidorJA
                     con.stream = client.GetStream();
                     con.streamr = new StreamReader(con.stream);
                     con.streamw = new StreamWriter(con.stream);
-                    con.nick = con.streamr.ReadLine();
-                    clsJugador jugador = new clsJugador(con.nick);
+                    con.recibe = con.streamr.ReadLine();
+                    clsMensaje msjLee = new clsMensaje();
+                    msjLee = paquete.recibirMensaje(con.recibe);
+                    Console.WriteLine("Jugador " + msjLee.Nick + " ya se unio a la partida");
+                    clsJugador jugador = new clsJugador(msjLee.Nick);
                     juego.agregarJugador(jugador);
-                    Console.WriteLine("Jugador " + con.nick + " ya se unio a la partida");
                     if((Convert.ToInt32(cantJugadores) - juego.Jugadores.Count)!=0)
                     {
-                        Console.WriteLine("Jugador: "+con.nick + " espere que faltan " + (Convert.ToInt32(cantJugadores) - juego.Jugadores.Count) + " jugadores para comenzar el juego");
-                        cliente = new clsCliente(con.stream, con.streamw, con.streamr, con.nick,"WAIT");
+                        Console.WriteLine("Jugador: " + msjLee.Nick + " espere que faltan " + (Convert.ToInt32(cantJugadores) - juego.Jugadores.Count) + " jugadores para comenzar el juego");
+                        cliente = new clsCliente(con.stream, con.streamw, con.streamr, msjLee.Nick, "WAIT");
                         router.ListaCliente.Add(cliente);
                     }   
                     else
                     {
-                        cliente = new clsCliente(con.stream, con.streamw, con.streamr, con.nick, "START");
+                        cliente = new clsCliente(con.stream, con.streamw, con.streamr, msjLee.Nick, "START");
                         router.ListaCliente.Add(cliente);
                         router.comienzaPartida();
                     }

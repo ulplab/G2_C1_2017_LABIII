@@ -15,6 +15,7 @@ namespace ServidorJA
     public delegate void recibir(clsMensaje mensaje, String nombre);
     class clsCliente
     {
+        #region Atributos, Set y Get
         private NetworkStream stream;
         public NetworkStream Stream
         {
@@ -51,6 +52,8 @@ namespace ServidorJA
             set { estado = value; }
         }
 
+        #endregion
+
         public event recibir recMsj;
         private clsManejoPaquetes msjPaquete;
 
@@ -64,7 +67,7 @@ namespace ServidorJA
             stream = ntStream;
             streamw = sw;
             streamr = sr;
-            this.nick = nick;
+            this.nick = nick; //Revisar NICK
             msjPaquete = new clsManejoPaquetes();
            clsMensaje m= new clsMensaje();
             m.Retorno=estado;

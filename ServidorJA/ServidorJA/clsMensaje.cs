@@ -13,21 +13,20 @@ namespace ServidorJA
         NuevoJugador,
         Baja,
         ComienzoPartida,
-
     }
 
     public class clsMensaje
     {
-       
+
         String nick;
         String letraPalabra;
+        List<int> posicionLetra;
         String retorno;
         String palabraAhorcado;
         String puntaje;
         Accion accion;
-        // static public event enviaLetra envLetra;
 
-      
+
 
         public string Nick
         {
@@ -54,7 +53,11 @@ namespace ServidorJA
                 letraPalabra = value;
             }
         }
-
+        public List<int> PosicionLetra
+        {
+            get { return posicionLetra; }
+            set { posicionLetra = value; }
+        }
         public string Retorno
         {
             get
