@@ -11,14 +11,12 @@ using ClasesComunicacion;
 
 namespace JuegoAhorcado
 {
-    
-    public delegate void send(clsMensaje mensaje);
-    public delegate void enviaLetra(clsMensaje mensaje);
     public partial class frmJuego : Form
     {      
         clsCliente cliente;
         String nick;
         clsMensajeJuego msjJuego;
+        string palabra;
 
         public frmJuego(clsCliente cliente,String nick,clsMensajeBase msjBase)
         {
@@ -32,7 +30,7 @@ namespace JuegoAhorcado
             cliente.falloLetra += fallaLetra;
             cliente.acertoPalabra += habilitaPalabra;
             cliente.falloPalabra += fallaPalabra;
-            string palabra = cliente.Mensaje.PalabraAhorcado;
+            palabra = cliente.Mensaje.PalabraAhorcado;
             Char[] palabraIndice = palabra.ToCharArray();
             //foreach(clsJugador c in cliente.Mensaje.ListaJugadores)
             //{
@@ -223,79 +221,79 @@ namespace JuegoAhorcado
         private void habilitaPalabra(clsMensajeBase m)
         {
             clsMensajeJuego msj = (clsMensajeJuego)m;
-
+            msj.PalabraAhorcado = palabra;
             int cant=msj.PalabraAhorcado.Length;
             for (int i = 0; i < cant; i++)
             {
                 if (i == 0)
                     this.Invoke(new Action(() =>
                     {
-                        lb0.Text = msj.LetraPalabra;
+                        lb0.Text = msj.LetraPalabra[i].ToString();
                     }));
                 else if (i == 1)
                     this.Invoke(new Action(() =>
                     {
-                        lb1.Text = msj.LetraPalabra;
+                        lb1.Text = msj.LetraPalabra[i].ToString();
                     }));
                 else if (i == 2)
                     this.Invoke(new Action(() =>
                     {
-                        lb2.Text = msj.LetraPalabra;
+                        lb2.Text = msj.LetraPalabra[i].ToString();
                     }));
                 else if (i == 3)
                     this.Invoke(new Action(() =>
                     {
-                        lb3.Text = msj.LetraPalabra;
+                        lb3.Text = msj.LetraPalabra[i].ToString();
                     }));
                 else if (i == 4)
                     this.Invoke(new Action(() =>
                     {
-                        lb4.Text = msj.LetraPalabra;
+                        lb4.Text = msj.LetraPalabra[i].ToString();
                     }));
                 else if (i == 5)
                     this.Invoke(new Action(() =>
                     {
-                        lb5.Text = msj.LetraPalabra;
+                        lb5.Text = msj.LetraPalabra[i].ToString();
                     }));
                 else if (i == 6)
                     this.Invoke(new Action(() =>
                     {
-                        lb6.Text = msj.LetraPalabra;
+                        lb6.Text = msj.LetraPalabra[i].ToString();
                     }));
                 else if (i == 7)
                     this.Invoke(new Action(() =>
                     {
-                        lb7.Text = msj.LetraPalabra;
+                        lb7.Text = msj.LetraPalabra[i].ToString();
                     }));
                 else if (i == 8)
                     this.Invoke(new Action(() =>
                     {
-                        lb8.Text = msj.LetraPalabra;
+                        lb8.Text = msj.LetraPalabra[i].ToString();
                     }));
                 else if (i == 9)
                     this.Invoke(new Action(() =>
                     {
-                        lb9.Text = msj.LetraPalabra;
+                        lb9.Text = msj.LetraPalabra[i].ToString();
                     }));
                 else if (i == 10)
                     this.Invoke(new Action(() =>
                     {
-                        lb10.Text = msj.LetraPalabra;
+                        lb10.Text = msj.LetraPalabra[i].ToString();
                     }));
                 else if (i == 11)
                     this.Invoke(new Action(() =>
                     {
-                        lb11.Text = msj.LetraPalabra;
+                        lb11.Text = msj.LetraPalabra[i].ToString();
                     }));
                 else if (i == 12)
                     this.Invoke(new Action(() =>
                     {
-                        lb12.Text = msj.LetraPalabra;
+                        lb12.Text = msj.LetraPalabra[i].ToString();
                     }));
                 else if (i == 13)
                     this.Invoke(new Action(() =>
                     {
-                        lb13.Text = msj.LetraPalabra;
+                        lb13.Text = msj.LetraPalabra[i].ToString();
                     }));
             }
         }

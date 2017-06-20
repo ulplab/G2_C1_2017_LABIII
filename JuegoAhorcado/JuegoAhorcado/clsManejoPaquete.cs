@@ -8,28 +8,8 @@ using ClasesComunicacion;
 
 namespace JuegoAhorcado
 {
-    public delegate void delRec(clsMensaje msg);
-    public delegate void delEnv(string strJSON);
    public class clsManejoPaquetes
     {
-
-        delRec Recibe;
-        string msje;
-        clsMensaje msjPaquete = new clsMensaje();
-
-        public clsMensaje MsjPaquete
-        {
-            get
-            {
-                return msjPaquete;
-            }
-
-            set
-            {
-                msjPaquete = value;
-            }
-        }
-
         public clsMensajeBase recibirMensaje(string mensaje)
         {
             

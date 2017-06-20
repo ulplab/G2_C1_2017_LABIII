@@ -51,7 +51,6 @@
     <Compile Include="clsCliente.cs" />
     <Compile Include="clsJugador.cs" />
     <Compile Include="clsManejoPaquete.cs" />
-    <Compile Include="clsMensaje.cs" />
     <Compile Include="frmJuego.cs">
       <SubType>Form</SubType>
     </Compile>
