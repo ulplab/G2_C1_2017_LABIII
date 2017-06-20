@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using ClasesComunicacion;
 
 namespace JuegoAhorcado
 {
@@ -29,13 +30,33 @@ namespace JuegoAhorcado
             }
         }
 
-        public clsMensaje recibirMensaje(string mensaje)
+        public clsMensajeBase recibirMensaje(string mensaje)
         {
-            this.msje = mensaje;
-            return JsonConvert.DeserializeObject<clsMensaje>(this.msje);
+            
+
+                clsMensajeBase convertido=JsonConvert.DeserializeObject<clsMensajeBase>(mensaje);
+                switch (convertido.Tipo)
+                {
+                    case "MENSAJE_PARTIDA":
+                        clsMensajePartida retorno1 = JsonConvert.DeserializeObject<clsMensajePartida>(mensaje);
+                        return retorno1;
+                        
+                    case "MENSAJE_JUEGO":
+                        clsMensajeJuego retorno2 = JsonConvert.DeserializeObject<clsMensajeJuego>(mensaje);
+                        return retorno2;
+
+                    default: return null;
+                    
+                        
+                }
+
+            
+
+
+           
         }
 
-        public string enviarMensaje(clsMensaje msj)
+        public string enviarMensaje(clsMensajeBase msj)
         {
             return JsonConvert.SerializeObject(msj);
         }

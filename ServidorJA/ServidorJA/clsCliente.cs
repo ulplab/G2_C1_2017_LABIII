@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using ClasesComunicacion;
 using System.Threading;
 using System.Net.Sockets;
 using System.IO;
@@ -12,7 +12,7 @@ using System.Net;
 namespace ServidorJA
 {
 
-    public delegate void recibir(clsMensaje mensaje, String nombre);
+    public delegate void recibir(clsMensajeBase mensaje, String nombre);
     class clsCliente
     {
         #region Atributos, Set y Get
@@ -69,7 +69,7 @@ namespace ServidorJA
             streamr = sr;
             this.nick = nick; //Revisar NICK
             msjPaquete = new clsManejoPaquetes();
-           clsMensaje m= new clsMensaje();
+           clsMensajeBase m= new clsMensajeBase();
             m.Retorno=estado;
         }
 
@@ -89,7 +89,7 @@ namespace ServidorJA
             }
         }
 
-        public void enviar(clsMensaje msj)
+        public void enviar(clsMensajeBase msj)
         {
             streamw.WriteLine(msjPaquete.enviarMensaje(msj));
             streamw.Flush();

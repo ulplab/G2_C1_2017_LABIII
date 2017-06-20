@@ -8,6 +8,7 @@ using System.Threading;
 using System.Net.Sockets;
 using System.IO;
 using System.Net;
+using ClasesComunicacion;
 
 
 namespace ServidorJA
@@ -21,7 +22,6 @@ namespace ServidorJA
             TcpClient----------> Proporciona la Conexion entre el Servidor y el Cliente.                
             NetworkStream------> Se encarga de enviar mensajes atravez de los sockets.                  
         */
-        private String cantJugadores;
         private TcpListener server;
         private TcpClient client = new TcpClient();
         private IPEndPoint ipendpoint = new IPEndPoint(IPAddress.Any, 8000);
@@ -31,7 +31,6 @@ namespace ServidorJA
         static clsJuego juego = new clsJuego();
         clsRouter router = new clsRouter(juego);
         clsCliente cliente;
-        private bool controlInicio = false;
 
         Connection con;
         private struct Connection
@@ -44,9 +43,6 @@ namespace ServidorJA
 
         public clsServer()
         {
-            controlInicio = true;
-            //paquete.Recibir += recibe;
-            //paquete.Enviar += Envia;
             Inicio();
         }
 
@@ -66,8 +62,7 @@ namespace ServidorJA
                     con.streamr = new StreamReader(con.stream);
                     con.streamw = new StreamWriter(con.stream);
                     con.recibe = con.streamr.ReadLine();
-                    clsMensaje msjLee = new clsMensaje();
-                    msjLee = paquete.recibirMensaje(con.recibe);
+                    clsMensajeBase msjLee = paquete.recibirMensaje(con.recibe);
                     Console.WriteLine("Jugador " + msjLee.Nick + " ya se unio a la partida");
                     clsJugador jugador = new clsJugador(msjLee.Nick);
                     juego.agregarJugador(jugador);

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClasesComunicacion;
 
 namespace JuegoAhorcado
 {
@@ -17,28 +18,50 @@ namespace JuegoAhorcado
     {      
         clsCliente cliente;
         String nick;
+        clsMensajeJuego msjJuego;
 
-        public frmJuego(clsCliente cliente,String nick)
+        public frmJuego(clsCliente cliente,String nick,clsMensajeBase msjBase)
         {
             InitializeComponent();
             this.nick=nick;
             this.cliente = cliente;
+            ///this.msjJuego = (clsMensajeJuego)msjBase;
+            clsMensajePartida msjPartida = (clsMensajePartida)msjBase;
+            start(msjPartida);
             cliente.acertoLetra += habilitaLetra;
             cliente.falloLetra += fallaLetra;
             cliente.acertoPalabra += habilitaPalabra;
             cliente.falloPalabra += fallaPalabra;
             string palabra = cliente.Mensaje.PalabraAhorcado;
             Char[] palabraIndice = palabra.ToCharArray();
-            foreach(clsJugador c in cliente.Mensaje.ListaJugadores)
+            //foreach(clsJugador c in cliente.Mensaje.ListaJugadores)
+            //{
+            //    lbJugadores.Items.Add(c.Nick);
+            //}
+        }
+
+        private void start(clsMensajePartida msjPartida)
+        {
+            this.Text = "Juego Ahorcado - PLAYER " + this.nick;
+
+            for (int i = 0; i < msjPartida.PalabraAhorcado.Length; i++)
             {
-                lbJugadores.Items.Add(c.Nick);
+                foreach (Control c in pnlPalabra.Controls)
+                {
+                    if (c is Label && (c as Label).Name.Equals("lblGuion" + i.ToString()))
+                    {
+                        c.Visible = true;
+                    }
+                }
             }
+
+
         }
         private void btnArriesgar_Click(object sender, EventArgs e)
         {
             if (tbPalabra.Text != " " && tbPalabra.Text != "") // Checkear bien que no hayan varios espacios
             {
-                clsMensaje msj = new clsMensaje();
+                clsMensajeJuego msj = new clsMensajeJuego();
                 msj.LetraPalabra = tbPalabra.Text.ToUpper();
                 msj.Accion = "PROBAR_PALABRA";
                 msj.Nick = cliente.Nick;
@@ -49,7 +72,7 @@ namespace JuegoAhorcado
         {
             if (tbLetra.Text != " " && tbLetra.Text != "")
             {
-                clsMensaje msj = new clsMensaje();
+                clsMensajeJuego msj = new clsMensajeJuego();
                  msj.LetraPalabra=tbLetra.Text.ToUpper();
                  msj.Accion = "PROBAR_LETRA";
                  msj.Nick = cliente.Nick;
@@ -59,23 +82,9 @@ namespace JuegoAhorcado
                 tbLetra.Focus();
             }
         }
-        private void frmJuego_Load(object sender, EventArgs e)
+        private void habilitaLetra(clsMensajeBase m) 
         {
-            this.Text = "Juego Ahorcado - PLAYER " + this.nick;
-
-            for (int i = 0; i < cliente.Mensaje.PalabraAhorcado.Length; i++)
-            {
-                foreach (Control c in pnlPalabra.Controls)
-                {
-                    if (c is Label && (c as Label).Name.Equals("lblGuion" + i.ToString()))
-                    {
-                        c.Visible = true;
-                    }
-                }
-            }
-        }
-        private void habilitaLetra(clsMensaje msj) 
-        {
+            clsMensajeJuego msj = (clsMensajeJuego)m;
             List<int> posiciones = msj.PosicionLetra;
             for(int i=0;i<posiciones.Count;i++)
             {
@@ -152,7 +161,7 @@ namespace JuegoAhorcado
             }
 
         }
-        private void fallaLetra(clsMensaje msj)
+        private void fallaLetra(clsMensajeBase msj)
         {
             MessageBox.Show("FALLASTE, TENE CUIDADO QUE LA SOGA APRETA");
             pintarUna();
@@ -211,8 +220,10 @@ namespace JuegoAhorcado
         //    else
         //        MessageBox.Show("Se acabo che...");
         //}
-        private void habilitaPalabra(clsMensaje msj)
+        private void habilitaPalabra(clsMensajeBase m)
         {
+            clsMensajeJuego msj = (clsMensajeJuego)m;
+
             int cant=msj.PalabraAhorcado.Length;
             for (int i = 0; i < cant; i++)
             {
@@ -288,7 +299,7 @@ namespace JuegoAhorcado
                     }));
             }
         }
-        private void fallaPalabra(clsMensaje msj)
+        private void fallaPalabra(clsMensajeBase msj)
         {
             pintarTodo();
         }

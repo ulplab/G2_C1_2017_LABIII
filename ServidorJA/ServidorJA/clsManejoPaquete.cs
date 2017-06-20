@@ -4,41 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using ClasesComunicacion;
 
 namespace ServidorJA
 {
-    public delegate void delRec(clsMensaje msg);
-    //public delegate void delEnv(string strJSON,clsMensaje a);
     public class clsManejoPaquetes
     {
-
-        delRec Recibe;
-        string msje;
-        clsMensaje msjPaquete = new clsMensaje();
-
-        public clsMensaje MsjPaquete
+        public clsMensajeBase recibirMensaje(string mensaje)
         {
-            get
+            clsMensajeBase convertido = JsonConvert.DeserializeObject<clsMensajeBase>(mensaje);
+            switch (convertido.Tipo)
             {
-                return msjPaquete;
-            }
+                case "MENSAJE_PARTIDA":
+                    clsMensajePartida retorno1 = JsonConvert.DeserializeObject<clsMensajePartida>(mensaje);
+                    return retorno1;
 
-            set
-            {
-                msjPaquete = value;
+                case "MENSAJE_JUEGO":
+                    clsMensajeJuego retorno2 = JsonConvert.DeserializeObject<clsMensajeJuego>(mensaje);
+                    return retorno2;
+
+                default: return convertido;
+
             }
         }
 
-        public clsMensaje recibirMensaje(string mensaje)
-        {
-            this.msje = mensaje;
-            return JsonConvert.DeserializeObject<clsMensaje>(this.msje);
-
-        }
-
-        public string enviarMensaje(clsMensaje msj)
+        public string enviarMensaje(clsMensajeBase msj)
         {
             return JsonConvert.SerializeObject(msj);
         }
-     }
+    }
 }

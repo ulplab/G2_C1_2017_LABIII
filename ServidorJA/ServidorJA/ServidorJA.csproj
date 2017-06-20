@@ -32,9 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Probando\G2_C1_2017_PC\ChatApp\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\..\ServidorAhorcado\ServidorJA\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,10 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsJuego.cs" />
-    <Compile Include="clsJugador.cs" />
     <Compile Include="clsCliente.cs" />
     <Compile Include="clsManejoPaquete.cs" />
-    <Compile Include="clsMensaje.cs" />
     <Compile Include="clsRouter.cs" />
     <Compile Include="clsServer.cs" />
     <Compile Include="Program.cs" />
@@ -59,6 +57,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClasesComunicacion\ClasesComunicacion.csproj">
+      <Project>{b16948e6-c7a1-43ef-a3ce-cacf97f154f7}</Project>
+      <Name>ClasesComunicacion</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

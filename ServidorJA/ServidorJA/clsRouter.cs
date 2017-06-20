@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClasesComunicacion;
 
 namespace ServidorJA
 {
@@ -26,21 +27,24 @@ namespace ServidorJA
         public void comienzaPartida()
         {
             juego.GeneraPalabra();
-            Console.WriteLine("Palabra a adivinar: " + juego.Palabra); 
-            clsMensaje msj = new clsMensaje();
+            Console.WriteLine("Palabra a adivinar: " + juego.Palabra);
+            clsMensajePartida msjP = new clsMensajePartida();
             foreach(clsCliente c in listaCliente)
             {
                 c.recMsj += recibe;
                 c.MsjPaquete = msjPaquete;
-                msj.Accion = "COMIENZA_PARTIDA";
-                msj.ListaJugadores = juego.Jugadores;
-                msj.Retorno = "START";
-                msj.PalabraAhorcado = juego.Palabra;
-                c.enviar(msj);
+                msjP.Accion = "COMIENZA_PARTIDA";
+                msjP.ListaJugadores = juego.Jugadores;
+                msjP.Retorno = "START";
+                msjP.PalabraAhorcado = juego.Palabra;
+                c.enviar(msjP);
             }
         }
-        public void recibe(clsMensaje mensaje, String nombre) //Revisar String nombre que viene JSON completo
+        public void recibe(clsMensajeBase m, String nombre) //Revisar String nombre que viene JSON completo
         {
+
+            clsMensajeJuego mensaje = (clsMensajeJuego)m;
+
             mensaje.PalabraAhorcado = juego.Palabra;
             switch(mensaje.Accion)
             {
@@ -60,7 +64,7 @@ namespace ServidorJA
                 EnviarATodos(mensaje);
             }
         }
-        public void EnviarAUno(string nombre,clsMensaje mensaje)
+        public void EnviarAUno(string nombre,clsMensajeBase mensaje)
         {
             foreach (clsCliente c in listaCliente)
             {
@@ -71,7 +75,7 @@ namespace ServidorJA
             }
 
         }
-        public void EnviarATodos(clsMensaje mensaje)
+        public void EnviarATodos(clsMensajeBase mensaje)
         {
             foreach (clsCliente c in listaCliente)
             {

@@ -629,7 +629,6 @@
             this.Controls.Add(this.panel2);
             this.Name = "frmJuego";
             this.Text = "JUEGO AHORCADO(PLAYER 1)";
-            this.Load += new System.EventHandler(this.frmJuego_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbPiernaDerPintada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBrazoDerPintado)).EndInit();

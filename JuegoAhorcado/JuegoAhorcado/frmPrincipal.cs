@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using ClasesComunicacion;
 
 namespace JuegoAhorcado
 {
@@ -37,16 +38,15 @@ namespace JuegoAhorcado
             }
         }
 
-        public void comenzar(clsMensaje msg)
+        public void comenzar(clsMensajeBase msgBase)
         {
-            if (msg.Retorno != "WAIT")
+            if (msgBase.Retorno != "WAIT")
             {
-                frmJuego frmP1 = new frmJuego(cliente, tbJugador.Text);
+                frmJuego frmP1 = new frmJuego(cliente, tbJugador.Text, msgBase);
                 this.Invoke(new Action(() =>
                 {
                     frmP1.Show();
                     this.Hide();
-                    cliente.Mensaje = msg;
                 }));
             }
             else

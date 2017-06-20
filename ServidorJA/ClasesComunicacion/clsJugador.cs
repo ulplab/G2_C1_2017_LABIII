@@ -4,7 +4,7 @@ using System.Text;
 
 
 
-namespace ServidorJA
+namespace ClasesComunicacion
 {
 
     public class clsJugador
@@ -13,13 +13,19 @@ namespace ServidorJA
         int puntaje = 0;
         int sinAcertar;
         bool fueraDeJuego = false;
-        Color color;
+        Color color;  
 
         public clsJugador(String nombre)
         {
             this.nick = nombre;
-            this.Color = color;
+           // this.colorJ = color;
 
+        }
+
+        public Color Color
+        {
+            get { return color; }
+            set { color = value; }
         }
 
         public string Nick
@@ -68,18 +74,6 @@ namespace ServidorJA
             set
             {
                 fueraDeJuego = value;
-            }
-        }
-        public Color Color
-        {
-            get
-            {
-                return color;
-            }
-
-            set
-            {
-                color = value;
             }
         }
         ////    Jugador PuntajeMasAlto()

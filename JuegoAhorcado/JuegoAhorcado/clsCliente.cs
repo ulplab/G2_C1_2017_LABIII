@@ -7,12 +7,13 @@ using System.Drawing;
 using System.Net.Sockets;
 using System.Threading;
 using System.IO;
+using ClasesComunicacion;
 
 namespace JuegoAhorcado
 {
     public delegate void enviar(string Json);
-    public delegate void enviaFrmJuego(clsMensaje msj);
-    public delegate void comienzo(clsMensaje msj);
+    public delegate void enviaFrmJuego(clsMensajeBase msj);
+    public delegate void comienzo(clsMensajeBase msj);
 
 
     public class clsCliente
@@ -20,14 +21,14 @@ namespace JuegoAhorcado
         //clsJugador player;
         TcpClient client;
         static int port = 8000;
-        clsMensaje mensaje;
+        clsMensajeBase mensaje;
         private String nick;
         public String Nick
         {
             get { return nick; }
             set { nick = value; }
         }
-        public clsMensaje Mensaje
+        public clsMensajeBase Mensaje
         {
             get { return mensaje; }
             set { mensaje = value; }
@@ -67,8 +68,8 @@ namespace JuegoAhorcado
                 stream = client.GetStream();
                 streamw = new StreamWriter(stream);
                 streamr = new StreamReader(stream);
-                clsMensaje msjNick = new clsMensaje();
-                msjNick.Nick=nick;
+                clsMensajeBase msjNick = new clsMensajeBase();
+                msjNick.Nick = nick;
                 streamw.WriteLine(serializador.enviarMensaje(msjNick)); 
                 streamw.Flush();
 
@@ -110,7 +111,7 @@ namespace JuegoAhorcado
                 Console.Write(ex.Message);
             }
         }
-        public void enviar(clsMensaje msj)
+        public void enviar(clsMensajeBase msj)
         {
             try
             {

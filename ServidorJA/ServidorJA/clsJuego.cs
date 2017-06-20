@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Drawing;
 using System.Text.RegularExpressions;
+using ClasesComunicacion;
 
 namespace ServidorJA
 {
@@ -169,9 +170,9 @@ namespace ServidorJA
                 return indice;
             }
         }
-        public clsMensaje enviaLetra(string nick, string l)
+        public clsMensajeJuego enviaLetra(string nick, string l)
         {
-            clsMensaje msjRetorno = new clsMensaje();
+            clsMensajeJuego msjRetorno = new clsMensajeJuego();
             List<int> listaPosiciones = new List<int>();
             int indiceJugador = BuscaIndiceJugador(nick);
             msjRetorno.Retorno = "FALLO";
@@ -196,9 +197,9 @@ namespace ServidorJA
             msjRetorno.Accion = "PROBAR_LETRA";//REVISAR PORQUE SE PIERDE LA ACCION AL ENVIAR AL CLIENTE EL MSJ
             return msjRetorno;
         }
-        public clsMensaje enviaPalabra(string nick, string s)
+        public clsMensajeJuego enviaPalabra(string nick, string s)
         {
-            clsMensaje msjRetorno = new clsMensaje();
+            clsMensajeJuego msjRetorno = new clsMensajeJuego();
             if (palabra.Equals(s))
             {
                 Jugadores.ElementAt(BuscaIndiceJugador(nick)).Puntaje = 5;
