@@ -46,6 +46,7 @@ namespace JuegoAhorcado
                 {
                     frmP1.Show();
                     this.Hide();
+                    cliente.Mensaje = msg;
                 }));
             }
             else

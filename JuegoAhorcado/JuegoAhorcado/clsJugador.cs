@@ -4,7 +4,7 @@ using System.Text;
 
 
 
-namespace ServidorJA
+namespace JuegoAhorcado
 {
 
     public class clsJugador
@@ -70,6 +70,7 @@ namespace ServidorJA
                 fueraDeJuego = value;
             }
         }
+
         public Color Color
         {
             get

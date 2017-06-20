@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Drawing;
 using System.Threading;
 using System.Net.Sockets;
 using System.IO;
@@ -52,16 +52,13 @@ namespace ServidorJA
 
         public void Inicio()
         {
- 
             Console.WriteLine("Servidor escuchando en puerto 8000");
             server = new TcpListener(ipendpoint);
             server.Start();
-            Console.WriteLine("INGRESE CANTIDAD DE JUGADORES QUE DESEA TENER EN LA PARTIDA");
-            cantJugadores = Console.ReadLine();
 
             while (true)
             {
-                if (juego.Jugadores.Count < Convert.ToInt32(cantJugadores)) 
+                if (juego.Jugadores.Count < 2) 
                 {
                     client = server.AcceptTcpClient();
                     con = new Connection();
@@ -74,9 +71,9 @@ namespace ServidorJA
                     Console.WriteLine("Jugador " + msjLee.Nick + " ya se unio a la partida");
                     clsJugador jugador = new clsJugador(msjLee.Nick);
                     juego.agregarJugador(jugador);
-                    if((Convert.ToInt32(cantJugadores) - juego.Jugadores.Count)!=0)
+                    if((2 - juego.Jugadores.Count)!=0)
                     {
-                        Console.WriteLine("Jugador: " + msjLee.Nick + " espere que faltan " + (Convert.ToInt32(cantJugadores) - juego.Jugadores.Count) + " jugadores para comenzar el juego");
+                        Console.WriteLine("Jugador: " + msjLee.Nick + " espere que faltan " + (2- juego.Jugadores.Count) + " jugadores para comenzar el juego");
                         cliente = new clsCliente(con.stream, con.streamw, con.streamr, msjLee.Nick, "WAIT");
                         router.ListaCliente.Add(cliente);
                     }   

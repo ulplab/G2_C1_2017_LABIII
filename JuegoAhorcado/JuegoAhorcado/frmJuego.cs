@@ -29,6 +29,10 @@ namespace JuegoAhorcado
             cliente.falloPalabra += fallaPalabra;
             string palabra = cliente.Mensaje.PalabraAhorcado;
             Char[] palabraIndice = palabra.ToCharArray();
+            foreach(clsJugador c in cliente.Mensaje.ListaJugadores)
+            {
+                lbJugadores.Items.Add(c.Nick);
+            }
         }
         private void btnArriesgar_Click(object sender, EventArgs e)
         {
@@ -36,13 +40,9 @@ namespace JuegoAhorcado
             {
                 clsMensaje msj = new clsMensaje();
                 msj.LetraPalabra = tbPalabra.Text.ToUpper();
-                msj.Accion = Accion.ProbarPalabra;
+                msj.Accion = "PROBAR_PALABRA";
                 msj.Nick = cliente.Nick;
                 cliente.enviar(msj);
-                //if (!com.enviaPalabra(player, env_palabra))
-                //{
-                //    pintarTodo();
-                //}
             }
         }        
         private void btnLetra_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace JuegoAhorcado
             {
                 clsMensaje msj = new clsMensaje();
                  msj.LetraPalabra=tbLetra.Text.ToUpper();
-                 msj.Accion=Accion.ProbarLetra;
+                 msj.Accion = "PROBAR_LETRA";
                  msj.Nick = cliente.Nick;
                  cliente.enviar(msj);
                 
@@ -291,7 +291,6 @@ namespace JuegoAhorcado
         private void fallaPalabra(clsMensaje msj)
         {
             pintarTodo();
-            ahorcar();
         }
         public void pintarUna()
         {
@@ -339,12 +338,15 @@ namespace JuegoAhorcado
         }
         public void pintarTodo()
         {
-            pbPiernaDerPintada.Visible = true;
-            pbPiernaIzqPintada.Visible = true;
-            pbBrazoDerPintado.Visible = true;
-            pbBrazoIzqPintado.Visible = true;
-            pbCabezaPintada.Visible = true;
-            ahorcar();
+            this.Invoke(new Action(() =>
+            {
+                pbPiernaDerPintada.Visible = true;
+                pbPiernaIzqPintada.Visible = true;
+                pbBrazoDerPintado.Visible = true;
+                pbBrazoIzqPintado.Visible = true;
+                pbCabezaPintada.Visible = true;
+                ahorcar();
+            }));  
         }
         private void ahorcar()
         {

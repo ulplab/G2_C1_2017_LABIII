@@ -48,13 +48,13 @@ namespace JuegoAhorcado
             {
                 string aux = streamr.ReadLine();
                 mensaje = serializador.recibirMensaje(aux);  //pto de corte sab 17
-                if (mensaje.Retorno != "FALLO" && mensaje.Accion==Accion.ProbarLetra)
-                    acertoLetra(mensaje); 
-                else
+                if (mensaje.Retorno != "FALLO" && mensaje.Accion =="PROBAR_LETRA")
+                    acertoLetra(mensaje);
+                else if (mensaje.Retorno == "FALLO" && mensaje.Accion == "PROBAR_LETRA")
                     falloLetra(mensaje);
-                if (mensaje.Retorno != "FALLO" && mensaje.Accion == Accion.ProbarPalabra)
+                if (mensaje.Retorno != "FALLO" && mensaje.Accion == "PROBAR_PALABRA")
                     acertoPalabra(mensaje);
-                else
+                else if (mensaje.Retorno == "FALLO" && mensaje.Accion == "PROBAR_PALABRA")
                     falloPalabra(mensaje);
             }
         }            

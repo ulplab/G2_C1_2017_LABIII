@@ -15,6 +15,7 @@ namespace ServidorJA
     {
         List<String> diccionario = new List<string>();//contiene el diccionario en memoria
         List<clsJugador> jugadores = new List<clsJugador>();
+        private List<Color> listaColores = new List<Color>();
         string palabra;
         List<int> numerosUsados = new List<int>();// almacena los numeros (palabras) que ya fueron utilizadas
         StreamReader file;
@@ -52,10 +53,20 @@ namespace ServidorJA
         {
             LeerArchivo();
             //GeneraPalabra();
+            agregarColores();
         }
 
+        private void agregarColores()
+        {
+            listaColores.Add(Color.Blue);
+            listaColores.Add(Color.Red);
+            listaColores.Add(Color.Green);
+            listaColores.Add(Color.Yellow);
+            listaColores.Add(Color.Orange);
+        }
         public void agregarJugador(clsJugador j)
         {
+            j.Color = listaColores[Jugadores.Count];
             Jugadores.Add(j);
         }
         public void quitarJugador(clsJugador j)
@@ -182,6 +193,7 @@ namespace ServidorJA
             }
             msjRetorno.LetraPalabra = l;
             msjRetorno.PosicionLetra = listaPosiciones;
+            msjRetorno.Accion = "PROBAR_LETRA";//REVISAR PORQUE SE PIERDE LA ACCION AL ENVIAR AL CLIENTE EL MSJ
             return msjRetorno;
         }
         public clsMensaje enviaPalabra(string nick, string s)
@@ -197,8 +209,10 @@ namespace ServidorJA
             else
             {
                 //quitarJugador(p); 
-                msjRetorno.Retorno = "'FALLO";
+                msjRetorno.Retorno = "FALLO";
             }
+            msjRetorno.LetraPalabra = s;
+            msjRetorno.Accion = "PROBAR_PALABRA";
             return msjRetorno;
         }
     }

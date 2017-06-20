@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ServidorJA
 {
-    enum Accion
+    public enum Accion
     {
         ProbarLetra,
         ProbarPalabra,
@@ -17,18 +17,21 @@ namespace ServidorJA
 
     public class clsMensaje
     {
-
         String nick;
         String letraPalabra;
         List<int> posicionLetra;
         String retorno;
         String palabraAhorcado;
         String puntaje;
-        Accion accion;
+        String accion;
+        List<clsJugador> listaJugadores = new List<clsJugador>();
 
-
-
-        public string Nick
+        public List<clsJugador> ListaJugadores
+        {
+            get { return listaJugadores; }
+            set { listaJugadores = value; }
+        }
+        public String Nick
         {
             get
             {
@@ -40,8 +43,7 @@ namespace ServidorJA
                 nick = value;
             }
         }
-
-        public string LetraPalabra
+        public String LetraPalabra
         {
             get
             {
@@ -58,7 +60,7 @@ namespace ServidorJA
             get { return posicionLetra; }
             set { posicionLetra = value; }
         }
-        public string Retorno
+        public String Retorno
         {
             get
             {
@@ -70,8 +72,7 @@ namespace ServidorJA
                 retorno = value;
             }
         }
-
-        public string PalabraAhorcado
+        public String PalabraAhorcado
         {
             get
             {
@@ -83,8 +84,7 @@ namespace ServidorJA
                 palabraAhorcado = value;
             }
         }
-
-        internal Accion Accion
+        public String Accion
         {
             get
             {
@@ -96,8 +96,7 @@ namespace ServidorJA
                 accion = value;
             }
         }
-
-        public string Puntaje
+        public String Puntaje
         {
             get
             {

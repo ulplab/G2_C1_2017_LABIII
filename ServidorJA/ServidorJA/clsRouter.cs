@@ -26,13 +26,14 @@ namespace ServidorJA
         public void comienzaPartida()
         {
             juego.GeneraPalabra();
-            Console.WriteLine("Palabra a adivinar: " + juego.Palabra);
+            Console.WriteLine("Palabra a adivinar: " + juego.Palabra); 
             clsMensaje msj = new clsMensaje();
             foreach(clsCliente c in listaCliente)
             {
                 c.recMsj += recibe;
                 c.MsjPaquete = msjPaquete;
-                msj.Accion = Accion.ComienzoPartida;
+                msj.Accion = "COMIENZA_PARTIDA";
+                msj.ListaJugadores = juego.Jugadores;
                 msj.Retorno = "START";
                 msj.PalabraAhorcado = juego.Palabra;
                 c.enviar(msj);
@@ -43,14 +44,11 @@ namespace ServidorJA
             mensaje.PalabraAhorcado = juego.Palabra;
             switch(mensaje.Accion)
             {
-                case Accion.ProbarLetra:
-                    mensaje = juego.enviaLetra(nombre, mensaje.LetraPalabra); 
-                    
+                case "PROBAR_LETRA":
+                    mensaje = juego.enviaLetra(nombre, mensaje.LetraPalabra);
                     break;
-                case Accion.ProbarPalabra:
+                case "PROBAR_PALABRA":
                     mensaje = juego.enviaPalabra(nombre, mensaje.LetraPalabra);
-                    
-
                     break;
             }
             if (mensaje.Retorno.Equals("FALLO"))

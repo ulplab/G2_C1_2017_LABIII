@@ -33,7 +33,6 @@ namespace JuegoAhorcado
         {
             this.msje = mensaje;
             return JsonConvert.DeserializeObject<clsMensaje>(this.msje);
-
         }
 
         public string enviarMensaje(clsMensaje msj)

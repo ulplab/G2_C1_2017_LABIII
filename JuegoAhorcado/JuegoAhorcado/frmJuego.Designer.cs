@@ -75,6 +75,8 @@
             this.lb2 = new System.Windows.Forms.Label();
             this.lb1 = new System.Windows.Forms.Label();
             this.lb0 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbJugadores = new System.Windows.Forms.ListBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPiernaDerPintada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBrazoDerPintado)).BeginInit();
@@ -88,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCabeza)).BeginInit();
             this.panel4.SuspendLayout();
             this.pnlPalabra.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -214,7 +217,7 @@
             this.panel4.Controls.Add(this.btnLetra);
             this.panel4.Location = new System.Drawing.Point(12, 137);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(579, 172);
+            this.panel4.Size = new System.Drawing.Size(425, 172);
             this.panel4.TabIndex = 1;
             // 
             // tbPalabra
@@ -598,11 +601,29 @@
             this.lb0.Tag = "";
             this.lb0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lbJugadores);
+            this.panel1.Location = new System.Drawing.Point(443, 137);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(148, 172);
+            this.panel1.TabIndex = 5;
+            // 
+            // lbJugadores
+            // 
+            this.lbJugadores.FormattingEnabled = true;
+            this.lbJugadores.Location = new System.Drawing.Point(4, 4);
+            this.lbJugadores.Name = "lbJugadores";
+            this.lbJugadores.Size = new System.Drawing.Size(137, 160);
+            this.lbJugadores.TabIndex = 0;
+            // 
             // frmJuego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 316);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlPalabra);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
@@ -623,6 +644,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.pnlPalabra.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -675,5 +697,7 @@
         private System.Windows.Forms.Label lb11;
         private System.Windows.Forms.Label lblGuion10;
         private System.Windows.Forms.Label lb10;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListBox lbJugadores;
     }
 }
