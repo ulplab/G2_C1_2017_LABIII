@@ -14,6 +14,7 @@ namespace ServidorJA
 
     public class clsJuego
     {
+       
         List<String> diccionario = new List<string>();//contiene el diccionario en memoria
         List<clsJugador> jugadores = new List<clsJugador>();
         private List<Color> listaColores = new List<Color>();
@@ -23,6 +24,7 @@ namespace ServidorJA
         const int CHANCES = 5;// son las chances que tiene el jugador para adivinar la palabra,en caso de "ARRIESGAR" pierde toda las chances
         String[,] palabraArray;//variable multidimensional palabra que va a contener la palabra y por cada caracter el usuario q adivino el mismo y su numero de usuario
         clsMensajeGanador ganador = null;//agregado martes a als  23 hs 
+        int contadorColoresUsados = 0;
 
        
         #region Set y Get
@@ -71,6 +73,10 @@ namespace ServidorJA
             listaColores.Add(Color.Green);
             listaColores.Add(Color.Yellow);
             listaColores.Add(Color.Orange);
+            listaColores.Add(Color.Aquamarine);
+            listaColores.Add(Color.Black);
+            listaColores.Add(Color.Cyan);
+            listaColores.Add(Color.Magenta);
         }
         public void agregarJugador(clsJugador j)
         {

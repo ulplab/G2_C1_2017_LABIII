@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmJuego));
+            System.Windows.Forms.ColumnHeader columnHeader1;
             this.panel2 = new System.Windows.Forms.Panel();
             this.pbPiernaDerPintada = new System.Windows.Forms.PictureBox();
             this.pbBrazoDerPintado = new System.Windows.Forms.PictureBox();
@@ -76,9 +77,10 @@
             this.lb1 = new System.Windows.Forms.Label();
             this.lb0 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbJugadores = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lvJugadores = new System.Windows.Forms.ListView();
+            columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPiernaDerPintada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBrazoDerPintado)).BeginInit();
@@ -606,21 +608,22 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lvJugadores);
             this.panel1.Controls.Add(this.lbTime);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.lbJugadores);
             this.panel1.Location = new System.Drawing.Point(443, 137);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(148, 172);
             this.panel1.TabIndex = 5;
             // 
-            // lbJugadores
+            // lbTime
             // 
-            this.lbJugadores.FormattingEnabled = true;
-            this.lbJugadores.Location = new System.Drawing.Point(4, 43);
-            this.lbJugadores.Name = "lbJugadores";
-            this.lbJugadores.Size = new System.Drawing.Size(137, 121);
-            this.lbJugadores.TabIndex = 0;
+            this.lbTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbTime.Location = new System.Drawing.Point(45, 6);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(96, 24);
+            this.lbTime.TabIndex = 2;
+            this.lbTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -632,14 +635,20 @@
             this.label1.Text = "Tiempo";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbTime
+            // lvJugadores
             // 
-            this.lbTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbTime.Location = new System.Drawing.Point(45, 6);
-            this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(96, 24);
-            this.lbTime.TabIndex = 2;
-            this.lbTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lvJugadores.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            columnHeader1});
+            this.lvJugadores.Location = new System.Drawing.Point(6, 33);
+            this.lvJugadores.Name = "lvJugadores";
+            this.lvJugadores.Size = new System.Drawing.Size(121, 120);
+            this.lvJugadores.TabIndex = 3;
+            this.lvJugadores.UseCompatibleStateImageBehavior = false;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Jugadores";
+            columnHeader1.Width = 80;
             // 
             // frmJuego
             // 
@@ -652,6 +661,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "frmJuego";
             this.Text = "JUEGO AHORCADO(PLAYER 1)";
+            this.Load += new System.EventHandler(this.frmJuego_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbPiernaDerPintada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBrazoDerPintado)).EndInit();
@@ -721,8 +731,8 @@
         private System.Windows.Forms.Label lblGuion10;
         private System.Windows.Forms.Label lb10;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListBox lbJugadores;
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListView lvJugadores;
     }
 }

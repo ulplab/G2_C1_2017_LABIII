@@ -18,6 +18,7 @@ namespace JuegoAhorcado
         clsMensajeJuego msjJuego;
         string palabra;
         clsMensajeGanador ganador;
+        clsMensajePartida msjPartida;
 
         public frmJuego(clsCliente cliente,String nick,clsMensajeBase msjBase)
         {
@@ -25,7 +26,7 @@ namespace JuegoAhorcado
             this.nick=nick;
             this.cliente = cliente;
             ///this.msjJuego = (clsMensajeJuego)msjBase;
-            clsMensajePartida msjPartida = (clsMensajePartida)msjBase;
+            msjPartida = (clsMensajePartida)msjBase;
             start(msjPartida);
             cliente.acertoLetra += habilitaLetra;
             cliente.falloLetra += fallaLetra;
@@ -34,10 +35,7 @@ namespace JuegoAhorcado
             cliente.timeForm += tiempo;
             palabra = cliente.Mensaje.PalabraAhorcado;
             Char[] palabraIndice = palabra.ToCharArray();
-            //foreach(clsJugador c in cliente.Mensaje.ListaJugadores)
-            //{
-            //    lbJugadores.Items.Add(c.Nick);
-            //}
+           
         }
 
         private void start(clsMensajePartida msjPartida)
@@ -321,6 +319,30 @@ namespace JuegoAhorcado
         {
             clsMensajeTimer msjTime = (clsMensajeTimer)m;
             lbTime.Invoke((Action)(() => lbTime.Text = msjTime.Segundero.ToString()));
+        }
+
+        private void frmJuego_Load(object sender, EventArgs e)
+        {int cont=0;
+        
+        lvJugadores.Font = new Font(lvJugadores.Font,lvJugadores.Font.Style | FontStyle.Bold);
+       
+            lvJugadores.View = View.Details;
+            lvJugadores.BackColor= Color.PaleGoldenrod;
+
+           
+            foreach (clsJugador j in msjPartida.ListaJugadores)
+            {
+                lvJugadores.Items.Add(j.Nick);
+
+                lvJugadores.Items[cont].ForeColor = j.Color;
+                cont++;
+   
+            }
+        }
+
+        private void lvJugadores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
     }
