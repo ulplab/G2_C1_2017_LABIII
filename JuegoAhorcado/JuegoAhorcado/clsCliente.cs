@@ -79,6 +79,8 @@ namespace JuegoAhorcado
                         {
                             clsMensajeTimer mensajeTimer = (clsMensajeTimer)mensaje;
                             timeForm(mensajeTimer);
+                            if (mensajeTimer.Segundero == 0)
+                                falloPalabra();
                         } break;
                 }
             }
