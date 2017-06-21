@@ -12,8 +12,6 @@ namespace JuegoAhorcado
     {
         public clsMensajeBase recibirMensaje(string mensaje)
         {
-            
-
                 clsMensajeBase convertido=JsonConvert.DeserializeObject<clsMensajeBase>(mensaje);
                 switch (convertido.Tipo)
                 {
@@ -25,15 +23,17 @@ namespace JuegoAhorcado
                         clsMensajeJuego retorno2 = JsonConvert.DeserializeObject<clsMensajeJuego>(mensaje);
                         return retorno2;
 
-                    default: return null;
-                    
-                        
-                }
+                    case "MENSAJE_PERDEDOR":
+                        clsMensajePerdedor retorno3 = JsonConvert.DeserializeObject<clsMensajePerdedor>(mensaje);
+                        return retorno3;
 
-            
+                    case "MENSAJE_GANADOR":
+                        clsMensajeGanador retorno4 = JsonConvert.DeserializeObject<clsMensajeGanador>(mensaje);
+                        return retorno4;
 
-
-           
+                    default: return convertido;
+                                     
+                }   
         }
 
         public string enviarMensaje(clsMensajeBase msj)

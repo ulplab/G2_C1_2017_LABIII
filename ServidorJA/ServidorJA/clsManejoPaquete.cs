@@ -23,6 +23,14 @@ namespace ServidorJA
                     clsMensajeJuego retorno2 = JsonConvert.DeserializeObject<clsMensajeJuego>(mensaje);
                     return retorno2;
 
+                case "MENSAJE_PERDEDOR":
+                    clsMensajePerdedor retorno3 = JsonConvert.DeserializeObject<clsMensajePerdedor>(mensaje);
+                    return retorno3;
+
+                case "MENSAJE_GANADOR":
+                    clsMensajeGanador retorno4 = JsonConvert.DeserializeObject<clsMensajeGanador>(mensaje);
+                    return retorno4;
+
                 default: return convertido;
 
             }

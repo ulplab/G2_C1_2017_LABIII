@@ -52,8 +52,6 @@ namespace JuegoAhorcado
                     }
                 }
             }
-
-
         }
         private void btnArriesgar_Click(object sender, EventArgs e)
         {
@@ -159,65 +157,11 @@ namespace JuegoAhorcado
             }
 
         }
-        private void fallaLetra(clsMensajeBase msj)
+        private void fallaLetra()
         {
             MessageBox.Show("FALLASTE, TENE CUIDADO QUE LA SOGA APRETA");
             pintarUna();
         }
-
-        //private void habilitaLetra( string pal)
-        //{
-        //    for (int i = 0; i <= pal.Length - 1; i++)
-        //    {
-
-        //        if (pal[i].ToString().Equals(pal))
-        //        {
-
-        //            foreach (Control c in pnlPalabra.Controls)
-        //            {
-        //                if (c is Label && !(c as Label).Text.Contains("_") && (c as Label).Name.Equals("lb" + i.ToString()))
-        //                {
-
-        //                    Label l = (Label)c;
-        //                    if (l.Visible == false) 
-        //                    {
-        //                        this.Invoke(new Action(() =>
-        //                        {
-        //                            l.Text = pal;
-        //                            l.Visible = true;
-        //                        }));
-        //                        //  l.ForeColor = p.Color;
-                                
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    }
-            
-        //}
-        //private void habilitaPalabra(Color cp)
-        //{
-        //    if (cp != Color.Transparent)
-        //     {
-        //        // Habilitar los tb/lbl
-        //        foreach (Control c in pnlPalabra.Controls)
-        //        {
-        //            if (c is Label && !(c as Label).Text.Contains("_"))
-        //            {
-        //                Label l = (Label)c;
-        //                int posicionLetra = (int.Parse(l.Tag.ToString())) - 1;
-        //                if (l.Visible == false)
-        //                {
-        //                    l.ForeColor = cp;
-        //                    //l.Text = com.Palabra[posicionLetra].ToString();
-        //                    l.Visible = true;
-        //                }
-        //            }
-        //        }
-        //    }
-        //    else
-        //        MessageBox.Show("Se acabo che...");
-        //}
         private void habilitaPalabra(clsMensajeBase m)
         {
             clsMensajeJuego msj = (clsMensajeJuego)m;
@@ -297,7 +241,7 @@ namespace JuegoAhorcado
                     }));
             }
         }
-        private void fallaPalabra(clsMensajeBase msj)
+        private void fallaPalabra()
         {
             pintarTodo();
         }

@@ -110,6 +110,7 @@ namespace ServidorJA
 
 
         }
+                                                      
         public int GenerateRandom(int min, int max)
         {
             int seed = Convert.ToInt32(Regex.Match(Guid.NewGuid().ToString(), @"\d+").Value);
@@ -149,7 +150,7 @@ namespace ServidorJA
                 }
             }
         }//genera  una nueva palabra para palabraArray y vuelve las chances perdidas por los jugadores  a cero
-        int BuscaIndiceJugador(String nombre)
+       public int BuscaIndiceJugador(String nombre)
         {
             int indice = 0;
             int tamañoLista = Jugadores.Count;
@@ -170,6 +171,11 @@ namespace ServidorJA
                 return indice;
             }
         }
+
+       public bool ganador(string nombre)
+       {
+           //CONTROLAR GANADOR Y GANADOR POR PALABRA COMPLETA
+       }
         public clsMensajeJuego enviaLetra(string nick, string l)
         {
             clsMensajeJuego msjRetorno = new clsMensajeJuego();

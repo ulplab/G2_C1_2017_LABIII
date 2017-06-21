@@ -50,19 +50,35 @@ namespace ServidorJA
             {
                 case "PROBAR_LETRA":
                     mensaje = juego.enviaLetra(nombre, mensaje.LetraPalabra);
+                    controlaFallo(mensaje, nombre);
+
                     break;
                 case "PROBAR_PALABRA":
                     mensaje = juego.enviaPalabra(nombre, mensaje.LetraPalabra);
+                    controlaFallo(mensaje, nombre);
                     break;
             }
-            if (mensaje.Retorno.Equals("FALLO"))
+        }
+
+        private void controlaFallo(clsMensajeJuego mensaje, String nombre)
+        {
+            if (juego.Jugadores.ElementAt(juego.BuscaIndiceJugador(nombre)).FueraDeJuego)
             {
-                EnviarAUno(nombre, mensaje);
+                clsMensajePerdedor msjPerdedor = new clsMensajePerdedor();
+                EnviarAUno(nombre, msjPerdedor);
             }
             else
             {
-                EnviarATodos(mensaje);
+                if (mensaje.Retorno.Equals("FALLO"))
+                {
+                    EnviarAUno(nombre, mensaje);
+                }
+                else
+                {
+                    EnviarATodos(mensaje);
+                }
             }
+       
         }
         public void EnviarAUno(string nombre,clsMensajeBase mensaje)
         {

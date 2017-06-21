@@ -11,7 +11,6 @@ namespace ClasesComunicacion
         String letraPalabra;
         List<int> posicionLetra;
         String palabraAhorcado;
-        String puntaje;
 
 
         public String LetraPalabra
@@ -41,18 +40,6 @@ namespace ClasesComunicacion
             set
             {
                 palabraAhorcado = value;
-            }
-        }
-        public String Puntaje
-        {
-            get
-            {
-                return puntaje;
-            }
-
-            set
-            {
-                puntaje = value;
             }
         }
         public clsMensajeJuego()

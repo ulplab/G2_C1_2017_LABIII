@@ -12,7 +12,8 @@ using ClasesComunicacion;
 namespace JuegoAhorcado
 {
     public delegate void enviar(string Json);
-    public delegate void enviaFrmJuego(clsMensajeBase msj);
+    public delegate void enviaFrmJuegoAcerto(clsMensajeBase msj);
+    public delegate void enviaFrmJuegoFallo();
     public delegate void comienzo(clsMensajeBase msj);
 
 
@@ -39,24 +40,36 @@ namespace JuegoAhorcado
         static private StreamWriter streamw;
         static private StreamReader streamr;
         public event comienzo start;
-        public event enviaFrmJuego acertoLetra;
-        public event enviaFrmJuego falloLetra;
-        public event enviaFrmJuego acertoPalabra;
-        public event enviaFrmJuego falloPalabra;
+        public event enviaFrmJuegoAcerto acertoLetra;
+        public event enviaFrmJuegoFallo falloLetra;
+        public event enviaFrmJuegoAcerto acertoPalabra;
+        public event enviaFrmJuegoFallo falloPalabra;
         public void leer()
         {
             while (true)
             {
                 string aux = streamr.ReadLine();
-                mensaje = serializador.recibirMensaje(aux);  //pto de corte sab 17
-                if (mensaje.Retorno != "FALLO" && mensaje.Accion =="PROBAR_LETRA")
-                    acertoLetra(mensaje);
-                else if (mensaje.Retorno == "FALLO" && mensaje.Accion == "PROBAR_LETRA")
-                    falloLetra(mensaje);
-                if (mensaje.Retorno != "FALLO" && mensaje.Accion == "PROBAR_PALABRA")
-                    acertoPalabra(mensaje);
-                else if (mensaje.Retorno == "FALLO" && mensaje.Accion == "PROBAR_PALABRA")
-                    falloPalabra(mensaje);
+                mensaje = serializador.recibirMensaje(aux);  
+                switch(mensaje.Tipo)
+                {
+                    case "MENSAJE_JUEGO":
+                        {
+                            clsMensajeJuego mensajeJuego=(clsMensajeJuego)mensaje;
+                            if (mensaje.Retorno != "FALLO" && mensaje.Accion == "PROBAR_LETRA")
+                            acertoLetra(mensaje);
+                            else if (mensaje.Retorno == "FALLO" && mensaje.Accion == "PROBAR_LETRA")
+                            falloLetra();
+                            if (mensaje.Retorno != "FALLO" && mensaje.Accion == "PROBAR_PALABRA")
+                            acertoPalabra(mensaje);
+                            else if (mensaje.Retorno == "FALLO" && mensaje.Accion == "PROBAR_PALABRA")
+                            falloPalabra();
+                        }break;
+
+                    case "MENSAJE_PERDEDOR":
+                        {
+                            falloPalabra();
+                        }break;
+                }
             }
         }            
         public void Iniciar()
