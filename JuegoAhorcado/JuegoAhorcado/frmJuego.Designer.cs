@@ -28,23 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmJuego));
             System.Windows.Forms.ColumnHeader columnHeader1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmJuego));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pbPiernaDerPintada = new System.Windows.Forms.PictureBox();
-            this.pbBrazoDerPintado = new System.Windows.Forms.PictureBox();
-            this.pbPiernaIzqPintada = new System.Windows.Forms.PictureBox();
-            this.pbBrazoIzqPintado = new System.Windows.Forms.PictureBox();
-            this.pbCabezaPintada = new System.Windows.Forms.PictureBox();
-            this.pbPiernaDer = new System.Windows.Forms.PictureBox();
-            this.pbBrazoDer = new System.Windows.Forms.PictureBox();
-            this.pbPiernaIzq = new System.Windows.Forms.PictureBox();
-            this.pbBrazoIzq = new System.Windows.Forms.PictureBox();
-            this.pbCabeza = new System.Windows.Forms.PictureBox();
+            this.pnlHorca = new System.Windows.Forms.Panel();
+            this.pnlCabeza = new System.Windows.Forms.Panel();
+            this.pnlCuerpo = new System.Windows.Forms.Panel();
+            this.pnlBrazo02 = new System.Windows.Forms.Panel();
+            this.pnlBrazo01 = new System.Windows.Forms.Panel();
+            this.pnlCaja = new System.Windows.Forms.Panel();
+            this.pnlPie01 = new System.Windows.Forms.Panel();
+            this.pnlPie02 = new System.Windows.Forms.Panel();
+            this.pnlContainerAhorcado = new System.Windows.Forms.Panel();
+            this.pbCabezaViva = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lvJugadores = new System.Windows.Forms.ListView();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tbPalabra = new System.Windows.Forms.TextBox();
             this.tbLetra = new System.Windows.Forms.TextBox();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.btnArriesgar = new System.Windows.Forms.Button();
             this.btnLetra = new System.Windows.Forms.Button();
             this.pnlPalabra = new System.Windows.Forms.Panel();
@@ -76,158 +78,201 @@
             this.lb2 = new System.Windows.Forms.Label();
             this.lb1 = new System.Windows.Forms.Label();
             this.lb0 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.lbTime = new System.Windows.Forms.Label();
+            this.pnlContainerPalabra = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.lvJugadores = new System.Windows.Forms.ListView();
             columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPiernaDerPintada)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBrazoDerPintado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPiernaIzqPintada)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBrazoIzqPintado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCabezaPintada)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPiernaDer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBrazoDer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPiernaIzq)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBrazoIzq)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCabeza)).BeginInit();
+            this.pnlHorca.SuspendLayout();
+            this.pnlCabeza.SuspendLayout();
+            this.pnlCuerpo.SuspendLayout();
+            this.pnlBrazo02.SuspendLayout();
+            this.pnlBrazo01.SuspendLayout();
+            this.pnlPie01.SuspendLayout();
+            this.pnlContainerAhorcado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCabezaViva)).BeginInit();
+            this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.pnlPalabra.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlContainerPalabra.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Jugadores";
+            columnHeader1.Width = 120;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.pbPiernaDerPintada);
-            this.panel2.Controls.Add(this.pbBrazoDerPintado);
-            this.panel2.Controls.Add(this.pbPiernaIzqPintada);
-            this.panel2.Controls.Add(this.pbBrazoIzqPintado);
-            this.panel2.Controls.Add(this.pbCabezaPintada);
-            this.panel2.Controls.Add(this.pbPiernaDer);
-            this.panel2.Controls.Add(this.pbBrazoDer);
-            this.panel2.Controls.Add(this.pbPiernaIzq);
-            this.panel2.Controls.Add(this.pbBrazoIzq);
-            this.panel2.Controls.Add(this.pbCabeza);
-            this.panel2.Location = new System.Drawing.Point(597, 12);
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.pnlHorca);
+            this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(119, 297);
+            this.panel2.Size = new System.Drawing.Size(238, 460);
             this.panel2.TabIndex = 1;
             // 
-            // pbPiernaDerPintada
+            // pnlHorca
             // 
-            this.pbPiernaDerPintada.Image = ((System.Drawing.Image)(resources.GetObject("pbPiernaDerPintada.Image")));
-            this.pbPiernaDerPintada.Location = new System.Drawing.Point(58, 213);
-            this.pbPiernaDerPintada.Name = "pbPiernaDerPintada";
-            this.pbPiernaDerPintada.Size = new System.Drawing.Size(42, 69);
-            this.pbPiernaDerPintada.TabIndex = 15;
-            this.pbPiernaDerPintada.TabStop = false;
-            this.pbPiernaDerPintada.Visible = false;
+            this.pnlHorca.BackgroundImage = global::JuegoAhorcado.Properties.Resources.horca;
+            this.pnlHorca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlHorca.Controls.Add(this.pnlCabeza);
+            this.pnlHorca.Location = new System.Drawing.Point(3, 13);
+            this.pnlHorca.Name = "pnlHorca";
+            this.pnlHorca.Size = new System.Drawing.Size(228, 414);
+            this.pnlHorca.TabIndex = 5;
             // 
-            // pbBrazoDerPintado
+            // pnlCabeza
             // 
-            this.pbBrazoDerPintado.Image = ((System.Drawing.Image)(resources.GetObject("pbBrazoDerPintado.Image")));
-            this.pbBrazoDerPintado.Location = new System.Drawing.Point(58, 149);
-            this.pbBrazoDerPintado.Name = "pbBrazoDerPintado";
-            this.pbBrazoDerPintado.Size = new System.Drawing.Size(42, 69);
-            this.pbBrazoDerPintado.TabIndex = 14;
-            this.pbBrazoDerPintado.TabStop = false;
-            this.pbBrazoDerPintado.Visible = false;
+            this.pnlCabeza.BackgroundImage = global::JuegoAhorcado.Properties.Resources.tipo_cabeza;
+            this.pnlCabeza.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnlCabeza.Controls.Add(this.pnlCuerpo);
+            this.pnlCabeza.Location = new System.Drawing.Point(92, 126);
+            this.pnlCabeza.Name = "pnlCabeza";
+            this.pnlCabeza.Size = new System.Drawing.Size(146, 273);
+            this.pnlCabeza.TabIndex = 5;
+            this.pnlCabeza.Visible = false;
             // 
-            // pbPiernaIzqPintada
+            // pnlCuerpo
             // 
-            this.pbPiernaIzqPintada.Image = ((System.Drawing.Image)(resources.GetObject("pbPiernaIzqPintada.Image")));
-            this.pbPiernaIzqPintada.Location = new System.Drawing.Point(18, 213);
-            this.pbPiernaIzqPintada.Name = "pbPiernaIzqPintada";
-            this.pbPiernaIzqPintada.Size = new System.Drawing.Size(45, 65);
-            this.pbPiernaIzqPintada.TabIndex = 13;
-            this.pbPiernaIzqPintada.TabStop = false;
-            this.pbPiernaIzqPintada.Visible = false;
+            this.pnlCuerpo.BackgroundImage = global::JuegoAhorcado.Properties.Resources.tipo_cuerpo02;
+            this.pnlCuerpo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlCuerpo.Controls.Add(this.pnlBrazo02);
+            this.pnlCuerpo.Location = new System.Drawing.Point(-8, 38);
+            this.pnlCuerpo.Name = "pnlCuerpo";
+            this.pnlCuerpo.Size = new System.Drawing.Size(177, 230);
+            this.pnlCuerpo.TabIndex = 4;
+            this.pnlCuerpo.Visible = false;
             // 
-            // pbBrazoIzqPintado
+            // pnlBrazo02
             // 
-            this.pbBrazoIzqPintado.Image = ((System.Drawing.Image)(resources.GetObject("pbBrazoIzqPintado.Image")));
-            this.pbBrazoIzqPintado.Location = new System.Drawing.Point(18, 149);
-            this.pbBrazoIzqPintado.Name = "pbBrazoIzqPintado";
-            this.pbBrazoIzqPintado.Size = new System.Drawing.Size(45, 69);
-            this.pbBrazoIzqPintado.TabIndex = 12;
-            this.pbBrazoIzqPintado.TabStop = false;
-            this.pbBrazoIzqPintado.Visible = false;
+            this.pnlBrazo02.BackgroundImage = global::JuegoAhorcado.Properties.Resources.tipo_brazo2;
+            this.pnlBrazo02.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlBrazo02.Controls.Add(this.pnlBrazo01);
+            this.pnlBrazo02.Location = new System.Drawing.Point(29, -36);
+            this.pnlBrazo02.Name = "pnlBrazo02";
+            this.pnlBrazo02.Size = new System.Drawing.Size(174, 285);
+            this.pnlBrazo02.TabIndex = 8;
+            this.pnlBrazo02.Visible = false;
             // 
-            // pbCabezaPintada
+            // pnlBrazo01
             // 
-            this.pbCabezaPintada.Image = ((System.Drawing.Image)(resources.GetObject("pbCabezaPintada.Image")));
-            this.pbCabezaPintada.Location = new System.Drawing.Point(28, -1);
-            this.pbCabezaPintada.Name = "pbCabezaPintada";
-            this.pbCabezaPintada.Size = new System.Drawing.Size(61, 156);
-            this.pbCabezaPintada.TabIndex = 11;
-            this.pbCabezaPintada.TabStop = false;
-            this.pbCabezaPintada.Visible = false;
+            this.pnlBrazo01.BackgroundImage = global::JuegoAhorcado.Properties.Resources.tipo_brazo1;
+            this.pnlBrazo01.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlBrazo01.Controls.Add(this.pnlCaja);
+            this.pnlBrazo01.Controls.Add(this.pnlPie01);
+            this.pnlBrazo01.Location = new System.Drawing.Point(-49, 8);
+            this.pnlBrazo01.Name = "pnlBrazo01";
+            this.pnlBrazo01.Size = new System.Drawing.Size(168, 270);
+            this.pnlBrazo01.TabIndex = 9;
+            this.pnlBrazo01.Visible = false;
             // 
-            // pbPiernaDer
+            // pnlCaja
             // 
-            this.pbPiernaDer.Image = ((System.Drawing.Image)(resources.GetObject("pbPiernaDer.Image")));
-            this.pbPiernaDer.Location = new System.Drawing.Point(58, 213);
-            this.pbPiernaDer.Name = "pbPiernaDer";
-            this.pbPiernaDer.Size = new System.Drawing.Size(42, 69);
-            this.pbPiernaDer.TabIndex = 10;
-            this.pbPiernaDer.TabStop = false;
+            this.pnlCaja.BackgroundImage = global::JuegoAhorcado.Properties.Resources.caja;
+            this.pnlCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlCaja.Location = new System.Drawing.Point(75, 198);
+            this.pnlCaja.Name = "pnlCaja";
+            this.pnlCaja.Size = new System.Drawing.Size(74, 60);
+            this.pnlCaja.TabIndex = 12;
             // 
-            // pbBrazoDer
+            // pnlPie01
             // 
-            this.pbBrazoDer.Image = ((System.Drawing.Image)(resources.GetObject("pbBrazoDer.Image")));
-            this.pbBrazoDer.Location = new System.Drawing.Point(58, 149);
-            this.pbBrazoDer.Name = "pbBrazoDer";
-            this.pbBrazoDer.Size = new System.Drawing.Size(42, 69);
-            this.pbBrazoDer.TabIndex = 9;
-            this.pbBrazoDer.TabStop = false;
+            this.pnlPie01.BackgroundImage = global::JuegoAhorcado.Properties.Resources.tipo_pie01;
+            this.pnlPie01.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnlPie01.Controls.Add(this.pnlPie02);
+            this.pnlPie01.Location = new System.Drawing.Point(76, 153);
+            this.pnlPie01.Name = "pnlPie01";
+            this.pnlPie01.Size = new System.Drawing.Size(86, 47);
+            this.pnlPie01.TabIndex = 10;
+            this.pnlPie01.Visible = false;
             // 
-            // pbPiernaIzq
+            // pnlPie02
             // 
-            this.pbPiernaIzq.Image = ((System.Drawing.Image)(resources.GetObject("pbPiernaIzq.Image")));
-            this.pbPiernaIzq.Location = new System.Drawing.Point(18, 213);
-            this.pbPiernaIzq.Name = "pbPiernaIzq";
-            this.pbPiernaIzq.Size = new System.Drawing.Size(45, 65);
-            this.pbPiernaIzq.TabIndex = 8;
-            this.pbPiernaIzq.TabStop = false;
+            this.pnlPie02.BackgroundImage = global::JuegoAhorcado.Properties.Resources.tipo_pie02;
+            this.pnlPie02.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnlPie02.Location = new System.Drawing.Point(35, 0);
+            this.pnlPie02.Name = "pnlPie02";
+            this.pnlPie02.Size = new System.Drawing.Size(38, 49);
+            this.pnlPie02.TabIndex = 8;
+            this.pnlPie02.Visible = false;
             // 
-            // pbBrazoIzq
+            // pnlContainerAhorcado
             // 
-            this.pbBrazoIzq.Image = ((System.Drawing.Image)(resources.GetObject("pbBrazoIzq.Image")));
-            this.pbBrazoIzq.Location = new System.Drawing.Point(18, 149);
-            this.pbBrazoIzq.Name = "pbBrazoIzq";
-            this.pbBrazoIzq.Size = new System.Drawing.Size(45, 69);
-            this.pbBrazoIzq.TabIndex = 6;
-            this.pbBrazoIzq.TabStop = false;
+            this.pnlContainerAhorcado.BackColor = System.Drawing.Color.Transparent;
+            this.pnlContainerAhorcado.Controls.Add(this.panel2);
+            this.pnlContainerAhorcado.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlContainerAhorcado.Location = new System.Drawing.Point(0, 0);
+            this.pnlContainerAhorcado.Name = "pnlContainerAhorcado";
+            this.pnlContainerAhorcado.Size = new System.Drawing.Size(268, 489);
+            this.pnlContainerAhorcado.TabIndex = 6;
             // 
-            // pbCabeza
+            // pbCabezaViva
             // 
-            this.pbCabeza.Image = ((System.Drawing.Image)(resources.GetObject("pbCabeza.Image")));
-            this.pbCabeza.Location = new System.Drawing.Point(28, -1);
-            this.pbCabeza.Name = "pbCabeza";
-            this.pbCabeza.Size = new System.Drawing.Size(61, 156);
-            this.pbCabeza.TabIndex = 5;
-            this.pbCabeza.TabStop = false;
+            this.pbCabezaViva.BackColor = System.Drawing.Color.Transparent;
+            this.pbCabezaViva.BackgroundImage = global::JuegoAhorcado.Properties.Resources.tipo_cabezaMuerte;
+            this.pbCabezaViva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbCabezaViva.InitialImage = null;
+            this.pbCabezaViva.Location = new System.Drawing.Point(-1, 20);
+            this.pbCabezaViva.Name = "pbCabezaViva";
+            this.pbCabezaViva.Size = new System.Drawing.Size(137, 133);
+            this.pbCabezaViva.TabIndex = 11;
+            this.pbCabezaViva.TabStop = false;
+            this.pbCabezaViva.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lvJugadores);
+            this.panel1.Location = new System.Drawing.Point(502, 223);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(158, 191);
+            this.panel1.TabIndex = 5;
+            // 
+            // lvJugadores
+            // 
+            this.lvJugadores.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.lvJugadores.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            columnHeader1});
+            this.lvJugadores.Font = new System.Drawing.Font("MineCrafter 3", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvJugadores.ForeColor = System.Drawing.SystemColors.Window;
+            this.lvJugadores.Location = new System.Drawing.Point(18, 16);
+            this.lvJugadores.Name = "lvJugadores";
+            this.lvJugadores.Scrollable = false;
+            this.lvJugadores.Size = new System.Drawing.Size(121, 162);
+            this.lvJugadores.TabIndex = 4;
+            this.lvJugadores.UseCompatibleStateImageBehavior = false;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.FlatAppearance.CheckedBackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("MineCrafter 3", 12F);
+            this.btnSalir.Location = new System.Drawing.Point(514, 425);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(128, 28);
+            this.btnSalir.TabIndex = 2;
+            this.btnSalir.Text = "SALIR";
+            this.btnSalir.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.tbPalabra);
             this.panel4.Controls.Add(this.tbLetra);
-            this.panel4.Controls.Add(this.btnSalir);
             this.panel4.Controls.Add(this.btnArriesgar);
             this.panel4.Controls.Add(this.btnLetra);
-            this.panel4.Location = new System.Drawing.Point(12, 137);
+            this.panel4.Location = new System.Drawing.Point(33, 223);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(425, 172);
+            this.panel4.Size = new System.Drawing.Size(453, 191);
             this.panel4.TabIndex = 1;
             // 
             // tbPalabra
             // 
-            this.tbPalabra.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPalabra.Location = new System.Drawing.Point(119, 13);
+            this.tbPalabra.Font = new System.Drawing.Font("MineCrafter 3", 18F);
+            this.tbPalabra.Location = new System.Drawing.Point(138, 16);
             this.tbPalabra.MaxLength = 14;
             this.tbPalabra.Multiline = true;
             this.tbPalabra.Name = "tbPalabra";
@@ -237,8 +282,8 @@
             // 
             // tbLetra
             // 
-            this.tbLetra.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLetra.Location = new System.Drawing.Point(18, 13);
+            this.tbLetra.Font = new System.Drawing.Font("MineCrafter 3", 48F);
+            this.tbLetra.Location = new System.Drawing.Point(18, 16);
             this.tbLetra.MaxLength = 1;
             this.tbLetra.Multiline = true;
             this.tbLetra.Name = "tbLetra";
@@ -246,20 +291,16 @@
             this.tbLetra.TabIndex = 3;
             this.tbLetra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(284, 109);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(128, 52);
-            this.btnSalir.TabIndex = 2;
-            this.btnSalir.Text = "SALIR";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            // 
             // btnArriesgar
             // 
-            this.btnArriesgar.Location = new System.Drawing.Point(119, 109);
+            this.btnArriesgar.FlatAppearance.CheckedBackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnArriesgar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnArriesgar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnArriesgar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnArriesgar.Font = new System.Drawing.Font("MineCrafter 3", 12F);
+            this.btnArriesgar.Location = new System.Drawing.Point(138, 112);
             this.btnArriesgar.Name = "btnArriesgar";
-            this.btnArriesgar.Size = new System.Drawing.Size(128, 52);
+            this.btnArriesgar.Size = new System.Drawing.Size(169, 28);
             this.btnArriesgar.TabIndex = 1;
             this.btnArriesgar.Text = "ARRIESGAR";
             this.btnArriesgar.UseVisualStyleBackColor = true;
@@ -267,16 +308,22 @@
             // 
             // btnLetra
             // 
-            this.btnLetra.Location = new System.Drawing.Point(18, 109);
+            this.btnLetra.FlatAppearance.CheckedBackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnLetra.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnLetra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnLetra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLetra.Font = new System.Drawing.Font("MineCrafter 3", 12F);
+            this.btnLetra.Location = new System.Drawing.Point(18, 112);
             this.btnLetra.Name = "btnLetra";
-            this.btnLetra.Size = new System.Drawing.Size(95, 52);
+            this.btnLetra.Size = new System.Drawing.Size(95, 28);
             this.btnLetra.TabIndex = 0;
-            this.btnLetra.Text = "PRUEBA LETRA";
+            this.btnLetra.Text = "LETRA";
             this.btnLetra.UseVisualStyleBackColor = true;
             this.btnLetra.Click += new System.EventHandler(this.btnLetra_Click);
             // 
             // pnlPalabra
             // 
+            this.pnlPalabra.BackColor = System.Drawing.Color.Transparent;
             this.pnlPalabra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlPalabra.Controls.Add(this.lblGuion13);
             this.pnlPalabra.Controls.Add(this.lb13);
@@ -306,9 +353,9 @@
             this.pnlPalabra.Controls.Add(this.lb2);
             this.pnlPalabra.Controls.Add(this.lb1);
             this.pnlPalabra.Controls.Add(this.lb0);
-            this.pnlPalabra.Location = new System.Drawing.Point(12, 12);
+            this.pnlPalabra.Location = new System.Drawing.Point(57, 54);
             this.pnlPalabra.Name = "pnlPalabra";
-            this.pnlPalabra.Size = new System.Drawing.Size(579, 119);
+            this.pnlPalabra.Size = new System.Drawing.Size(579, 140);
             this.pnlPalabra.TabIndex = 1;
             // 
             // lblGuion13
@@ -324,7 +371,7 @@
             // 
             // lb13
             // 
-            this.lb13.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb13.Font = new System.Drawing.Font("MineCrafter 3", 18F);
             this.lb13.Location = new System.Drawing.Point(531, 31);
             this.lb13.Name = "lb13";
             this.lb13.Size = new System.Drawing.Size(41, 50);
@@ -345,7 +392,7 @@
             // 
             // lb12
             // 
-            this.lb12.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb12.Font = new System.Drawing.Font("MineCrafter 3", 18F);
             this.lb12.Location = new System.Drawing.Point(494, 31);
             this.lb12.Name = "lb12";
             this.lb12.Size = new System.Drawing.Size(41, 50);
@@ -366,7 +413,7 @@
             // 
             // lb11
             // 
-            this.lb11.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb11.Font = new System.Drawing.Font("MineCrafter 3", 18F);
             this.lb11.Location = new System.Drawing.Point(458, 31);
             this.lb11.Name = "lb11";
             this.lb11.Size = new System.Drawing.Size(41, 50);
@@ -387,7 +434,7 @@
             // 
             // lb10
             // 
-            this.lb10.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb10.Font = new System.Drawing.Font("MineCrafter 3", 18F);
             this.lb10.Location = new System.Drawing.Point(421, 31);
             this.lb10.Name = "lb10";
             this.lb10.Size = new System.Drawing.Size(41, 50);
@@ -507,7 +554,7 @@
             // 
             // lb9
             // 
-            this.lb9.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb9.Font = new System.Drawing.Font("MineCrafter 3", 18F);
             this.lb9.Location = new System.Drawing.Point(383, 31);
             this.lb9.Name = "lb9";
             this.lb9.Size = new System.Drawing.Size(41, 50);
@@ -517,7 +564,7 @@
             // 
             // lb8
             // 
-            this.lb8.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb8.Font = new System.Drawing.Font("MineCrafter 3", 18F);
             this.lb8.Location = new System.Drawing.Point(341, 31);
             this.lb8.Name = "lb8";
             this.lb8.Size = new System.Drawing.Size(41, 50);
@@ -527,7 +574,7 @@
             // 
             // lb7
             // 
-            this.lb7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb7.Font = new System.Drawing.Font("MineCrafter 3", 18F);
             this.lb7.Location = new System.Drawing.Point(299, 31);
             this.lb7.Name = "lb7";
             this.lb7.Size = new System.Drawing.Size(41, 50);
@@ -537,7 +584,7 @@
             // 
             // lb6
             // 
-            this.lb6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb6.Font = new System.Drawing.Font("MineCrafter 3", 18F);
             this.lb6.Location = new System.Drawing.Point(257, 31);
             this.lb6.Name = "lb6";
             this.lb6.Size = new System.Drawing.Size(41, 50);
@@ -547,7 +594,7 @@
             // 
             // lb5
             // 
-            this.lb5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb5.Font = new System.Drawing.Font("MineCrafter 3", 18F);
             this.lb5.Location = new System.Drawing.Point(215, 31);
             this.lb5.Name = "lb5";
             this.lb5.Size = new System.Drawing.Size(41, 50);
@@ -557,7 +604,7 @@
             // 
             // lb4
             // 
-            this.lb4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb4.Font = new System.Drawing.Font("MineCrafter 3", 18F);
             this.lb4.Location = new System.Drawing.Point(173, 31);
             this.lb4.Name = "lb4";
             this.lb4.Size = new System.Drawing.Size(41, 50);
@@ -567,7 +614,7 @@
             // 
             // lb3
             // 
-            this.lb3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb3.Font = new System.Drawing.Font("MineCrafter 3", 18F);
             this.lb3.Location = new System.Drawing.Point(131, 31);
             this.lb3.Name = "lb3";
             this.lb3.Size = new System.Drawing.Size(41, 50);
@@ -577,7 +624,7 @@
             // 
             // lb2
             // 
-            this.lb2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb2.Font = new System.Drawing.Font("MineCrafter 3", 18F);
             this.lb2.Location = new System.Drawing.Point(89, 31);
             this.lb2.Name = "lb2";
             this.lb2.Size = new System.Drawing.Size(41, 50);
@@ -587,7 +634,7 @@
             // 
             // lb1
             // 
-            this.lb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb1.Font = new System.Drawing.Font("MineCrafter 3", 18F);
             this.lb1.Location = new System.Drawing.Point(47, 31);
             this.lb1.Name = "lb1";
             this.lb1.Size = new System.Drawing.Size(41, 50);
@@ -597,7 +644,7 @@
             // 
             // lb0
             // 
-            this.lb0.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb0.Font = new System.Drawing.Font("MineCrafter 3", 18F);
             this.lb0.Location = new System.Drawing.Point(5, 31);
             this.lb0.Name = "lb0";
             this.lb0.Size = new System.Drawing.Size(41, 50);
@@ -605,79 +652,71 @@
             this.lb0.Tag = "";
             this.lb0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.lvJugadores);
-            this.panel1.Controls.Add(this.lbTime);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(443, 137);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(148, 172);
-            this.panel1.TabIndex = 5;
-            // 
             // lbTime
             // 
-            this.lbTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbTime.Location = new System.Drawing.Point(45, 6);
+            this.lbTime.Font = new System.Drawing.Font("MineCrafter 3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.ForeColor = System.Drawing.Color.Red;
+            this.lbTime.Location = new System.Drawing.Point(524, 6);
             this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(96, 24);
-            this.lbTime.TabIndex = 2;
+            this.lbTime.Size = new System.Drawing.Size(69, 42);
+            this.lbTime.TabIndex = 7;
             this.lbTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlContainerPalabra
+            // 
+            this.pnlContainerPalabra.BackColor = System.Drawing.Color.Transparent;
+            this.pnlContainerPalabra.Controls.Add(this.label1);
+            this.pnlContainerPalabra.Controls.Add(this.lbTime);
+            this.pnlContainerPalabra.Controls.Add(this.pnlPalabra);
+            this.pnlContainerPalabra.Controls.Add(this.panel4);
+            this.pnlContainerPalabra.Controls.Add(this.btnSalir);
+            this.pnlContainerPalabra.Controls.Add(this.panel1);
+            this.pnlContainerPalabra.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContainerPalabra.Location = new System.Drawing.Point(268, 0);
+            this.pnlContainerPalabra.Name = "pnlContainerPalabra";
+            this.pnlContainerPalabra.Size = new System.Drawing.Size(693, 489);
+            this.pnlContainerPalabra.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 12);
+            this.label1.Font = new System.Drawing.Font("MineCrafter 3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(52, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Tiempo";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lvJugadores
-            // 
-            this.lvJugadores.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            columnHeader1});
-            this.lvJugadores.Location = new System.Drawing.Point(6, 33);
-            this.lvJugadores.Name = "lvJugadores";
-            this.lvJugadores.Size = new System.Drawing.Size(121, 120);
-            this.lvJugadores.TabIndex = 3;
-            this.lvJugadores.UseCompatibleStateImageBehavior = false;
-            // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "Jugadores";
-            columnHeader1.Width = 80;
+            this.label1.Size = new System.Drawing.Size(459, 31);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "APURATE QUE EL TIEMPO SE AGOTA";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // frmJuego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 316);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pnlPalabra);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel2);
+            this.BackgroundImage = global::JuegoAhorcado.Properties.Resources._2dgame;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(961, 489);
+            this.Controls.Add(this.pnlContainerPalabra);
+            this.Controls.Add(this.pnlContainerAhorcado);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmJuego";
             this.Text = "JUEGO AHORCADO(PLAYER 1)";
             this.Load += new System.EventHandler(this.frmJuego_Load);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbPiernaDerPintada)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBrazoDerPintado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPiernaIzqPintada)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBrazoIzqPintado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCabezaPintada)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPiernaDer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBrazoDer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPiernaIzq)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBrazoIzq)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCabeza)).EndInit();
+            this.pnlHorca.ResumeLayout(false);
+            this.pnlCabeza.ResumeLayout(false);
+            this.pnlCuerpo.ResumeLayout(false);
+            this.pnlBrazo02.ResumeLayout(false);
+            this.pnlBrazo01.ResumeLayout(false);
+            this.pnlPie01.ResumeLayout(false);
+            this.pnlContainerAhorcado.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbCabezaViva)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.pnlPalabra.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlContainerPalabra.ResumeLayout(false);
+            this.pnlContainerPalabra.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -685,23 +724,32 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlContainerAhorcado;
+        private System.Windows.Forms.PictureBox pbCabezaViva;
+        private System.Windows.Forms.Panel pnlHorca;
+        private System.Windows.Forms.Panel pnlCabeza;
+        private System.Windows.Forms.Panel pnlCuerpo;
+        private System.Windows.Forms.Panel pnlBrazo02;
+        private System.Windows.Forms.Panel pnlBrazo01;
+        private System.Windows.Forms.Panel pnlPie01;
+        private System.Windows.Forms.Panel pnlPie02;
+        private System.Windows.Forms.Panel pnlCaja;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox tbPalabra;
         private System.Windows.Forms.TextBox tbLetra;
-        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnArriesgar;
         private System.Windows.Forms.Button btnLetra;
         private System.Windows.Forms.Panel pnlPalabra;
-        private System.Windows.Forms.Label lb9;
-        private System.Windows.Forms.Label lb8;
-        private System.Windows.Forms.Label lb7;
-        private System.Windows.Forms.Label lb6;
-        private System.Windows.Forms.Label lb5;
-        private System.Windows.Forms.Label lb4;
-        private System.Windows.Forms.Label lb3;
-        private System.Windows.Forms.Label lb2;
-        private System.Windows.Forms.Label lb1;
-        private System.Windows.Forms.Label lb0;
+        private System.Windows.Forms.Label lblGuion13;
+        private System.Windows.Forms.Label lb13;
+        private System.Windows.Forms.Label lblGuion12;
+        private System.Windows.Forms.Label lb12;
+        private System.Windows.Forms.Label lblGuion11;
+        private System.Windows.Forms.Label lb11;
+        private System.Windows.Forms.Label lblGuion10;
+        private System.Windows.Forms.Label lb10;
         private System.Windows.Forms.Label lblGuion9;
         private System.Windows.Forms.Label lblGuion8;
         private System.Windows.Forms.Label lblGuion7;
@@ -712,27 +760,19 @@
         private System.Windows.Forms.Label lblGuion2;
         private System.Windows.Forms.Label lblGuion1;
         private System.Windows.Forms.Label lblGuion0;
-        private System.Windows.Forms.PictureBox pbPiernaDer;
-        private System.Windows.Forms.PictureBox pbBrazoDer;
-        private System.Windows.Forms.PictureBox pbPiernaIzq;
-        private System.Windows.Forms.PictureBox pbBrazoIzq;
-        private System.Windows.Forms.PictureBox pbCabeza;
-        private System.Windows.Forms.PictureBox pbPiernaDerPintada;
-        private System.Windows.Forms.PictureBox pbBrazoDerPintado;
-        private System.Windows.Forms.PictureBox pbPiernaIzqPintada;
-        private System.Windows.Forms.PictureBox pbBrazoIzqPintado;
-        private System.Windows.Forms.PictureBox pbCabezaPintada;
-        private System.Windows.Forms.Label lblGuion13;
-        private System.Windows.Forms.Label lb13;
-        private System.Windows.Forms.Label lblGuion12;
-        private System.Windows.Forms.Label lb12;
-        private System.Windows.Forms.Label lblGuion11;
-        private System.Windows.Forms.Label lb11;
-        private System.Windows.Forms.Label lblGuion10;
-        private System.Windows.Forms.Label lb10;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lb9;
+        private System.Windows.Forms.Label lb8;
+        private System.Windows.Forms.Label lb7;
+        private System.Windows.Forms.Label lb6;
+        private System.Windows.Forms.Label lb5;
+        private System.Windows.Forms.Label lb4;
+        private System.Windows.Forms.Label lb3;
+        private System.Windows.Forms.Label lb2;
+        private System.Windows.Forms.Label lb1;
+        private System.Windows.Forms.Label lb0;
         private System.Windows.Forms.Label lbTime;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnlContainerPalabra;
         private System.Windows.Forms.ListView lvJugadores;
+        private System.Windows.Forms.Label label1;
     }
 }

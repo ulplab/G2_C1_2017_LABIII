@@ -52,24 +52,24 @@ namespace JuegoAhorcado
             {
                 string aux = streamr.ReadLine();
                 mensaje = serializador.recibirMensaje(aux);
-                switch(mensaje.Tipo)
+                switch (mensaje.Tipo)
                 {
                     case "MENSAJE_JUEGO":
                         {
-                            clsMensajeJuego mensajeJuego=(clsMensajeJuego)mensaje;
+                            clsMensajeJuego mensajeJuego = (clsMensajeJuego)mensaje;
                             if (mensaje.Retorno != "FALLO" && mensaje.Accion == "PROBAR_LETRA")
-                            acertoLetra(mensajeJuego);
+                                acertoLetra(mensajeJuego);
                             else if (mensaje.Retorno == "FALLO" && mensaje.Accion == "PROBAR_LETRA")
-                            falloLetra();
-                      
+                                falloLetra();
+
                             else if (mensaje.Retorno == "FALLO" && mensaje.Accion == "PROBAR_PALABRA")
-                            falloPalabra();
-                        }break;
+                                falloPalabra();
+                        } break;
 
                     case "MENSAJE_PERDEDOR":
                         {
                             falloPalabra();
-                        }break;
+                        } break;
                     case "MENSAJE_GANADOR":
                         {
                             clsMensajeGanador mensajeGanador = (clsMensajeGanador)mensaje;
@@ -84,7 +84,7 @@ namespace JuegoAhorcado
                         } break;
                 }
             }
-        }            
+        }
         public void Iniciar()
         {
             try
@@ -96,7 +96,7 @@ namespace JuegoAhorcado
                 streamr = new StreamReader(stream);
                 clsMensajeBase msjNick = new clsMensajeBase();
                 msjNick.Nick = nick;
-                streamw.WriteLine(serializador.enviarMensaje(msjNick)); 
+                streamw.WriteLine(serializador.enviarMensaje(msjNick));
                 streamw.Flush();
 
 
@@ -108,7 +108,7 @@ namespace JuegoAhorcado
             }
             catch (SocketException ex)
             {
-                Console.WriteLine(ex+"Client Disconnected.");
+                Console.WriteLine(ex + "Client Disconnected.");
             }
         }
         public void DataIn()

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClasesComunicacion
 {
-    public class clsMensajeGanador:clsMensajeBase
+    public class clsMensajeGanador : clsMensajeBase
     {
         List<clsJugador> listaJugadores = new List<clsJugador>();
         int indice_ganador;

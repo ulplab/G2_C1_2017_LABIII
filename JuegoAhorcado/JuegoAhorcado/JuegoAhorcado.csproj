@@ -72,17 +72,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -97,6 +98,19 @@
       <Project>{db5f535f-72fe-4855-8524-7a6c8d943708}</Project>
       <Name>ClasesComunicacion</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\2dgame.jpg" />
+    <None Include="Resources\tipo-cabezaMuerte.png" />
+    <None Include="Resources\tipo-pie02.png" />
+    <None Include="Resources\tipo-pie01.png" />
+    <None Include="Resources\tipo-cuerpo02.png" />
+    <None Include="Resources\tipo-brazo2.png" />
+    <None Include="Resources\caja.png" />
+    <None Include="Resources\tipo-brazo1.png" />
+    <None Include="Resources\horca.png" />
+    <None Include="Resources\tipo-cabeza.png" />
+    <None Include="Resources\portada.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

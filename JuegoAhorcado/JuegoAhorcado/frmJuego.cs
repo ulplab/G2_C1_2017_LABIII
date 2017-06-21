@@ -12,7 +12,7 @@ using ClasesComunicacion;
 namespace JuegoAhorcado
 {
     public partial class frmJuego : Form
-    {      
+    {
         clsCliente cliente;
         String nick;
         clsMensajeJuego msjJuego;
@@ -23,7 +23,7 @@ namespace JuegoAhorcado
         public frmJuego(clsCliente cliente,String nick,clsMensajeBase msjBase)
         {
             InitializeComponent();
-            this.nick=nick;
+            this.nick = nick;
             this.cliente = cliente;
             ///this.msjJuego = (clsMensajeJuego)msjBase;
             msjPartida = (clsMensajePartida)msjBase;
@@ -35,7 +35,6 @@ namespace JuegoAhorcado
             cliente.timeForm += tiempo;
             palabra = cliente.Mensaje.PalabraAhorcado;
             Char[] palabraIndice = palabra.ToCharArray();
-           
         }
 
         private void start(clsMensajePartida msjPartida)
@@ -52,6 +51,8 @@ namespace JuegoAhorcado
                     }
                 }
             }
+
+
         }
         private void btnArriesgar_Click(object sender, EventArgs e)
         {
@@ -80,8 +81,6 @@ namespace JuegoAhorcado
         }
         private void habilitaLetra(clsMensajeBase m) 
         {
-
-
             clsMensajeJuego msj = (clsMensajeJuego)m;
             List<int> posiciones = msj.PosicionLetra;
             for(int i=0;i<posiciones.Count;i++)
@@ -164,88 +163,138 @@ namespace JuegoAhorcado
             MessageBox.Show("FALLASTE, TENE CUIDADO QUE LA SOGA APRETA");
             pintarUna();
         }
+
+        //private void habilitaLetra( string pal)
+        //{
+        //    for (int i = 0; i <= pal.Length - 1; i++)
+        //    {
+
+        //        if (pal[i].ToString().Equals(pal))
+        //        {
+
+        //            foreach (Control c in pnlPalabra.Controls)
+        //            {
+        //                if (c is Label && !(c as Label).Text.Contains("_") && (c as Label).Name.Equals("lb" + i.ToString()))
+        //                {
+
+        //                    Label l = (Label)c;
+        //                    if (l.Visible == false) 
+        //                    {
+        //                        this.Invoke(new Action(() =>
+        //                        {
+        //                            l.Text = pal;
+        //                            l.Visible = true;
+        //                        }));
+        //                        //  l.ForeColor = p.Color;
+                                
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }
+            
+        //}
+        //private void habilitaPalabra(Color cp)
+        //{
+        //    if (cp != Color.Transparent)
+        //     {
+        //        // Habilitar los tb/lbl
+        //        foreach (Control c in pnlPalabra.Controls)
+        //        {
+        //            if (c is Label && !(c as Label).Text.Contains("_"))
+        //            {
+        //                Label l = (Label)c;
+        //                int posicionLetra = (int.Parse(l.Tag.ToString())) - 1;
+        //                if (l.Visible == false)
+        //                {
+        //                    l.ForeColor = cp;
+        //                    //l.Text = com.Palabra[posicionLetra].ToString();
+        //                    l.Visible = true;
+        //                }
+        //            }
+        //        }
+        //    }
+        //    else
+        //        MessageBox.Show("Se acabo che...");
+        //}
         private void habilitaPalabra(clsMensajeBase m)
         {
-            
-                        ganador = (clsMensajeGanador)m;
-                        int cant = ganador.PalabraAhorcado.Length;
-                        for (int i = 0; i < cant; i++)
-                        {
-                            if (i == 0)
-                                this.Invoke(new Action(() =>
-                                {
-                                    lb0.Text = ganador.PalabraAhorcado[i].ToString();
-                                }));
-                            else if (i == 1)
-                                this.Invoke(new Action(() =>
-                                {
-                                    lb1.Text = ganador.PalabraAhorcado[i].ToString();
-                                }));
-                            else if (i == 2)
-                                this.Invoke(new Action(() =>
-                                {
-                                    lb2.Text = ganador.PalabraAhorcado[i].ToString();
-                                }));
-                            else if (i == 3)
-                                this.Invoke(new Action(() =>
-                                {
-                                    lb3.Text = ganador.PalabraAhorcado[i].ToString();
-                                }));
-                            else if (i == 4)
-                                this.Invoke(new Action(() =>
-                                {
-                                    lb4.Text = ganador.PalabraAhorcado[i].ToString();
-                                }));
-                            else if (i == 5)
-                                this.Invoke(new Action(() =>
-                                {
-                                    lb5.Text = ganador.PalabraAhorcado[i].ToString();
-                                }));
-                            else if (i == 6)
-                                this.Invoke(new Action(() =>
-                                {
-                                    lb6.Text = ganador.PalabraAhorcado[i].ToString();
-                                }));
-                            else if (i == 7)
-                                this.Invoke(new Action(() =>
-                                {
-                                    lb7.Text = ganador.PalabraAhorcado[i].ToString();
-                                }));
-                            else if (i == 8)
-                                this.Invoke(new Action(() =>
-                                {
-                                    lb8.Text = ganador.PalabraAhorcado[i].ToString();
-                                }));
-                            else if (i == 9)
-                                this.Invoke(new Action(() =>
-                                {
-                                    lb9.Text = ganador.PalabraAhorcado[i].ToString();
-                                }));
-                            else if (i == 10)
-                                this.Invoke(new Action(() =>
-                                {
-                                    lb10.Text = ganador.PalabraAhorcado[i].ToString();
-                                }));
-                            else if (i == 11)
-                                this.Invoke(new Action(() =>
-                                {
-                                    lb11.Text = ganador.PalabraAhorcado[i].ToString();
-                                }));
-                            else if (i == 12)
-                                this.Invoke(new Action(() =>
-                                {
-                                    lb12.Text = ganador.PalabraAhorcado[i].ToString();
-                                }));
-                            else if (i == 13)
-                                this.Invoke(new Action(() =>
-                                {
-                                    lb13.Text = ganador.PalabraAhorcado[i].ToString();
-                                }));
-                        }
-
-                        MessageBox.Show("GANADOR:" + ganador.ListaJugadores[ganador.Indice_ganador].Nick);
-            
-            
+            clsMensajeJuego msj = (clsMensajeJuego)m;
+            msj.PalabraAhorcado = palabra;
+            int cant=msj.PalabraAhorcado.Length;
+            for (int i = 0; i < cant; i++)
+            {
+                if (i == 0)
+                    this.Invoke(new Action(() =>
+                    {
+                        lb0.Text = msj.LetraPalabra[i].ToString();
+                    }));
+                else if (i == 1)
+                    this.Invoke(new Action(() =>
+                    {
+                        lb1.Text = msj.LetraPalabra[i].ToString();
+                    }));
+                else if (i == 2)
+                    this.Invoke(new Action(() =>
+                    {
+                        lb2.Text = msj.LetraPalabra[i].ToString();
+                    }));
+                else if (i == 3)
+                    this.Invoke(new Action(() =>
+                    {
+                        lb3.Text = msj.LetraPalabra[i].ToString();
+                    }));
+                else if (i == 4)
+                    this.Invoke(new Action(() =>
+                    {
+                        lb4.Text = msj.LetraPalabra[i].ToString();
+                    }));
+                else if (i == 5)
+                    this.Invoke(new Action(() =>
+                    {
+                        lb5.Text = msj.LetraPalabra[i].ToString();
+                    }));
+                else if (i == 6)
+                    this.Invoke(new Action(() =>
+                    {
+                        lb6.Text = msj.LetraPalabra[i].ToString();
+                    }));
+                else if (i == 7)
+                    this.Invoke(new Action(() =>
+                    {
+                        lb7.Text = msj.LetraPalabra[i].ToString();
+                    }));
+                else if (i == 8)
+                    this.Invoke(new Action(() =>
+                    {
+                        lb8.Text = msj.LetraPalabra[i].ToString();
+                    }));
+                else if (i == 9)
+                    this.Invoke(new Action(() =>
+                    {
+                        lb9.Text = msj.LetraPalabra[i].ToString();
+                    }));
+                else if (i == 10)
+                    this.Invoke(new Action(() =>
+                    {
+                        lb10.Text = msj.LetraPalabra[i].ToString();
+                    }));
+                else if (i == 11)
+                    this.Invoke(new Action(() =>
+                    {
+                        lb11.Text = msj.LetraPalabra[i].ToString();
+                    }));
+                else if (i == 12)
+                    this.Invoke(new Action(() =>
+                    {
+                        lb12.Text = msj.LetraPalabra[i].ToString();
+                    }));
+                else if (i == 13)
+                    this.Invoke(new Action(() =>
+                    {
+                        lb13.Text = msj.LetraPalabra[i].ToString();
+                    }));
+            }
         }
         private void fallaPalabra()
         {
@@ -253,57 +302,76 @@ namespace JuegoAhorcado
         }
         public void pintarUna()
         {
-            if (pbPiernaDerPintada.Visible == false)
+            if (pnlCabeza.Visible == false)
             {
                 this.Invoke(new Action(() =>
                 {
-                    pbPiernaDerPintada.Visible = true;
-                    pbPiernaDer.Visible = false;
-                }));  
-            }
-            else if (pbPiernaDerPintada.Visible == true && pbPiernaIzqPintada.Visible == false)
-            {
-                this.Invoke(new Action(() =>
-                {
-                    pbPiernaIzqPintada.Visible = true;
-                    pbPiernaIzq.Visible = false;
+                    pnlCabeza.Visible = true;
                 }));
             }
-            else if (pbPiernaDerPintada.Visible == true && pbPiernaIzqPintada.Visible == true && pbBrazoDerPintado.Visible == false)
+            else
             {
-                this.Invoke(new Action(() =>
+                if (pnlCuerpo.Visible == false)
                 {
-                    pbBrazoDerPintado.Visible = true;
-                    pbBrazoDer.Visible = false;
-                }));
-            }
-            else if (pbPiernaDerPintada.Visible == true && pbPiernaIzqPintada.Visible == true && pbBrazoDerPintado.Visible == true && pbBrazoIzqPintado.Visible == false)
-            {
-                this.Invoke(new Action(() =>
+                    this.Invoke(new Action(() =>
+                    {
+                        pnlCuerpo.Visible = true;
+                    }));
+                }
+                else
                 {
-                    pbBrazoIzqPintado.Visible = true;
-                    pbBrazoIzq.Visible = false;
-                }));
-            }
-            else if (pbPiernaDerPintada.Visible == true && pbPiernaIzqPintada.Visible == true && pbBrazoIzqPintado.Visible == true && pbBrazoDerPintado.Visible == true && pbCabezaPintada.Visible == false)
-            {
-                this.Invoke(new Action(() =>
-                {
-                    pbCabezaPintada.Visible = true;
-                    pbCabeza.Visible = false;
-                    ahorcar();
-                }));
+                    if (pnlBrazo02.Visible == false)
+                    {
+                        this.Invoke(new Action(() =>
+                        {
+                            pnlBrazo02.Visible = true;
+                        }));
+                    }
+                    else
+                    {
+                        if (pnlBrazo01.Visible == false)
+                        {
+                            this.Invoke(new Action(() =>
+                            {
+                                pnlBrazo01.Visible = true;
+                            }));
+                        }
+                        else
+                        {
+                            if (pnlPie01.Visible == false)
+                            {
+                                this.Invoke(new Action(() =>
+                                {
+                                    pnlPie01.Visible = true;
+                                }));
+                            }
+                            else
+                            {
+                                this.Invoke(new Action(() =>
+                                {
+                                    pnlPie02.Visible = true;
+                                    pnlCabeza.BackgroundImage = Properties.Resources.tipo_cabezaMuerte;
+                                    pnlCaja.Visible = false;
+                                    ahorcar();
+                                }));
+                            }
+                        }
+                    }
+                }
             }
         }
         public void pintarTodo()
         {
             this.Invoke(new Action(() =>
             {
-                pbPiernaDerPintada.Visible = true;
-                pbPiernaIzqPintada.Visible = true;
-                pbBrazoDerPintado.Visible = true;
-                pbBrazoIzqPintado.Visible = true;
-                pbCabezaPintada.Visible = true;
+                pnlCabeza.Visible = true;
+                pnlCuerpo.Visible = true;
+                pnlBrazo02.Visible = true;
+                pnlBrazo01.Visible = true;
+                pnlPie01.Visible = true;
+                pnlPie02.Visible = true;
+                pnlCabeza.BackgroundImage = Properties.Resources.tipo_cabezaMuerte;
+                pnlCaja.Visible = false;
                 ahorcar();
             }));  
         }
@@ -315,6 +383,7 @@ namespace JuegoAhorcado
             //com.recibe -= new ev_recibir(mostrarLetras);
            // com.recibe -= new ev_recibir(habilitaLetra);
         }
+
         private void tiempo(clsMensajeBase m)
         {
             clsMensajeTimer msjTime = (clsMensajeTimer)m;
@@ -322,28 +391,25 @@ namespace JuegoAhorcado
         }
 
         private void frmJuego_Load(object sender, EventArgs e)
-        {int cont=0;
-        
-        lvJugadores.Font = new Font(lvJugadores.Font,lvJugadores.Font.Style | FontStyle.Bold);
-       
-            lvJugadores.View = View.Details;
-            lvJugadores.BackColor= Color.PaleGoldenrod;
+        {
+            int cont = 0;
 
-           
+            lvJugadores.Font = new Font(lvJugadores.Font, lvJugadores.Font.Style | FontStyle.Bold);
+
+            lvJugadores.View = View.Details;
+            lvJugadores.BackColor = Color.PaleGoldenrod;
+
+
             foreach (clsJugador j in msjPartida.ListaJugadores)
             {
                 lvJugadores.Items.Add(j.Nick);
 
                 lvJugadores.Items[cont].ForeColor = j.Color;
                 cont++;
-   
+
             }
         }
 
-        private void lvJugadores_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClasesComunicacion
 {
-    public class clsMensajePerdedor:clsMensajeBase
+    public class clsMensajePerdedor : clsMensajeBase
     {
         public clsMensajePerdedor()
         {
