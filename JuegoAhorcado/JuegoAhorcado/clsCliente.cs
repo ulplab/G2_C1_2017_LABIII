@@ -56,11 +56,10 @@ namespace JuegoAhorcado
                         {
                             clsMensajeJuego mensajeJuego=(clsMensajeJuego)mensaje;
                             if (mensaje.Retorno != "FALLO" && mensaje.Accion == "PROBAR_LETRA")
-                            acertoLetra(mensaje);
+                            acertoLetra(mensajeJuego);
                             else if (mensaje.Retorno == "FALLO" && mensaje.Accion == "PROBAR_LETRA")
                             falloLetra();
-                            if (mensaje.Retorno != "FALLO" && mensaje.Accion == "PROBAR_PALABRA")
-                            acertoPalabra(mensaje);
+                      
                             else if (mensaje.Retorno == "FALLO" && mensaje.Accion == "PROBAR_PALABRA")
                             falloPalabra();
                         }break;
@@ -69,6 +68,11 @@ namespace JuegoAhorcado
                         {
                             falloPalabra();
                         }break;
+                    case "MENSAJE_GANADOR":
+                        {
+                            clsMensajeGanador mensajeGanador = (clsMensajeGanador)mensaje;
+                            acertoPalabra(mensajeGanador);
+                        } break;
                 }
             }
         }            

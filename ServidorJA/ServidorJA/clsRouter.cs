@@ -43,10 +43,10 @@ namespace ServidorJA
         public void recibe(clsMensajeBase m, String nombre) //Revisar String nombre que viene JSON completo
         {
 
-            clsMensajeJuego mensaje = (clsMensajeJuego)m;
+            clsMensajeJuego mensaje =(clsMensajeJuego)m;
 
             mensaje.PalabraAhorcado = juego.Palabra;
-            switch(mensaje.Accion)
+            switch(m.Accion)
             {
                 case "PROBAR_LETRA":
                     mensaje = juego.enviaLetra(nombre, mensaje.LetraPalabra);
@@ -75,7 +75,10 @@ namespace ServidorJA
                 }
                 else
                 {
-                    EnviarATodos(mensaje);
+                    if (juego.Ganador != null)
+                        EnviarATodos(juego.Ganador);//ojo con este cambio !!! penvia clase ganador
+                    else
+                        EnviarATodos(mensaje);
                 }
             }
        

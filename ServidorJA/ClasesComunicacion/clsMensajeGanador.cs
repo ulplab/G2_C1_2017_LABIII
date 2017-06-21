@@ -10,6 +10,13 @@ namespace ClasesComunicacion
     {
         List<clsJugador> listaJugadores = new List<clsJugador>();
         int indice_ganador;
+        string adivinador;
+
+        public string Adivinador
+        {
+            get { return adivinador; }
+            set { adivinador = value; }
+        }
 
         public int Indice_ganador
         {

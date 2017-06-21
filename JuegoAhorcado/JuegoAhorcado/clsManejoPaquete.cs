@@ -12,7 +12,7 @@ namespace JuegoAhorcado
     {
         public clsMensajeBase recibirMensaje(string mensaje)
         {
-                clsMensajeBase convertido=JsonConvert.DeserializeObject<clsMensajeBase>(mensaje);
+              clsMensajeBase convertido=JsonConvert.DeserializeObject<clsMensajeBase>(mensaje);
                 switch (convertido.Tipo)
                 {
                     case "MENSAJE_PARTIDA":

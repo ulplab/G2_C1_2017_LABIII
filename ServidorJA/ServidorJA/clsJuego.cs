@@ -22,8 +22,15 @@ namespace ServidorJA
         StreamReader file;
         const int CHANCES = 5;// son las chances que tiene el jugador para adivinar la palabra,en caso de "ARRIESGAR" pierde toda las chances
         String[,] palabraArray;//variable multidimensional palabra que va a contener la palabra y por cada caracter el usuario q adivino el mismo y su numero de usuario
+        clsMensajeGanador ganador = null;//agregado martes a als  23 hs 
 
+       
         #region Set y Get
+        public clsMensajeGanador Ganador
+        {
+            get { return ganador; }
+            set { ganador = value; }
+        }
         public string Palabra
         {
             get
@@ -87,11 +94,11 @@ namespace ServidorJA
             {
                 if (palabraArray[i, 1] != null && palabraArray[i, 1].Equals(jugador))
                 {
-                    palabraArray[i, 1] = null;
+                    palabraArray[i, 1] = "0";
                 }
             }
             Jugadores.ElementAt(BuscaIndiceJugador(jugador)).FueraDeJuego = true;
-            // jugadores.ElementAt(BuscaIndiceJugador(jugador)).SinAcertar = 5;
+            
 
         }//quita todo el puntaje de palabrasArray y deja fuera de  juego y sin acertar = 5
         void LeerArchivo()
@@ -148,6 +155,7 @@ namespace ServidorJA
                     palabraArray[contador, 1] = null;
                     contador++;
                 }
+                ganador = null;
             }
         }//genera  una nueva palabra para palabraArray y vuelve las chances perdidas por los jugadores  a cero
        public int BuscaIndiceJugador(String nombre)
@@ -172,10 +180,35 @@ namespace ServidorJA
             }
         }
 
-       public bool ganador(string nombre)
+        bool palabraAdivinada()
        {
-           //CONTROLAR GANADOR Y GANADOR POR PALABRA COMPLETA
-       }
+           bool retorno = true;
+
+           for (int i = 0; i <= (palabraArray.Length / 2) - 1; i++)
+           {
+               if (palabraArray[i, 1] == null )
+               {
+                   retorno = false;
+               }
+           }
+
+           return retorno;
+       }//funcion utilizada para saber si termino la partida ,si existe algun espacio con null entonces no se termino de adivinar la palabra
+        public void asignaPuntajePorPartidaAjugadores(){
+                if(palabraAdivinada()){
+
+                    for (int i = 0; i <= (palabraArray.Length / 2) - 1; i++)
+                    {
+                        if (palabraArray[i, 1]!=null&&!palabraArray[i, 1].Equals("0"))
+                        {
+
+                            jugadores.ElementAt(BuscaIndiceJugador(palabraArray[i, 1])).Puntaje = jugadores.ElementAt(BuscaIndiceJugador(palabraArray[i, 1])).Puntaje + 2;
+                           
+                        }
+                    }
+                }
+           }
+        
         public clsMensajeJuego enviaLetra(string nick, string l)
         {
             clsMensajeJuego msjRetorno = new clsMensajeJuego();
@@ -188,6 +221,7 @@ namespace ServidorJA
                 {
                     listaPosiciones.Add(i);
                     msjRetorno.Retorno = "ACERTADO";
+                    palabraArray[i, 1] = nick;// agregado martes a la noche  23:00hs  esto agrega el jugador que adivina al arreglo
                 }
             }
             if ( msjRetorno.Retorno .Equals("FALLO"))
@@ -198,20 +232,78 @@ namespace ServidorJA
                     Perdio(nick);
                 }
             }
+            else
+            {
+                if (palabraAdivinada())
+                {
+                    asignaPuntajePorPartidaAjugadores();
+                    ganador = new clsMensajeGanador();
+                    
+                    ganador.ListaJugadores = jugadores;
+                    ganador.Indice_ganador = puntajeMasAltoPorPartida(nick);
+                    ganador.Adivinador = nick;
+                    ganador.PalabraAhorcado = palabra;
+                }
+            }
             msjRetorno.LetraPalabra = l;
             msjRetorno.PosicionLetra = listaPosiciones;
             msjRetorno.Accion = "PROBAR_LETRA";//REVISAR PORQUE SE PIERDE LA ACCION AL ENVIAR AL CLIENTE EL MSJ
             return msjRetorno;
+        }
+        int puntajeMasAltoPorPartida(string adivinador)//retorna indici de jugador con puntaje mas alto en la lista jugadores
+        {   
+            int indiceganador=0  , contador=0;
+        
+            int puntaje = 0;
+            foreach(clsJugador j in jugadores){
+
+                if (j.Puntaje > puntaje)
+                {
+                    puntaje = j.Puntaje;
+                    indiceganador = contador;
+
+                }
+                else if (j.Puntaje == puntaje && j.Nick.Equals(adivinador))
+                {
+                    puntaje = j.Puntaje;
+                    indiceganador = contador;
+                }
+                    
+
+                contador++;
+            }
+            return indiceganador;
+                
         }
         public clsMensajeJuego enviaPalabra(string nick, string s)
         {
             clsMensajeJuego msjRetorno = new clsMensajeJuego();
             if (palabra.Equals(s))
             {
-                Jugadores.ElementAt(BuscaIndiceJugador(nick)).Puntaje = 5;
+                Jugadores.ElementAt(BuscaIndiceJugador(nick)).Puntaje =Jugadores.ElementAt(BuscaIndiceJugador(nick)).Puntaje+ 5;
                 msjRetorno.Retorno = "ACERTADO";
                 //p.Puntaje = 5;//cantidad de puntajes por acertar
                 //finJuego(p.Color);
+                for (int i = 0; i <= (palabraArray.Length / 2) - 1; i++)
+                {
+                    if (palabraArray[i,1]==null)
+                    {
+                        palabraArray[i, 1] = "0";
+                    }
+                }//este bucle hace que complete la palabra entonces la funcion palabra adivinada puede devolver true
+                asignaPuntajePorPartidaAjugadores();
+                if (palabraAdivinada())
+                {
+                    asignaPuntajePorPartidaAjugadores();
+                    ganador = new clsMensajeGanador();
+
+                    ganador.ListaJugadores = jugadores;
+                    ganador.Indice_ganador = puntajeMasAltoPorPartida(nick);
+                    ganador.Adivinador = nick;
+                    ganador.PalabraAhorcado = palabra;
+                }
+               
+
             }
             else
             {
@@ -224,3 +316,8 @@ namespace ServidorJA
         }
     }
 }
+
+//se controla en generapalabra (que es para comenzar partida devuelta) el mensaje ganador se vuelva null
+//se creo la funcion palabraadivinada para usar mensaje ganador y para controla q esten los espacios [x,1] del array con "algo" para poder
+//sacar puntajes y demas
+//se utilizan estasvariables en enviar letra ,en enviarpalabra

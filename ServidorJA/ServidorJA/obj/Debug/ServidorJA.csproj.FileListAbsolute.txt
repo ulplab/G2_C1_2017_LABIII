@@ -49,3 +49,12 @@ C:\Users\Marcos\Desktop\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\Newtonsoft
 C:\Users\Marcos\Desktop\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\ClasesComunicacion.pdb
 C:\Users\Marcos\Desktop\G2_C1_2017_PC\ServidorJA\ServidorJA\obj\Debug\ServidorJA.csprojResolveAssemblyReference.cache
 C:\Proyecto Optativa2\v1\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\Newtonsoft.Json.xml
+C:\JuegoAhorcado\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\ServidorJA.exe.config
+C:\JuegoAhorcado\G2_C1_2017_PC\ServidorJA\ServidorJA\obj\Debug\ServidorJA.exe
+C:\JuegoAhorcado\G2_C1_2017_PC\ServidorJA\ServidorJA\obj\Debug\ServidorJA.pdb
+C:\JuegoAhorcado\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\ServidorJA.exe
+C:\JuegoAhorcado\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\ServidorJA.pdb
+C:\JuegoAhorcado\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\ClasesComunicacion.dll
+C:\JuegoAhorcado\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\Newtonsoft.Json.dll
+C:\JuegoAhorcado\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\ClasesComunicacion.pdb
+C:\JuegoAhorcado\G2_C1_2017_PC\ServidorJA\ServidorJA\obj\Debug\ServidorJA.csprojResolveAssemblyReference.cache
