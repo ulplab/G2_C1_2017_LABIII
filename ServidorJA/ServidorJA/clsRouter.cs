@@ -13,7 +13,7 @@ namespace ServidorJA
         clsJuego juego;
         clsManejoPaquetes msjPaquete;
         List<clsCliente> listaCliente;
-        int segundos=20;
+        int segundos=5000;
         internal List<clsCliente> ListaCliente
         {
             get { return listaCliente; }

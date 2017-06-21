@@ -196,82 +196,85 @@ namespace JuegoAhorcado
      
         private void habilitaPalabra(clsMensajeBase m)
         {
-            clsMensajeJuego msj = (clsMensajeJuego)m;
-            msj.PalabraAhorcado = palabra;
-            int cant=msj.PalabraAhorcado.Length;
-            for (int i = 0; i < cant; i++)
-            {
-                if (i == 0)
-                    this.Invoke(new Action(() =>
-                    {
-                        lb0.Text = msj.LetraPalabra[i].ToString();
-                    }));
-                else if (i == 1)
-                    this.Invoke(new Action(() =>
-                    {
-                        lb1.Text = msj.LetraPalabra[i].ToString();
-                    }));
-                else if (i == 2)
-                    this.Invoke(new Action(() =>
-                    {
-                        lb2.Text = msj.LetraPalabra[i].ToString();
-                    }));
-                else if (i == 3)
-                    this.Invoke(new Action(() =>
-                    {
-                        lb3.Text = msj.LetraPalabra[i].ToString();
-                    }));
-                else if (i == 4)
-                    this.Invoke(new Action(() =>
-                    {
-                        lb4.Text = msj.LetraPalabra[i].ToString();
-                    }));
-                else if (i == 5)
-                    this.Invoke(new Action(() =>
-                    {
-                        lb5.Text = msj.LetraPalabra[i].ToString();
-                    }));
-                else if (i == 6)
-                    this.Invoke(new Action(() =>
-                    {
-                        lb6.Text = msj.LetraPalabra[i].ToString();
-                    }));
-                else if (i == 7)
-                    this.Invoke(new Action(() =>
-                    {
-                        lb7.Text = msj.LetraPalabra[i].ToString();
-                    }));
-                else if (i == 8)
-                    this.Invoke(new Action(() =>
-                    {
-                        lb8.Text = msj.LetraPalabra[i].ToString();
-                    }));
-                else if (i == 9)
-                    this.Invoke(new Action(() =>
-                    {
-                        lb9.Text = msj.LetraPalabra[i].ToString();
-                    }));
-                else if (i == 10)
-                    this.Invoke(new Action(() =>
-                    {
-                        lb10.Text = msj.LetraPalabra[i].ToString();
-                    }));
-                else if (i == 11)
-                    this.Invoke(new Action(() =>
-                    {
-                        lb11.Text = msj.LetraPalabra[i].ToString();
-                    }));
-                else if (i == 12)
-                    this.Invoke(new Action(() =>
-                    {
-                        lb12.Text = msj.LetraPalabra[i].ToString();
-                    }));
-                else if (i == 13)
-                    this.Invoke(new Action(() =>
-                    {
-                        lb13.Text = msj.LetraPalabra[i].ToString();
-                    }));
-            }
+            
+            ganador = (clsMensajeGanador)m;
+                         int cant = ganador.PalabraAhorcado.Length;
+                         for (int i = 0; i < cant; i++)
+                         {
+                            if (i == 0)
+                                 this.Invoke(new Action(() =>
+                                 {
+                                     lb0.Text = ganador.PalabraAhorcado[i].ToString();
+                                 }));
+                            else if (i == 1)
+                                 this.Invoke(new Action(() =>
+                                 {
+                                     lb1.Text = ganador.PalabraAhorcado[i].ToString();
+                                 }));
+                             else if (i == 2)
+                                 this.Invoke(new Action(() =>
+                                 {
+                                     lb2.Text = ganador.PalabraAhorcado[i].ToString();
+                                 }));
+                             else if (i == 3)
+                                 this.Invoke(new Action(() =>
+                                 {
+                                     lb3.Text = ganador.PalabraAhorcado[i].ToString();
+                                 }));
+                             else if (i == 4)
+                                 this.Invoke(new Action(() =>
+                                 {
+                                     lb4.Text = ganador.PalabraAhorcado[i].ToString();
+                                 }));
+                             else if (i == 5)
+                                 this.Invoke(new Action(() =>
+                                 {
+                                     lb5.Text = ganador.PalabraAhorcado[i].ToString();
+                                 }));
+                             else if (i == 6)
+                                 this.Invoke(new Action(() =>
+                                 {
+                                     lb6.Text = ganador.PalabraAhorcado[i].ToString();
+                                 }));
+                             else if (i == 7)
+                                 this.Invoke(new Action(() =>
+                                 {
+                                     lb7.Text = ganador.PalabraAhorcado[i].ToString();
+                                 }));
+                             else if (i == 8)
+                                 this.Invoke(new Action(() =>
+                                 {
+                                     lb8.Text = ganador.PalabraAhorcado[i].ToString();
+                                }));
+                             else if (i == 9)
+                                 this.Invoke(new Action(() =>
+                                 {
+                                     lb9.Text = ganador.PalabraAhorcado[i].ToString();
+                                 }));
+                             else if (i == 10)
+                                 this.Invoke(new Action(() =>
+                                 {
+                                     lb10.Text = ganador.PalabraAhorcado[i].ToString();
+                                 }));
+                             else if (i == 11)
+                                 this.Invoke(new Action(() =>
+                                 {
+                                     lb11.Text = ganador.PalabraAhorcado[i].ToString();
+                                 }));
+                             else if (i == 12)
+                                 this.Invoke(new Action(() =>
+                                 {
+                                     lb12.Text = ganador.PalabraAhorcado[i].ToString();
+                                 }));
+                             else if (i == 13)
+                                 this.Invoke(new Action(() =>
+                                 {
+                                     lb13.Text = ganador.PalabraAhorcado[i].ToString();
+                                 }));
+                         }
+ 
+                         MessageBox.Show("GANADOR:" + ganador.ListaJugadores[ganador.Indice_ganador].Nick);
+             
         }
         private void fallaPalabra()
         {

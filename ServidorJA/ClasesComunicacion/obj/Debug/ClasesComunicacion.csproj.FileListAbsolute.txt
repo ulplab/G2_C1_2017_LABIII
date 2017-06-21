@@ -31,3 +31,4 @@ C:\Proyecto Optativa2\v4\G2_C1_2017_PC\ServidorJA\ClasesComunicacion\bin\Debug\N
 C:\Proyecto Optativa2\v4\G2_C1_2017_PC\ServidorJA\ClasesComunicacion\obj\Debug\ClasesComunicacion.csprojResolveAssemblyReference.cache
 C:\Proyecto Optativa2\v4\G2_C1_2017_PC\ServidorJA\ClasesComunicacion\obj\Debug\ClasesComunicacion.dll
 C:\Proyecto Optativa2\v4\G2_C1_2017_PC\ServidorJA\ClasesComunicacion\obj\Debug\ClasesComunicacion.pdb
+C:\JuegoAhorcado\G2_C1_2017_PC\ServidorJA\ClasesComunicacion\bin\Debug\Newtonsoft.Json.xml
