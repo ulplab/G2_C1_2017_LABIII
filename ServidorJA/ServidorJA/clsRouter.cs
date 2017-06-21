@@ -59,7 +59,6 @@ namespace ServidorJA
                     break;
             }
         }
-
         private void controlaFallo(clsMensajeJuego mensaje, String nombre)
         {
             if (juego.Jugadores.ElementAt(juego.BuscaIndiceJugador(nombre)).FueraDeJuego)

@@ -49,7 +49,7 @@ namespace JuegoAhorcado
             while (true)
             {
                 string aux = streamr.ReadLine();
-                mensaje = serializador.recibirMensaje(aux);  
+                mensaje = serializador.recibirMensaje(aux);
                 switch(mensaje.Tipo)
                 {
                     case "MENSAJE_JUEGO":

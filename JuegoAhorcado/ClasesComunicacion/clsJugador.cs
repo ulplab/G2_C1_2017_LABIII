@@ -34,6 +34,10 @@ namespace ClasesComunicacion
             {
                 return nick;
             }
+            set
+            {
+                nick = value;
+            }
 
 
         }

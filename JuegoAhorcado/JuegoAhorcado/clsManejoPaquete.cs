@@ -28,8 +28,8 @@ namespace JuegoAhorcado
                         return retorno3;
 
                     case "MENSAJE_GANADOR":
-                        clsMensajeGanador retorno4 = JsonConvert.DeserializeObject<clsMensajeGanador>(mensaje);
-                        return retorno4;
+                       clsMensajeGanador retorno4 = JsonConvert.DeserializeObject<clsMensajeGanador>(mensaje);
+                           return retorno4;
 
                     default: return convertido;
                                      

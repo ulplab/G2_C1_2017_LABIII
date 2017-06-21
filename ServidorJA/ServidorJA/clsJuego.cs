@@ -116,8 +116,7 @@ namespace ServidorJA
             }
 
 
-        }
-                                                      
+        }               
         public int GenerateRandom(int min, int max)
         {
             int seed = Convert.ToInt32(Regex.Match(Guid.NewGuid().ToString(), @"\d+").Value);
@@ -179,7 +178,6 @@ namespace ServidorJA
                 return indice;
             }
         }
-
         bool palabraAdivinada()
        {
            bool retorno = true;
@@ -208,7 +206,6 @@ namespace ServidorJA
                     }
                 }
            }
-        
         public clsMensajeJuego enviaLetra(string nick, string l)
         {
             clsMensajeJuego msjRetorno = new clsMensajeJuego();
