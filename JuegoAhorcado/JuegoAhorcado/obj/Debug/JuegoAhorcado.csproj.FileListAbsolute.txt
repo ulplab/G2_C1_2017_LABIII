@@ -29,7 +29,6 @@ C:\JuegoAhorcado\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\bin\Debug\JuegoAhorca
 C:\JuegoAhorcado\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.csprojResolveAssemblyReference.cache
 C:\JuegoAhorcado\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmJuego.resources
 C:\JuegoAhorcado\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmPrincipal.resources
-C:\JuegoAhorcado\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmSala.resources
 C:\JuegoAhorcado\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.Properties.Resources.resources
 C:\JuegoAhorcado\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.csproj.GenerateResource.Cache
 C:\Proyecto Optativa2\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\bin\Debug\JuegoAhorcado.exe.config
@@ -109,3 +108,6 @@ C:\Proyecto Optativa2\v3\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\Jue
 C:\Proyecto Optativa2\v3\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.csproj.GenerateResource.Cache
 C:\Proyecto Optativa2\v3\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.exe
 C:\Proyecto Optativa2\v3\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.pdb
+C:\JuegoAhorcado\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\bin\Debug\ClasesComunicacion.dll
+C:\JuegoAhorcado\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\bin\Debug\Newtonsoft.Json.dll
+C:\JuegoAhorcado\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\bin\Debug\ClasesComunicacion.pdb

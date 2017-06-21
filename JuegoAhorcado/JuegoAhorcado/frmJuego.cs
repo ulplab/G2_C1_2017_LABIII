@@ -164,59 +164,7 @@ namespace JuegoAhorcado
             pintarUna();
         }
 
-        //private void habilitaLetra( string pal)
-        //{
-        //    for (int i = 0; i <= pal.Length - 1; i++)
-        //    {
-
-        //        if (pal[i].ToString().Equals(pal))
-        //        {
-
-        //            foreach (Control c in pnlPalabra.Controls)
-        //            {
-        //                if (c is Label && !(c as Label).Text.Contains("_") && (c as Label).Name.Equals("lb" + i.ToString()))
-        //                {
-
-        //                    Label l = (Label)c;
-        //                    if (l.Visible == false) 
-        //                    {
-        //                        this.Invoke(new Action(() =>
-        //                        {
-        //                            l.Text = pal;
-        //                            l.Visible = true;
-        //                        }));
-        //                        //  l.ForeColor = p.Color;
-                                
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    }
-            
-        //}
-        //private void habilitaPalabra(Color cp)
-        //{
-        //    if (cp != Color.Transparent)
-        //     {
-        //        // Habilitar los tb/lbl
-        //        foreach (Control c in pnlPalabra.Controls)
-        //        {
-        //            if (c is Label && !(c as Label).Text.Contains("_"))
-        //            {
-        //                Label l = (Label)c;
-        //                int posicionLetra = (int.Parse(l.Tag.ToString())) - 1;
-        //                if (l.Visible == false)
-        //                {
-        //                    l.ForeColor = cp;
-        //                    //l.Text = com.Palabra[posicionLetra].ToString();
-        //                    l.Visible = true;
-        //                }
-        //            }
-        //        }
-        //    }
-        //    else
-        //        MessageBox.Show("Se acabo che...");
-        //}
+     
         private void habilitaPalabra(clsMensajeBase m)
         {
             clsMensajeJuego msj = (clsMensajeJuego)m;
@@ -408,6 +356,16 @@ namespace JuegoAhorcado
                 cont++;
 
             }
+
+            
+            foreach (ListViewItem I in lvJugadores.Items)
+            {
+
+
+                Color a =I.SubItems[0].ForeColor;
+                MessageBox.Show(a.ToString());
+            }
+           
         }
 
 
