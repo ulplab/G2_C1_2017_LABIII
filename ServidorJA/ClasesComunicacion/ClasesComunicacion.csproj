@@ -50,6 +50,7 @@
     <Compile Include="clsMensajePartida.cs" />
     <Compile Include="clsMensajeBase.cs" />
     <Compile Include="clsMensajePerdedor.cs" />
+    <Compile Include="clsMensajeTimer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

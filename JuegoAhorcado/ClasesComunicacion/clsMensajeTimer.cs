@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace ClasesComunicacion
 {
-    public class clsMensajeTimer:clsMensajeBase
+    public class clsMensajeTimer : clsMensajeBase
     {
         int segundero;
 
         public int Segundero
         {
-          get { return segundero; }
-          set { segundero = value; }
+            get { return segundero; }
+            set { segundero = value; }
         }
         public clsMensajeTimer()
         {
-            Tipo="MENSAJE_TIMER";
+            Tipo = "MENSAJE_TIMER";
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ClasesComunicacion;
+using System.Threading;
 
 namespace ServidorJA
 {
@@ -12,6 +13,7 @@ namespace ServidorJA
         clsJuego juego;
         clsManejoPaquetes msjPaquete;
         List<clsCliente> listaCliente;
+        int segundos=20;
         internal List<clsCliente> ListaCliente
         {
             get { return listaCliente; }
@@ -39,6 +41,8 @@ namespace ServidorJA
                 msjP.PalabraAhorcado = juego.Palabra;
                 c.enviar(msjP);
             }
+            Thread t = new Thread(timer);
+            t.Start();
         }
         public void recibe(clsMensajeBase m, String nombre) //Revisar String nombre que viene JSON completo
         {
@@ -101,6 +105,19 @@ namespace ServidorJA
             }
 
         }
+        public void timer()
+        {
+            clsMensajeBase mb;
+            clsMensajeTimer timer = new clsMensajeTimer();
+            while (segundos >= 0)
+            {
+                Thread.Sleep(1000);
+                timer.Segundero = segundos;
+                mb = (clsMensajeBase)timer;
+                EnviarATodos(mb);
+                segundos--;
+            }
 
+        }
     }
 }

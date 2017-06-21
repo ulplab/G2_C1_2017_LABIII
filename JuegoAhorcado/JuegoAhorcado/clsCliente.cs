@@ -13,6 +13,7 @@ namespace JuegoAhorcado
 {
     public delegate void enviar(string Json);
     public delegate void enviaFrmJuegoAcerto(clsMensajeBase msj);
+    public delegate void enviaFrmTime(clsMensajeBase msj);
     public delegate void enviaFrmJuegoFallo();
     public delegate void comienzo(clsMensajeBase msj);
 
@@ -44,6 +45,7 @@ namespace JuegoAhorcado
         public event enviaFrmJuegoFallo falloLetra;
         public event enviaFrmJuegoAcerto acertoPalabra;
         public event enviaFrmJuegoFallo falloPalabra;
+        public event enviaFrmTime timeForm;
         public void leer()
         {
             while (true)
@@ -72,6 +74,11 @@ namespace JuegoAhorcado
                         {
                             clsMensajeGanador mensajeGanador = (clsMensajeGanador)mensaje;
                             acertoPalabra(mensajeGanador);
+                        } break;
+                    case "MENSAJE_TIMER":
+                        {
+                            clsMensajeTimer mensajeTimer = (clsMensajeTimer)mensaje;
+                            timeForm(mensajeTimer);
                         } break;
                 }
             }

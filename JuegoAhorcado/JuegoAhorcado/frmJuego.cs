@@ -31,6 +31,7 @@ namespace JuegoAhorcado
             cliente.falloLetra += fallaLetra;
             cliente.acertoPalabra += habilitaPalabra;
             cliente.falloPalabra += fallaPalabra;
+            cliente.timeForm += tiempo;
             palabra = cliente.Mensaje.PalabraAhorcado;
             Char[] palabraIndice = palabra.ToCharArray();
             //foreach(clsJugador c in cliente.Mensaje.ListaJugadores)
@@ -316,10 +317,10 @@ namespace JuegoAhorcado
             //com.recibe -= new ev_recibir(mostrarLetras);
            // com.recibe -= new ev_recibir(habilitaLetra);
         }
-
-        private void frmJuego_Load(object sender, EventArgs e)
+        private void tiempo(clsMensajeBase m)
         {
-
+            clsMensajeTimer msjTime = (clsMensajeTimer)m;
+            lbTime.Invoke((Action)(() => lbTime.Text = msjTime.Segundero.ToString()));
         }
 
     }
