@@ -82,78 +82,107 @@ namespace JuegoAhorcado
         private void habilitaLetra(clsMensajeBase m) 
         {
             clsMensajeJuego msj = (clsMensajeJuego)m;
+            Color colorJG = Color.Orange;
+            lvJugadores.Invoke(new Action(() =>
+            {
+                foreach (ListViewItem list in lvJugadores.Items)
+                {
+                    this.Invoke(new Action(() =>
+                    {
+                        if (msj.Nick.Equals(list.SubItems[0].Text))
+                            colorJG = list.SubItems[0].ForeColor;
+                    }));
+                }
+            }));
+
+
+
             List<int> posiciones = msj.PosicionLetra;
-            for(int i=0;i<posiciones.Count;i++)
+            for (int i = 0; i < posiciones.Count; i++)
             {
                 if (posiciones[i] == 0)
                     this.Invoke(new Action(() =>
                     {
                         lb0.Text = msj.LetraPalabra;
+                        lbAdivina0.BackColor = colorJG;
                     }));
                 else if (posiciones[i] == 1)
                     this.Invoke(new Action(() =>
                     {
                         lb1.Text = msj.LetraPalabra;
+                        lbAdivina1.BackColor = colorJG;
                     }));
                 else if (posiciones[i] == 2)
                     this.Invoke(new Action(() =>
                     {
                         lb2.Text = msj.LetraPalabra;
+                        lbAdivina2.BackColor = colorJG;
                     }));
                 else if (posiciones[i] == 3)
                     this.Invoke(new Action(() =>
                     {
                         lb3.Text = msj.LetraPalabra;
+                        lbAdivina3.BackColor = colorJG;
                     }));
                 else if (posiciones[i] == 4)
                     this.Invoke(new Action(() =>
                     {
                         lb4.Text = msj.LetraPalabra;
+                        lbAdivina4.BackColor = colorJG;
                     }));
                 else if (posiciones[i] == 5)
                     this.Invoke(new Action(() =>
                     {
                         lb5.Text = msj.LetraPalabra;
+                        lbAdivina5.BackColor = colorJG;
                     }));
                 else if (posiciones[i] == 6)
                     this.Invoke(new Action(() =>
                     {
                         lb6.Text = msj.LetraPalabra;
+                        lbAdivina6.BackColor = colorJG;
                     }));
                 else if (posiciones[i] == 7)
                     this.Invoke(new Action(() =>
                     {
                         lb7.Text = msj.LetraPalabra;
+                        lbAdivina7.BackColor = colorJG;
                     }));
                 else if (posiciones[i] == 8)
                     this.Invoke(new Action(() =>
                     {
                         lb8.Text = msj.LetraPalabra;
+                        lbAdivina8.BackColor = colorJG;
                     }));
                 else if (posiciones[i] == 9)
                     this.Invoke(new Action(() =>
                     {
                         lb9.Text = msj.LetraPalabra;
+                        lbAdivina9.BackColor = colorJG;
                     }));
                 else if (posiciones[i] == 10)
                     this.Invoke(new Action(() =>
                     {
                         lb10.Text = msj.LetraPalabra;
+                        lbAdivina10.BackColor = colorJG;
                     }));
                 else if (posiciones[i] == 11)
                     this.Invoke(new Action(() =>
                     {
                         lb11.Text = msj.LetraPalabra;
+                        lbAdivina11.BackColor = colorJG;
                     }));
                 else if (posiciones[i] == 12)
                     this.Invoke(new Action(() =>
                     {
                         lb12.Text = msj.LetraPalabra;
+                        lbAdivina12.BackColor = colorJG;
                     }));
                 else if (posiciones[i] == 13)
                     this.Invoke(new Action(() =>
                     {
                         lb13.Text = msj.LetraPalabra;
+                        lbAdivina13.BackColor = colorJG;
                     }));
             }
 
@@ -355,15 +384,6 @@ namespace JuegoAhorcado
                 lvJugadores.Items[cont].ForeColor = j.Color;
                 cont++;
 
-            }
-
-            
-            foreach (ListViewItem I in lvJugadores.Items)
-            {
-
-
-                Color a =I.SubItems[0].ForeColor;
-                MessageBox.Show(a.ToString());
             }
            
         }

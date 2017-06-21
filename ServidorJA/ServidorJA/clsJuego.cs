@@ -248,6 +248,7 @@ namespace ServidorJA
                     ganador.PalabraAhorcado = palabra;
                 }
             }
+            msjRetorno.Nick = nick;
             msjRetorno.LetraPalabra = l;
             msjRetorno.PosicionLetra = listaPosiciones;
             msjRetorno.Accion = "PROBAR_LETRA";//REVISAR PORQUE SE PIERDE LA ACCION AL ENVIAR AL CLIENTE EL MSJ
