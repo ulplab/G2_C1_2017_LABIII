@@ -32,3 +32,10 @@ C:\Proyecto Optativa2\v4\G2_C1_2017_PC\JuegoAhorcado\ClasesComunicacion\obj\Debu
 C:\Proyecto Optativa2\v4\G2_C1_2017_PC\JuegoAhorcado\ClasesComunicacion\obj\Debug\ClasesComunicacion.dll
 C:\Proyecto Optativa2\v4\G2_C1_2017_PC\JuegoAhorcado\ClasesComunicacion\obj\Debug\ClasesComunicacion.pdb
 C:\JuegoAhorcado\G2_C1_2017_PC\JuegoAhorcado\ClasesComunicacion\bin\Debug\Newtonsoft.Json.xml
+C:\Proyecto Optativa2\v5\G2_C1_2017_PC\JuegoAhorcado\ClasesComunicacion\bin\Debug\ClasesComunicacion.dll
+C:\Proyecto Optativa2\v5\G2_C1_2017_PC\JuegoAhorcado\ClasesComunicacion\bin\Debug\ClasesComunicacion.pdb
+C:\Proyecto Optativa2\v5\G2_C1_2017_PC\JuegoAhorcado\ClasesComunicacion\bin\Debug\Newtonsoft.Json.dll
+C:\Proyecto Optativa2\v5\G2_C1_2017_PC\JuegoAhorcado\ClasesComunicacion\bin\Debug\Newtonsoft.Json.xml
+C:\Proyecto Optativa2\v5\G2_C1_2017_PC\JuegoAhorcado\ClasesComunicacion\obj\Debug\ClasesComunicacion.csprojResolveAssemblyReference.cache
+C:\Proyecto Optativa2\v5\G2_C1_2017_PC\JuegoAhorcado\ClasesComunicacion\obj\Debug\ClasesComunicacion.dll
+C:\Proyecto Optativa2\v5\G2_C1_2017_PC\JuegoAhorcado\ClasesComunicacion\obj\Debug\ClasesComunicacion.pdb

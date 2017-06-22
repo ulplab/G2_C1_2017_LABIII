@@ -13,7 +13,8 @@ namespace ServidorJA
         clsJuego juego;
         clsManejoPaquetes msjPaquete;
         List<clsCliente> listaCliente;
-        int segundos=5000;
+        int segundos=150;
+        Object a=new object();
         internal List<clsCliente> ListaCliente
         {
             get { return listaCliente; }
@@ -46,21 +47,23 @@ namespace ServidorJA
         }
         public void recibe(clsMensajeBase m, String nombre) //Revisar String nombre que viene JSON completo
         {
-
-            clsMensajeJuego mensaje =(clsMensajeJuego)m;
-
-            mensaje.PalabraAhorcado = juego.Palabra;
-            switch(m.Accion)
+            lock (a)
             {
-                case "PROBAR_LETRA":
-                    mensaje = juego.enviaLetra(nombre, mensaje.LetraPalabra);
-                    controlaFallo(mensaje, nombre);
+                clsMensajeJuego mensaje = (clsMensajeJuego)m;
 
-                    break;
-                case "PROBAR_PALABRA":
-                    mensaje = juego.enviaPalabra(nombre, mensaje.LetraPalabra);
-                    controlaFallo(mensaje, nombre);
-                    break;
+                mensaje.PalabraAhorcado = juego.Palabra;
+                switch (m.Accion)
+                {
+                    case "PROBAR_LETRA":
+                        mensaje = juego.enviaLetra(nombre, mensaje.LetraPalabra);
+                        controlaFallo(mensaje, nombre);
+
+                        break;
+                    case "PROBAR_PALABRA":
+                        mensaje = juego.enviaPalabra(nombre, mensaje.LetraPalabra);
+                        controlaFallo(mensaje, nombre);
+                        break;
+                }
             }
         }
         private void controlaFallo(clsMensajeJuego mensaje, String nombre)
@@ -101,7 +104,7 @@ namespace ServidorJA
         {
             foreach (clsCliente c in listaCliente)
             {
-                    c.enviar(mensaje);
+                c.enviar(mensaje);
             }
 
         }

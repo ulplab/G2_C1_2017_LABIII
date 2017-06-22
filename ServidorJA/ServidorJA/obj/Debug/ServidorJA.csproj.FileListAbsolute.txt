@@ -78,3 +78,12 @@ C:\Proyecto Optativa2\v4\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\ClasesCom
 C:\Proyecto Optativa2\v4\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\Newtonsoft.Json.xml
 C:\Proyecto Optativa2\v4\G2_C1_2017_PC\ServidorJA\ServidorJA\obj\Debug\ServidorJA.csprojResolveAssemblyReference.cache
 C:\JuegoAhorcado\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\Newtonsoft.Json.xml
+C:\Proyecto Optativa2\v5\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\ServidorJA.exe.config
+C:\Proyecto Optativa2\v5\G2_C1_2017_PC\ServidorJA\ServidorJA\obj\Debug\ServidorJA.exe
+C:\Proyecto Optativa2\v5\G2_C1_2017_PC\ServidorJA\ServidorJA\obj\Debug\ServidorJA.pdb
+C:\Proyecto Optativa2\v5\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\ServidorJA.exe
+C:\Proyecto Optativa2\v5\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\ServidorJA.pdb
+C:\Proyecto Optativa2\v5\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\ClasesComunicacion.dll
+C:\Proyecto Optativa2\v5\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\ClasesComunicacion.pdb
+C:\Proyecto Optativa2\v5\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\Newtonsoft.Json.xml
+C:\Proyecto Optativa2\v5\G2_C1_2017_PC\ServidorJA\ServidorJA\obj\Debug\ServidorJA.csprojResolveAssemblyReference.cache

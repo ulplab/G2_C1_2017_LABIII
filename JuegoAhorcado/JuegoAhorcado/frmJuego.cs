@@ -273,7 +273,7 @@ namespace JuegoAhorcado
                                  }));
                          }
  
-                         MessageBox.Show("GANADOR:" + ganador.ListaJugadores[ganador.Indice_ganador].Nick);
+                         MessageBox.Show("GANADOR:" + ganador.ListaJugadores[ganador.Indice_ganador].Nick.ToString());
              
         }
         private void fallaPalabra()
@@ -359,7 +359,6 @@ namespace JuegoAhorcado
         {
             btnLetra.Enabled = false;
             btnArriesgar.Enabled = false;
-            MessageBox.Show("TE RE MIL AHORCASTE");
             //com.recibe -= new ev_recibir(mostrarLetras);
            // com.recibe -= new ev_recibir(habilitaLetra);
         }
