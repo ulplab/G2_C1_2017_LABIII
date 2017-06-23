@@ -153,7 +153,8 @@ C:\v5\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\bin\Debug\ClasesComunicacion.pdb
 C:\v5\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\bin\Debug\Newtonsoft.Json.xml
 C:\v5\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.csprojResolveAssemblyReference.cache
 C:\v5\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmJuego.resources
-C:\v5\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmMensaje.resources
 C:\v5\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmPrincipal.resources
 C:\v5\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.Properties.Resources.resources
 C:\v5\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.csproj.GenerateResource.Cache
+C:\v5\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmGanador.resources
+C:\v5\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmDesconexionServer.resources

@@ -63,25 +63,18 @@ namespace ServidorJA
                     con.streamw = new StreamWriter(con.stream);
                     con.recibe = con.streamr.ReadLine();
                     clsMensajeBase msjLee = paquete.recibirMensaje(con.recibe);
-                    Console.WriteLine("Jugador " + msjLee.Nick + " ya se unio a la partida");
+                    Console.WriteLine("Jugador " + msjLee.Nick + "  se unio a la partida");
                     clsJugador jugador = new clsJugador(msjLee.Nick);
                     juego.agregarJugador(jugador);
-                    if((2 - juego.Jugadores.Count)!=0)
+                    cliente = new clsCliente(con.stream, con.streamw, con.streamr, msjLee.Nick);
+                    router.ListaCliente.Add(cliente);
+                    if((2 - juego.Jugadores.Count)==0)
                     {
-                        Console.WriteLine("Jugador: " + msjLee.Nick + " espere que faltan " + (2- juego.Jugadores.Count) + " jugadores para comenzar el juego");
-                        cliente = new clsCliente(con.stream, con.streamw, con.streamr, msjLee.Nick, "WAIT");
-                        router.ListaCliente.Add(cliente);
-                    }   
-                    else
-                    {
-                        cliente = new clsCliente(con.stream, con.streamw, con.streamr, msjLee.Nick, "START");
-                        router.ListaCliente.Add(cliente);
                         router.comienzaPartida();
                     }
                     Thread t = new Thread(cliente.DataIn);
                     t.Start();
                 }
-            
             }
         }
 

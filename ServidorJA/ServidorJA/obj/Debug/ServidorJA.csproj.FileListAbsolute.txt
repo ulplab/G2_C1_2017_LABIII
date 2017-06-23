@@ -90,3 +90,9 @@ C:\Proyecto Optativa2\v5\G2_C1_2017_PC\ServidorJA\ServidorJA\obj\Debug\ServidorJ
 C:\v5\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\ServidorJA.exe.config
 C:\v5\G2_C1_2017_PC\ServidorJA\ServidorJA\obj\Debug\ServidorJA.exe
 C:\v5\G2_C1_2017_PC\ServidorJA\ServidorJA\obj\Debug\ServidorJA.pdb
+C:\v5\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\ServidorJA.exe
+C:\v5\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\ServidorJA.pdb
+C:\v5\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\ClasesComunicacion.dll
+C:\v5\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\ClasesComunicacion.pdb
+C:\v5\G2_C1_2017_PC\ServidorJA\ServidorJA\bin\Debug\Newtonsoft.Json.xml
+C:\v5\G2_C1_2017_PC\ServidorJA\ServidorJA\obj\Debug\ServidorJA.csprojResolveAssemblyReference.cache

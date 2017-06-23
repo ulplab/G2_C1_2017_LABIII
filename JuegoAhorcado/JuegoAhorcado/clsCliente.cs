@@ -16,7 +16,8 @@ namespace JuegoAhorcado
     public delegate void enviaFrmTime(clsMensajeBase msj);
     public delegate void enviaFrmJuegoFallo();
     public delegate void comienzo(clsMensajeBase msj);
-    public delegate void problemasConServidor(string mensaje,string mensajeformulario);
+    public delegate void problemasConServidor();
+    public delegate void exitGame();
    
 
 
@@ -27,6 +28,12 @@ namespace JuegoAhorcado
         static int port = 8000;
         clsMensajeBase mensaje;
         private String nick;
+
+        public TcpClient Client
+        {
+            get { return client; }
+            set { client = value; }
+        }
         public String Nick
         {
             get { return nick; }
@@ -49,11 +56,22 @@ namespace JuegoAhorcado
         public event enviaFrmJuegoFallo falloPalabra;
         public event enviaFrmTime timeForm;
         public event problemasConServidor DesconexionServidor;//mandamos un mensaje al formulario que tenga problemas con la desconieccion con el servidor
+        public event exitGame ExitGame;//mandamos un mensaje al formulario que tenga problemas con la desconieccion con el servidor
+        Thread t;
 
-        public void leer()
+        public void leeInputCliente()
         {
             try
             {
+                clsMensajeBase mb = new clsMensajeBase();
+                mb.Nick = nick;
+                streamw.WriteLine(serializador.enviarMensaje(mb));
+                streamw.Flush();
+
+
+                string aux1 = streamr.ReadLine();
+                mensaje = serializador.recibirMensaje(aux1);
+                start(mensaje);
                 while (true)
                 {
                     string aux = streamr.ReadLine();
@@ -93,45 +111,39 @@ namespace JuegoAhorcado
             }
             catch(InvalidOperationException e)
             {
-                DesconexionServidor("Gracias por jugar!! seras redirigido al menu principal", "Redirigido a menu principal");
+                ExitGame();
             }
             catch (SocketException e)
             {
-                DesconexionServidor("!Error de conexion con el servidor, espere su reconexion", "Upss!!");
+                DesconexionServidor();
             }
             catch (System.IO.IOException e)
             {
-                DesconexionServidor("!Error de conexion con el servidor, espere su reconexion", "Upss!!");
+                DesconexionServidor();
             }
         }
-        public void Iniciar()
+        public void ConectarseServidor()
         {
             try
             {
-                client = new TcpClient("127.0.0.1", port);
+                client = new TcpClient();
+                client.Connect("127.0.0.1", port);
                 Console.WriteLine("Client conectado.");
                 stream = client.GetStream();
                 streamw = new StreamWriter(stream);
                 streamr = new StreamReader(stream);
-                clsMensajeBase msjNick = new clsMensajeBase();
-                msjNick.Nick = nick;
-                streamw.WriteLine(serializador.enviarMensaje(msjNick));
-                streamw.Flush();
-
-
-                string aux = streamr.ReadLine();
-                mensaje = serializador.recibirMensaje(aux);
-                start(mensaje);
-                Thread t = new Thread(leer);
+                t=new Thread(leeInputCliente);
                 t.Start();
             }
-            catch (SocketException ex)
+            catch (System.Net.Sockets.SocketException ex)
             {
-                Console.WriteLine(ex + "Client Disconnected.");
+                Console.WriteLine("Error socket: " + ex);
+                t.Abort();
             }
             catch (IOException )
             {
-                DesconexionServidor("!Error de conexión con el servidor", "Upss!!");
+                DesconexionServidor();
+                t.Abort();
             }
         }
  

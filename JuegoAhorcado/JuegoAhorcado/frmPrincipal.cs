@@ -28,7 +28,7 @@ namespace JuegoAhorcado
             if(tbJugador.Text!=String.Empty || tbJugador.Text.Length>4)
             {
                 cliente.Nick = tbJugador.Text;
-                Thread comienzo = new Thread(cliente.Iniciar);
+                Thread comienzo = new Thread(cliente.ConectarseServidor);
                 comienzo.Start();
                 tbJugador.Enabled = false;
                 btnJugar.Enabled = false;

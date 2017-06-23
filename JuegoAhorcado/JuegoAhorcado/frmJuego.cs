@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClasesComunicacion;
+using System.Threading;
 
 namespace JuegoAhorcado
 {
@@ -34,6 +35,7 @@ namespace JuegoAhorcado
             cliente.falloPalabra += fallaPalabra;
             cliente.timeForm += tiempo;
             cliente.DesconexionServidor+=DesconexionServidor;
+            cliente.ExitGame += ExitGame;
             palabra = cliente.Mensaje.PalabraAhorcado;
             Char[] palabraIndice = palabra.ToCharArray();
         }
@@ -190,7 +192,6 @@ namespace JuegoAhorcado
         }
         private void fallaLetra()
         {
-            MessageBox.Show("FALLASTE, TENE CUIDADO QUE LA SOGA APRETA");
             pintarUna();
         }
         private void habilitaPalabra(clsMensajeBase m)
@@ -271,8 +272,8 @@ namespace JuegoAhorcado
                                      lb13.Text = ganador.PalabraAhorcado[i].ToString();
                                  }));
                          }
- 
-                         MessageBox.Show("GANADOR:" + ganador.ListaJugadores[ganador.Indice_ganador].Nick.ToString());
+            frmGanador frmGana=new frmGanador(ganador.ListaJugadores[ganador.Indice_ganador].Nick.ToString());
+            frmGana.ShowDialog();
              
         }
         private void fallaPalabra()
@@ -386,9 +387,9 @@ namespace JuegoAhorcado
             }
            
         }
-        void DesconexionServidor(string mensaje, string textoFormulario)
+        void DesconexionServidor()
         {
-            frmMensaje cartelErrorConexion = new frmMensaje(mensaje, textoFormulario, "Aceptar");
+            frmDesconexionServer cartelErrorConexion = new frmDesconexionServer();
             cartelErrorConexion.ShowDialog();
             if (!cartelErrorConexion.Disposing)
             {
@@ -397,9 +398,12 @@ namespace JuegoAhorcado
             }
         }
 
-        private void frmJuego_FormClosing(object sender, FormClosingEventArgs e)
+        void ExitGame()
         {
-
+            //System.Diagnostics.Process.Start(Application.ExecutablePath);
+            Application.Exit();
+            Application.ExitThread();
         }
+
     }
 }

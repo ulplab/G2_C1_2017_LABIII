@@ -50,17 +50,23 @@
   <ItemGroup>
     <Compile Include="clsCliente.cs" />
     <Compile Include="clsManejoPaquete.cs" />
+    <Compile Include="frmGanador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGanador.Designer.cs">
+      <DependentUpon>frmGanador.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmJuego.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmJuego.Designer.cs">
       <DependentUpon>frmJuego.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMensaje.cs">
+    <Compile Include="frmDesconexionServer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMensaje.Designer.cs">
-      <DependentUpon>frmMensaje.cs</DependentUpon>
+    <Compile Include="frmDesconexionServer.Designer.cs">
+      <DependentUpon>frmDesconexionServer.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -70,11 +76,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmGanador.resx">
+      <DependentUpon>frmGanador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmJuego.resx">
       <DependentUpon>frmJuego.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMensaje.resx">
-      <DependentUpon>frmMensaje.cs</DependentUpon>
+    <EmbeddedResource Include="frmDesconexionServer.resx">
+      <DependentUpon>frmDesconexionServer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
@@ -110,6 +119,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\2dgame.jpg" />
+    <None Include="Resources\errorConexion.png" />
+    <None Include="Resources\ganador.png" />
     <None Include="Resources\plk.jpg" />
     <None Include="Resources\tipo-cabezaMuerte.png" />
     <None Include="Resources\tipo-pie02.png" />

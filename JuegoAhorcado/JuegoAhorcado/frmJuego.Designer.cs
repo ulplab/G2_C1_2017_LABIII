@@ -855,7 +855,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmJuego";
             this.Text = "JUEGO AHORCADO(PLAYER 1)";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmJuego_FormClosing);
             this.Load += new System.EventHandler(this.frmJuego_Load);
             this.panel2.ResumeLayout(false);
             this.pnlHorca.ResumeLayout(false);

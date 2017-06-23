@@ -10,14 +10,11 @@ using System.Windows.Forms;
 
 namespace JuegoAhorcado
 {
-    public partial class frmMensaje : Form
+    public partial class frmDesconexionServer : Form
     {
-        public frmMensaje(string textoMensaje,string textoFormulario,string textoBoton)
+        public frmDesconexionServer()
         {
             InitializeComponent();
-            btnPrincipal.Text = textoBoton;
-            lblMensaje.Text = textoMensaje;
-            this.Text = textoFormulario;
         }
 
         private void btnPrincipal_Click(object sender, EventArgs e)

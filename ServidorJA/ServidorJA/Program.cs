@@ -12,10 +12,6 @@ namespace ServidorJA
         {
             clsServer server = new clsServer();
         }
-        public void restart()
-        {
-            Console.Clear();
-        }
 
     }
 }

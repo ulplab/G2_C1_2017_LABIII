@@ -62,7 +62,7 @@ namespace ServidorJA
             get { return msjPaquete; }
             set { msjPaquete = value; }
         }
-        public clsCliente(NetworkStream ntStream, StreamWriter sw, StreamReader sr, String nick, String estado)
+        public clsCliente(NetworkStream ntStream, StreamWriter sw, StreamReader sr, String nick)
         {
             stream = ntStream;
             streamw = sw;
@@ -70,7 +70,6 @@ namespace ServidorJA
             this.nick = nick; //Revisar NICK
             msjPaquete = new clsManejoPaquetes();
            clsMensajeBase m= new clsMensajeBase();
-            m.Retorno=estado;
         }
 
         public void DataIn()
@@ -85,7 +84,7 @@ namespace ServidorJA
             }
             catch (Exception ex)
             {
-                Console.Write(ex.Message);
+                Console.ReadLine();
             }
         }
 
@@ -96,9 +95,13 @@ namespace ServidorJA
                 streamw.WriteLine(msjPaquete.enviarMensaje(msj));
                 streamw.Flush();
             }
-            catch(Exception e)
+            catch (System.IO.IOException e)
             {
-                Console.WriteLine("Error " + e);
+                Console.ReadLine();
+            }
+            catch(System.Net.Sockets.SocketException e)
+            {
+                Console.ReadLine();
             }
         }
 
