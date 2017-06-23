@@ -127,6 +127,7 @@
             this.MaximizeBox = false;
             this.Name = "frmPrincipal";
             this.Text = "Juego Ahorcado";
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

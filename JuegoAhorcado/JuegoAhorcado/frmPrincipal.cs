@@ -12,13 +12,16 @@ using ClasesComunicacion;
 
 namespace JuegoAhorcado
 {
+
     public partial class frmPrincipal : Form
     {
         static clsCliente cliente = new clsCliente();
+       
         public frmPrincipal()
         {
             InitializeComponent();
             cliente.start += comenzar;
+            
         }
         private void btnJugar_Click(object sender, EventArgs e)
         {
@@ -51,6 +54,11 @@ namespace JuegoAhorcado
             }
             else
                 MessageBox.Show("ESPERA DEMAS JUGADORES");
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
 
     }

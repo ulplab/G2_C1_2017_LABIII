@@ -16,6 +16,8 @@ namespace JuegoAhorcado
     public delegate void enviaFrmTime(clsMensajeBase msj);
     public delegate void enviaFrmJuegoFallo();
     public delegate void comienzo(clsMensajeBase msj);
+    public delegate void problemasConServidor(string mensaje,string mensajeformulario);
+   
 
 
     public class clsCliente
@@ -46,44 +48,54 @@ namespace JuegoAhorcado
         public event enviaFrmJuegoAcerto acertoPalabra;
         public event enviaFrmJuegoFallo falloPalabra;
         public event enviaFrmTime timeForm;
+        public event problemasConServidor DesconexionServidor;//mandamos un mensaje al formulario que tenga problemas con la desconieccion con el servidor
+
         public void leer()
         {
-            while (true)
+            try
             {
-                string aux = streamr.ReadLine();
-                mensaje = serializador.recibirMensaje(aux);
-                switch (mensaje.Tipo)
+                while (true)
                 {
-                    case "MENSAJE_JUEGO":
-                        {
-                            clsMensajeJuego mensajeJuego = (clsMensajeJuego)mensaje;
-                            if (mensaje.Retorno != "FALLO" && mensaje.Accion == "PROBAR_LETRA")
-                                acertoLetra(mensajeJuego);
-                            else if (mensaje.Retorno == "FALLO" && mensaje.Accion == "PROBAR_LETRA")
-                                falloLetra();
+                    string aux = streamr.ReadLine();
+                    mensaje = serializador.recibirMensaje(aux);
+                    switch (mensaje.Tipo)
+                    {
+                        case "MENSAJE_JUEGO":
+                            {
+                                clsMensajeJuego mensajeJuego = (clsMensajeJuego)mensaje;
+                                if (mensaje.Retorno != "FALLO" && mensaje.Accion == "PROBAR_LETRA")
+                                    acertoLetra(mensajeJuego);
+                                else if (mensaje.Retorno == "FALLO" && mensaje.Accion == "PROBAR_LETRA")
+                                    falloLetra();
 
-                            else if (mensaje.Retorno == "FALLO" && mensaje.Accion == "PROBAR_PALABRA")
-                                falloPalabra();
-                        } break;
+                                else if (mensaje.Retorno == "FALLO" && mensaje.Accion == "PROBAR_PALABRA")
+                                    falloPalabra();
+                            } break;
 
-                    case "MENSAJE_PERDEDOR":
-                        {
-                            falloPalabra();
-                        } break;
-                    case "MENSAJE_GANADOR":
-                        {
-                            clsMensajeGanador mensajeGanador = (clsMensajeGanador)mensaje;
-                            acertoPalabra(mensajeGanador);
-                        } break;
-                    case "MENSAJE_TIMER":
-                        {
-                            clsMensajeTimer mensajeTimer = (clsMensajeTimer)mensaje;
-                            timeForm(mensajeTimer);
-                            if (mensajeTimer.Segundero == 0)
+                        case "MENSAJE_PERDEDOR":
+                            {
                                 falloPalabra();
-                        } break;
+                            } break;
+                        case "MENSAJE_GANADOR":
+                            {
+                                clsMensajeGanador mensajeGanador = (clsMensajeGanador)mensaje;
+                                acertoPalabra(mensajeGanador);
+                            } break;
+                        case "MENSAJE_TIMER":
+                            {
+                                clsMensajeTimer mensajeTimer = (clsMensajeTimer)mensaje;
+                                timeForm(mensajeTimer);
+                                if (mensajeTimer.Segundero == 0)
+                                    falloPalabra();
+                            } break;
+                    }
                 }
             }
+            catch
+            {
+                DesconexionServidor("!Error de conexión con el servidor", "Upss!!");
+            }
+           
         }
         public void Iniciar()
         {
@@ -110,33 +122,12 @@ namespace JuegoAhorcado
             {
                 Console.WriteLine(ex + "Client Disconnected.");
             }
-        }
-        public void DataIn()
-        {
-            try
+            catch (IOException )
             {
-                NetworkStream stream = client.GetStream();
-                StreamReader reader = new StreamReader(stream);
-                while (true) //client.Connected
-                {
-                    //string recibe = reader.ReadLine();
-                    //clsMensaje mAux = serializador.recibirMensaje(recibe);
-                    //switch (mAux.Tipo)
-                    //{
-                    //    case TipoMsj.palabraJuego:
-                    //        j.Palabra = mAux.Msj;
-                    //        j.Invoke((Action)j.CargarForm);
-                    //        break;
-                    //    case TipoMsj.env_letra:
-                    //        break;
-                    //}
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.Write(ex.Message);
+                DesconexionServidor("!Error de conexión con el servidor","Upss!!");
             }
         }
+ 
         public void enviar(clsMensajeBase msj)
         {
             try

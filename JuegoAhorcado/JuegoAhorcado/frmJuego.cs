@@ -15,7 +15,7 @@ namespace JuegoAhorcado
     {
         clsCliente cliente;
         String nick;
-        clsMensajeJuego msjJuego;
+     
         string palabra;
         clsMensajeGanador ganador;
         clsMensajePartida msjPartida;
@@ -33,6 +33,7 @@ namespace JuegoAhorcado
             cliente.acertoPalabra += habilitaPalabra;
             cliente.falloPalabra += fallaPalabra;
             cliente.timeForm += tiempo;
+            cliente.DesconexionServidor+=DesconexionServidor;
             palabra = cliente.Mensaje.PalabraAhorcado;
             Char[] palabraIndice = palabra.ToCharArray();
         }
@@ -388,6 +389,17 @@ namespace JuegoAhorcado
 
             }
            
+        }
+
+        void DesconexionServidor(string mensaje, string textoFormulario)
+        {
+
+            frmMensaje cartelErrorConexion = new frmMensaje(mensaje, textoFormulario, "Aceptar");
+            cartelErrorConexion.ShowDialog();
+            if (!cartelErrorConexion.Disposing)
+            {
+              //  this.Close();
+            }
         }
 
 

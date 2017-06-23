@@ -80,72 +80,12 @@ namespace ServidorJA
                     }
                     Thread t = new Thread(cliente.DataIn);
                     t.Start();
-                }                
+                }
+            
             }
         }
 
-        //public void recibe(clsMensaje msje)
-        //{
-        //    switch (msje.Accion)
-        //    {  
-        //        case Accion.ProbarLetra:
-        //            msje.Retorno = juego.enviaLetra(msje.Nick, msje.LetraPalabra);
-        //            break;
-
-        //        case Accion.ProbarPalabra:
-        //            msje.Retorno = juego.enviaPalabra(msje.Nick, msje.LetraPalabra);
-        //            break;
-        //        case Accion.ComienzoPartida:
-        //            msje.Retorno = "START";
-        //            msje.PalabraAhorcado = juego.Palabra;
-        //                break;
-                
-        //        default: break;
-        //    }
-
-
-        //}
-        //public void Envia(string mensaje, clsMensaje Mensaje)
-        //{
-        //    switch(Mensaje.Retorno){
-
-        //    case "FALLO":
-
-        //         foreach (Connection c in list)
-        //        {
-        //            if (c.nick.Equals(Mensaje.Nick))
-        //            {
-        //                c.streamw.WriteLine(mensaje);
-        //                c.streamw.Flush();
-        //                break;
-        //            }
-        //         }
-        //         break;
-        //        case "EXITO":
-        //            foreach (Connection c in list)
-        //            {
-        //                try
-        //                {   
-        //                    c.streamw.WriteLine(mensaje);
-        //                    c.streamw.Flush();
-        //                }
-        //                catch
-        //                {
-        //                }
-        //            }
-        //            break;
-
-        //        default: break;
-        //    }
-        //    if (Mensaje.Retorno.Equals("FALLO"))
-        //    {
-               
-        //    }
-        //    else
-        //    {
- 
-        //    }
-        //}
+  
     }
 }
         
