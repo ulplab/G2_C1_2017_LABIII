@@ -193,8 +193,6 @@ namespace JuegoAhorcado
             MessageBox.Show("FALLASTE, TENE CUIDADO QUE LA SOGA APRETA");
             pintarUna();
         }
-
-     
         private void habilitaPalabra(clsMensajeBase m)
         {
             
@@ -363,13 +361,11 @@ namespace JuegoAhorcado
             //com.recibe -= new ev_recibir(mostrarLetras);
            // com.recibe -= new ev_recibir(habilitaLetra);
         }
-
         private void tiempo(clsMensajeBase m)
         {
             clsMensajeTimer msjTime = (clsMensajeTimer)m;
             lbTime.Invoke((Action)(() => lbTime.Text = msjTime.Segundero.ToString()));
         }
-
         private void frmJuego_Load(object sender, EventArgs e)
         {
             int cont = 0;
@@ -390,18 +386,15 @@ namespace JuegoAhorcado
             }
            
         }
-
         void DesconexionServidor(string mensaje, string textoFormulario)
         {
-
             frmMensaje cartelErrorConexion = new frmMensaje(mensaje, textoFormulario, "Aceptar");
             cartelErrorConexion.ShowDialog();
             if (!cartelErrorConexion.Disposing)
             {
-              //  this.Close();
+                System.Diagnostics.Process.Start(Application.ExecutablePath);
+                Application.Exit();
             }
         }
-
-
     }
 }

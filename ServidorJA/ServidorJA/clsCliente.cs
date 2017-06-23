@@ -91,8 +91,16 @@ namespace ServidorJA
 
         public void enviar(clsMensajeBase msj)
         {
-            streamw.WriteLine(msjPaquete.enviarMensaje(msj));
-            streamw.Flush();
+            try
+            {
+                streamw.WriteLine(msjPaquete.enviarMensaje(msj));
+                streamw.Flush();
+            }
+            catch(Exception e)
+            {
+                //clsServer server = new clsServer();
+                //server.Inicio();
+            }
         }
 
 

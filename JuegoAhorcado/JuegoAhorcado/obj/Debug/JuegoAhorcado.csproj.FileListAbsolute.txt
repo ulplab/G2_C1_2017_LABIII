@@ -141,3 +141,4 @@ C:\Proyecto Optativa2\v5\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\Jue
 C:\Proyecto Optativa2\v5\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.Properties.Resources.resources
 C:\Proyecto Optativa2\v5\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.csproj.GenerateResource.Cache
 C:\JuegoAhorcado\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmMensaje.resources
+C:\Proyecto Optativa2\v5\G2_C1_2017_PC\JuegoAhorcado\JuegoAhorcado\obj\Debug\JuegoAhorcado.frmMensaje.resources
