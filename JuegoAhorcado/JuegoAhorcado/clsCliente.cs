@@ -91,11 +91,18 @@ namespace JuegoAhorcado
                     }
                 }
             }
-            catch
+            catch(InvalidOperationException e)
             {
-                DesconexionServidor("!Error de conexión con el servidor", "Upss!!");
+                DesconexionServidor("Gracias por jugar!! seras redirigido al menu principal", "Redirigido a menu principal");
             }
-           
+            catch (SocketException e)
+            {
+                DesconexionServidor("!Error de conexion con el servidor, espere su reconexion", "Upss!!");
+            }
+            catch (System.IO.IOException e)
+            {
+                DesconexionServidor("!Error de conexion con el servidor, espere su reconexion", "Upss!!");
+            }
         }
         public void Iniciar()
         {
@@ -124,7 +131,7 @@ namespace JuegoAhorcado
             }
             catch (IOException )
             {
-                DesconexionServidor("!Error de conexión con el servidor","Upss!!");
+                DesconexionServidor("!Error de conexión con el servidor", "Upss!!");
             }
         }
  

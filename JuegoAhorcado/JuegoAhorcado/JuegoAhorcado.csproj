@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\2dgame.jpg" />
+    <None Include="Resources\plk.jpg" />
     <None Include="Resources\tipo-cabezaMuerte.png" />
     <None Include="Resources\tipo-pie02.png" />
     <None Include="Resources\tipo-pie01.png" />

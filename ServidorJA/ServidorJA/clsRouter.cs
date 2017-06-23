@@ -63,6 +63,7 @@ namespace ServidorJA
                         mensaje = juego.enviaPalabra(nombre, mensaje.LetraPalabra);
                         controlaFallo(mensaje, nombre);
                         break;
+
                 }
             }
         }

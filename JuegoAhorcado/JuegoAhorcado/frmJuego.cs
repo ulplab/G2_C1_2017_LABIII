@@ -396,5 +396,10 @@ namespace JuegoAhorcado
                 Application.Exit();
             }
         }
+
+        private void frmJuego_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
     }
 }

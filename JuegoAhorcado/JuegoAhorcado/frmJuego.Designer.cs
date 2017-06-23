@@ -50,18 +50,32 @@
             this.btnArriesgar = new System.Windows.Forms.Button();
             this.btnLetra = new System.Windows.Forms.Button();
             this.pnlPalabra = new System.Windows.Forms.Panel();
+            this.lbAdivina13 = new System.Windows.Forms.Label();
             this.lblGuion13 = new System.Windows.Forms.Label();
+            this.lbAdivina12 = new System.Windows.Forms.Label();
             this.lb13 = new System.Windows.Forms.Label();
+            this.lbAdivina11 = new System.Windows.Forms.Label();
             this.lblGuion12 = new System.Windows.Forms.Label();
+            this.lbAdivina10 = new System.Windows.Forms.Label();
             this.lb12 = new System.Windows.Forms.Label();
+            this.lbAdivina9 = new System.Windows.Forms.Label();
             this.lblGuion11 = new System.Windows.Forms.Label();
+            this.lbAdivina8 = new System.Windows.Forms.Label();
             this.lb11 = new System.Windows.Forms.Label();
+            this.lbAdivina7 = new System.Windows.Forms.Label();
             this.lblGuion10 = new System.Windows.Forms.Label();
+            this.lbAdivina6 = new System.Windows.Forms.Label();
             this.lb10 = new System.Windows.Forms.Label();
+            this.lbAdivina5 = new System.Windows.Forms.Label();
             this.lblGuion9 = new System.Windows.Forms.Label();
+            this.lbAdivina4 = new System.Windows.Forms.Label();
             this.lblGuion8 = new System.Windows.Forms.Label();
+            this.lbAdivina3 = new System.Windows.Forms.Label();
             this.lblGuion7 = new System.Windows.Forms.Label();
+            this.lbAdivina2 = new System.Windows.Forms.Label();
+            this.lbAdivina1 = new System.Windows.Forms.Label();
             this.lblGuion6 = new System.Windows.Forms.Label();
+            this.lbAdivina0 = new System.Windows.Forms.Label();
             this.lblGuion5 = new System.Windows.Forms.Label();
             this.lblGuion4 = new System.Windows.Forms.Label();
             this.lblGuion3 = new System.Windows.Forms.Label();
@@ -81,20 +95,6 @@
             this.lbTime = new System.Windows.Forms.Label();
             this.pnlContainerPalabra = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbAdivina13 = new System.Windows.Forms.Label();
-            this.lbAdivina12 = new System.Windows.Forms.Label();
-            this.lbAdivina11 = new System.Windows.Forms.Label();
-            this.lbAdivina10 = new System.Windows.Forms.Label();
-            this.lbAdivina9 = new System.Windows.Forms.Label();
-            this.lbAdivina8 = new System.Windows.Forms.Label();
-            this.lbAdivina7 = new System.Windows.Forms.Label();
-            this.lbAdivina6 = new System.Windows.Forms.Label();
-            this.lbAdivina5 = new System.Windows.Forms.Label();
-            this.lbAdivina4 = new System.Windows.Forms.Label();
-            this.lbAdivina3 = new System.Windows.Forms.Label();
-            this.lbAdivina2 = new System.Windows.Forms.Label();
-            this.lbAdivina1 = new System.Windows.Forms.Label();
-            this.lbAdivina0 = new System.Windows.Forms.Label();
             columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2.SuspendLayout();
             this.pnlHorca.SuspendLayout();
@@ -386,6 +386,15 @@
             this.pnlPalabra.Size = new System.Drawing.Size(579, 140);
             this.pnlPalabra.TabIndex = 1;
             // 
+            // lbAdivina13
+            // 
+            this.lbAdivina13.Location = new System.Drawing.Point(531, 98);
+            this.lbAdivina13.Name = "lbAdivina13";
+            this.lbAdivina13.Size = new System.Drawing.Size(41, 15);
+            this.lbAdivina13.TabIndex = 65;
+            this.lbAdivina13.Tag = "13";
+            this.lbAdivina13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lblGuion13
             // 
             this.lblGuion13.Location = new System.Drawing.Point(531, 73);
@@ -397,6 +406,15 @@
             this.lblGuion13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblGuion13.Visible = false;
             // 
+            // lbAdivina12
+            // 
+            this.lbAdivina12.Location = new System.Drawing.Point(494, 98);
+            this.lbAdivina12.Name = "lbAdivina12";
+            this.lbAdivina12.Size = new System.Drawing.Size(41, 15);
+            this.lbAdivina12.TabIndex = 64;
+            this.lbAdivina12.Tag = "12";
+            this.lbAdivina12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lb13
             // 
             this.lb13.Font = new System.Drawing.Font("MineCrafter 3", 18F);
@@ -406,6 +424,15 @@
             this.lb13.TabIndex = 36;
             this.lb13.Tag = "";
             this.lb13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbAdivina11
+            // 
+            this.lbAdivina11.Location = new System.Drawing.Point(458, 98);
+            this.lbAdivina11.Name = "lbAdivina11";
+            this.lbAdivina11.Size = new System.Drawing.Size(41, 15);
+            this.lbAdivina11.TabIndex = 63;
+            this.lbAdivina11.Tag = "11";
+            this.lbAdivina11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblGuion12
             // 
@@ -418,6 +445,15 @@
             this.lblGuion12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblGuion12.Visible = false;
             // 
+            // lbAdivina10
+            // 
+            this.lbAdivina10.Location = new System.Drawing.Point(421, 98);
+            this.lbAdivina10.Name = "lbAdivina10";
+            this.lbAdivina10.Size = new System.Drawing.Size(41, 15);
+            this.lbAdivina10.TabIndex = 62;
+            this.lbAdivina10.Tag = "10";
+            this.lbAdivina10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lb12
             // 
             this.lb12.Font = new System.Drawing.Font("MineCrafter 3", 18F);
@@ -427,6 +463,15 @@
             this.lb12.TabIndex = 34;
             this.lb12.Tag = "";
             this.lb12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbAdivina9
+            // 
+            this.lbAdivina9.Location = new System.Drawing.Point(383, 98);
+            this.lbAdivina9.Name = "lbAdivina9";
+            this.lbAdivina9.Size = new System.Drawing.Size(41, 15);
+            this.lbAdivina9.TabIndex = 61;
+            this.lbAdivina9.Tag = "9";
+            this.lbAdivina9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblGuion11
             // 
@@ -439,6 +484,15 @@
             this.lblGuion11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblGuion11.Visible = false;
             // 
+            // lbAdivina8
+            // 
+            this.lbAdivina8.Location = new System.Drawing.Point(341, 98);
+            this.lbAdivina8.Name = "lbAdivina8";
+            this.lbAdivina8.Size = new System.Drawing.Size(41, 15);
+            this.lbAdivina8.TabIndex = 60;
+            this.lbAdivina8.Tag = "8";
+            this.lbAdivina8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lb11
             // 
             this.lb11.Font = new System.Drawing.Font("MineCrafter 3", 18F);
@@ -448,6 +502,15 @@
             this.lb11.TabIndex = 32;
             this.lb11.Tag = "";
             this.lb11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbAdivina7
+            // 
+            this.lbAdivina7.Location = new System.Drawing.Point(299, 98);
+            this.lbAdivina7.Name = "lbAdivina7";
+            this.lbAdivina7.Size = new System.Drawing.Size(41, 15);
+            this.lbAdivina7.TabIndex = 59;
+            this.lbAdivina7.Tag = "7";
+            this.lbAdivina7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblGuion10
             // 
@@ -460,6 +523,15 @@
             this.lblGuion10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblGuion10.Visible = false;
             // 
+            // lbAdivina6
+            // 
+            this.lbAdivina6.Location = new System.Drawing.Point(257, 98);
+            this.lbAdivina6.Name = "lbAdivina6";
+            this.lbAdivina6.Size = new System.Drawing.Size(41, 15);
+            this.lbAdivina6.TabIndex = 58;
+            this.lbAdivina6.Tag = "6";
+            this.lbAdivina6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lb10
             // 
             this.lb10.Font = new System.Drawing.Font("MineCrafter 3", 18F);
@@ -469,6 +541,15 @@
             this.lb10.TabIndex = 30;
             this.lb10.Tag = "";
             this.lb10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbAdivina5
+            // 
+            this.lbAdivina5.Location = new System.Drawing.Point(215, 98);
+            this.lbAdivina5.Name = "lbAdivina5";
+            this.lbAdivina5.Size = new System.Drawing.Size(41, 15);
+            this.lbAdivina5.TabIndex = 57;
+            this.lbAdivina5.Tag = "5";
+            this.lbAdivina5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblGuion9
             // 
@@ -481,6 +562,15 @@
             this.lblGuion9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblGuion9.Visible = false;
             // 
+            // lbAdivina4
+            // 
+            this.lbAdivina4.Location = new System.Drawing.Point(173, 98);
+            this.lbAdivina4.Name = "lbAdivina4";
+            this.lbAdivina4.Size = new System.Drawing.Size(41, 15);
+            this.lbAdivina4.TabIndex = 56;
+            this.lbAdivina4.Tag = "4";
+            this.lbAdivina4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lblGuion8
             // 
             this.lblGuion8.Location = new System.Drawing.Point(341, 73);
@@ -491,6 +581,15 @@
             this.lblGuion8.Text = "_____";
             this.lblGuion8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblGuion8.Visible = false;
+            // 
+            // lbAdivina3
+            // 
+            this.lbAdivina3.Location = new System.Drawing.Point(131, 98);
+            this.lbAdivina3.Name = "lbAdivina3";
+            this.lbAdivina3.Size = new System.Drawing.Size(41, 15);
+            this.lbAdivina3.TabIndex = 55;
+            this.lbAdivina3.Tag = "3";
+            this.lbAdivina3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblGuion7
             // 
@@ -503,6 +602,24 @@
             this.lblGuion7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblGuion7.Visible = false;
             // 
+            // lbAdivina2
+            // 
+            this.lbAdivina2.Location = new System.Drawing.Point(89, 98);
+            this.lbAdivina2.Name = "lbAdivina2";
+            this.lbAdivina2.Size = new System.Drawing.Size(41, 15);
+            this.lbAdivina2.TabIndex = 54;
+            this.lbAdivina2.Tag = "2";
+            this.lbAdivina2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbAdivina1
+            // 
+            this.lbAdivina1.Location = new System.Drawing.Point(47, 98);
+            this.lbAdivina1.Name = "lbAdivina1";
+            this.lbAdivina1.Size = new System.Drawing.Size(41, 15);
+            this.lbAdivina1.TabIndex = 53;
+            this.lbAdivina1.Tag = "1";
+            this.lbAdivina1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lblGuion6
             // 
             this.lblGuion6.Location = new System.Drawing.Point(257, 73);
@@ -513,6 +630,15 @@
             this.lblGuion6.Text = "_____";
             this.lblGuion6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblGuion6.Visible = false;
+            // 
+            // lbAdivina0
+            // 
+            this.lbAdivina0.Location = new System.Drawing.Point(5, 98);
+            this.lbAdivina0.Name = "lbAdivina0";
+            this.lbAdivina0.Size = new System.Drawing.Size(41, 15);
+            this.lbAdivina0.TabIndex = 52;
+            this.lbAdivina0.Tag = "0";
+            this.lbAdivina0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblGuion5
             // 
@@ -717,132 +843,6 @@
             this.label1.Text = "APURATE QUE EL TIEMPO SE AGOTA";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // lbAdivina13
-            // 
-            this.lbAdivina13.Location = new System.Drawing.Point(531, 98);
-            this.lbAdivina13.Name = "lbAdivina13";
-            this.lbAdivina13.Size = new System.Drawing.Size(41, 15);
-            this.lbAdivina13.TabIndex = 65;
-            this.lbAdivina13.Tag = "13";
-            this.lbAdivina13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbAdivina12
-            // 
-            this.lbAdivina12.Location = new System.Drawing.Point(494, 98);
-            this.lbAdivina12.Name = "lbAdivina12";
-            this.lbAdivina12.Size = new System.Drawing.Size(41, 15);
-            this.lbAdivina12.TabIndex = 64;
-            this.lbAdivina12.Tag = "12";
-            this.lbAdivina12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbAdivina11
-            // 
-            this.lbAdivina11.Location = new System.Drawing.Point(458, 98);
-            this.lbAdivina11.Name = "lbAdivina11";
-            this.lbAdivina11.Size = new System.Drawing.Size(41, 15);
-            this.lbAdivina11.TabIndex = 63;
-            this.lbAdivina11.Tag = "11";
-            this.lbAdivina11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbAdivina10
-            // 
-            this.lbAdivina10.Location = new System.Drawing.Point(421, 98);
-            this.lbAdivina10.Name = "lbAdivina10";
-            this.lbAdivina10.Size = new System.Drawing.Size(41, 15);
-            this.lbAdivina10.TabIndex = 62;
-            this.lbAdivina10.Tag = "10";
-            this.lbAdivina10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbAdivina9
-            // 
-            this.lbAdivina9.Location = new System.Drawing.Point(383, 98);
-            this.lbAdivina9.Name = "lbAdivina9";
-            this.lbAdivina9.Size = new System.Drawing.Size(41, 15);
-            this.lbAdivina9.TabIndex = 61;
-            this.lbAdivina9.Tag = "9";
-            this.lbAdivina9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbAdivina8
-            // 
-            this.lbAdivina8.Location = new System.Drawing.Point(341, 98);
-            this.lbAdivina8.Name = "lbAdivina8";
-            this.lbAdivina8.Size = new System.Drawing.Size(41, 15);
-            this.lbAdivina8.TabIndex = 60;
-            this.lbAdivina8.Tag = "8";
-            this.lbAdivina8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbAdivina7
-            // 
-            this.lbAdivina7.Location = new System.Drawing.Point(299, 98);
-            this.lbAdivina7.Name = "lbAdivina7";
-            this.lbAdivina7.Size = new System.Drawing.Size(41, 15);
-            this.lbAdivina7.TabIndex = 59;
-            this.lbAdivina7.Tag = "7";
-            this.lbAdivina7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbAdivina6
-            // 
-            this.lbAdivina6.Location = new System.Drawing.Point(257, 98);
-            this.lbAdivina6.Name = "lbAdivina6";
-            this.lbAdivina6.Size = new System.Drawing.Size(41, 15);
-            this.lbAdivina6.TabIndex = 58;
-            this.lbAdivina6.Tag = "6";
-            this.lbAdivina6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbAdivina5
-            // 
-            this.lbAdivina5.Location = new System.Drawing.Point(215, 98);
-            this.lbAdivina5.Name = "lbAdivina5";
-            this.lbAdivina5.Size = new System.Drawing.Size(41, 15);
-            this.lbAdivina5.TabIndex = 57;
-            this.lbAdivina5.Tag = "5";
-            this.lbAdivina5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbAdivina4
-            // 
-            this.lbAdivina4.Location = new System.Drawing.Point(173, 98);
-            this.lbAdivina4.Name = "lbAdivina4";
-            this.lbAdivina4.Size = new System.Drawing.Size(41, 15);
-            this.lbAdivina4.TabIndex = 56;
-            this.lbAdivina4.Tag = "4";
-            this.lbAdivina4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbAdivina3
-            // 
-            this.lbAdivina3.Location = new System.Drawing.Point(131, 98);
-            this.lbAdivina3.Name = "lbAdivina3";
-            this.lbAdivina3.Size = new System.Drawing.Size(41, 15);
-            this.lbAdivina3.TabIndex = 55;
-            this.lbAdivina3.Tag = "3";
-            this.lbAdivina3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbAdivina2
-            // 
-            this.lbAdivina2.Location = new System.Drawing.Point(89, 98);
-            this.lbAdivina2.Name = "lbAdivina2";
-            this.lbAdivina2.Size = new System.Drawing.Size(41, 15);
-            this.lbAdivina2.TabIndex = 54;
-            this.lbAdivina2.Tag = "2";
-            this.lbAdivina2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbAdivina1
-            // 
-            this.lbAdivina1.Location = new System.Drawing.Point(47, 98);
-            this.lbAdivina1.Name = "lbAdivina1";
-            this.lbAdivina1.Size = new System.Drawing.Size(41, 15);
-            this.lbAdivina1.TabIndex = 53;
-            this.lbAdivina1.Tag = "1";
-            this.lbAdivina1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbAdivina0
-            // 
-            this.lbAdivina0.Location = new System.Drawing.Point(5, 98);
-            this.lbAdivina0.Name = "lbAdivina0";
-            this.lbAdivina0.Size = new System.Drawing.Size(41, 15);
-            this.lbAdivina0.TabIndex = 52;
-            this.lbAdivina0.Tag = "0";
-            this.lbAdivina0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // frmJuego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -855,6 +855,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmJuego";
             this.Text = "JUEGO AHORCADO(PLAYER 1)";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmJuego_FormClosing);
             this.Load += new System.EventHandler(this.frmJuego_Load);
             this.panel2.ResumeLayout(false);
             this.pnlHorca.ResumeLayout(false);

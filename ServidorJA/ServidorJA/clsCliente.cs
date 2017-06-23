@@ -98,8 +98,7 @@ namespace ServidorJA
             }
             catch(Exception e)
             {
-                //clsServer server = new clsServer();
-                //server.Inicio();
+                Console.WriteLine("Error " + e);
             }
         }
 

@@ -35,6 +35,7 @@ namespace ServidorJA
                     clsMensajeTimer retorno5 = JsonConvert.DeserializeObject<clsMensajeTimer>(mensaje);
                     return retorno5;
 
+
                 default: return convertido;
 
             }
