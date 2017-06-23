@@ -138,12 +138,10 @@ namespace JuegoAhorcado
             catch (System.Net.Sockets.SocketException ex)
             {
                 Console.WriteLine("Error socket: " + ex);
-                t.Abort();
             }
             catch (IOException )
             {
                 DesconexionServidor();
-                t.Abort();
             }
         }
  

@@ -274,6 +274,7 @@ namespace JuegoAhorcado
                          }
             frmGanador frmGana=new frmGanador(ganador.ListaJugadores[ganador.Indice_ganador].Nick.ToString());
             frmGana.ShowDialog();
+            //Reiniciar juego despues que muestre al ganador
              
         }
         private void fallaPalabra()

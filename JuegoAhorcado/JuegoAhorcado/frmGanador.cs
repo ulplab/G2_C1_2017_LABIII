@@ -14,8 +14,8 @@ namespace JuegoAhorcado
     {
         public frmGanador(String ganador)
         {
-            lbGanador.Text = ganador.ToUpper();
             InitializeComponent();
+            lbGanador.Text = ganador.ToUpper();
         }
     }
 }
