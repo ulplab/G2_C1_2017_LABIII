@@ -54,7 +54,7 @@ namespace ServidorJA
 
             while (true)
             {
-                if (juego.Jugadores.Count < 2) 
+                if (juego.Jugadores.Count < 1) 
                 {
                     client = server.AcceptTcpClient();
                     con = new Connection();
@@ -68,7 +68,7 @@ namespace ServidorJA
                     juego.agregarJugador(jugador);
                     cliente = new clsCliente(con.stream, con.streamw, con.streamr, msjLee.Nick);
                     router.ListaCliente.Add(cliente);
-                    if((2 - juego.Jugadores.Count)==0)
+                    if((1 - juego.Jugadores.Count)==0)
                     {
                         router.comienzaPartida();
                     }

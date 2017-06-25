@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.lbGanador = new System.Windows.Forms.Label();
+            this.lbTimeSigRonda = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbGanador
@@ -36,10 +37,22 @@
             this.lbGanador.BackColor = System.Drawing.Color.Transparent;
             this.lbGanador.Font = new System.Drawing.Font("MineCrafter 3", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGanador.ForeColor = System.Drawing.Color.White;
-            this.lbGanador.Location = new System.Drawing.Point(39, 39);
+            this.lbGanador.Location = new System.Drawing.Point(30, 33);
             this.lbGanador.Name = "lbGanador";
             this.lbGanador.Size = new System.Drawing.Size(198, 64);
             this.lbGanador.TabIndex = 0;
+            this.lbGanador.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbTimeSigRonda
+            // 
+            this.lbTimeSigRonda.BackColor = System.Drawing.Color.Transparent;
+            this.lbTimeSigRonda.Font = new System.Drawing.Font("MineCrafter 3", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTimeSigRonda.ForeColor = System.Drawing.Color.White;
+            this.lbTimeSigRonda.Location = new System.Drawing.Point(92, 195);
+            this.lbTimeSigRonda.Name = "lbTimeSigRonda";
+            this.lbTimeSigRonda.Size = new System.Drawing.Size(81, 56);
+            this.lbTimeSigRonda.TabIndex = 2;
+            this.lbTimeSigRonda.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // frmGanador
             // 
@@ -47,7 +60,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::JuegoAhorcado.Properties.Resources.ganador;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(261, 261);
+            this.ClientSize = new System.Drawing.Size(261, 260);
+            this.Controls.Add(this.lbTimeSigRonda);
             this.Controls.Add(this.lbGanador);
             this.Name = "frmGanador";
             this.Text = "frmGanador";
@@ -58,5 +72,6 @@
         #endregion
 
         private System.Windows.Forms.Label lbGanador;
+        private System.Windows.Forms.Label lbTimeSigRonda;
     }
 }

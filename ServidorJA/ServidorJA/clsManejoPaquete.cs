@@ -35,6 +35,10 @@ namespace ServidorJA
                     clsMensajeTimer retorno5 = JsonConvert.DeserializeObject<clsMensajeTimer>(mensaje);
                     return retorno5;
 
+                case "MENSAJE_SIGUIENTE_RONDA":
+                    clsMensajeSigRonda retorno6 = JsonConvert.DeserializeObject<clsMensajeSigRonda>(mensaje);
+                    return retorno6;
+
 
                 default: return convertido;
 

@@ -272,7 +272,7 @@ namespace JuegoAhorcado
                                      lb13.Text = ganador.PalabraAhorcado[i].ToString();
                                  }));
                          }
-            frmGanador frmGana=new frmGanador(ganador.ListaJugadores[ganador.Indice_ganador].Nick.ToString());
+            frmGanador frmGana=new frmGanador(ganador.ListaJugadores[ganador.Indice_ganador].Nick.ToString(),cliente);
             frmGana.ShowDialog();
             //Reiniciar juego despues que muestre al ganador
              
@@ -404,6 +404,26 @@ namespace JuegoAhorcado
             //System.Diagnostics.Process.Start(Application.ExecutablePath);
             Application.Exit();
             Application.ExitThread();
+        }
+
+        public void limpiarForm()
+        {
+            tbLetra.Clear();
+            tbPalabra.Clear();
+            lb0.Text= "";
+            lb1.Text = "";
+            lb2.Text = "";
+            lb3.Text = "";
+            lb4.Text = "";
+            lb5.Text = "";
+            lb6.Text = "";
+            lb7.Text = "";
+            lb8.Text = "";
+            lb9.Text = "";
+            lb10.Text = "";
+            lb11.Text = "";
+            lb12.Text = "";
+            lb13.Text = "";
         }
 
     }

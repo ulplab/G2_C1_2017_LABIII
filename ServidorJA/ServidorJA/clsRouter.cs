@@ -8,7 +8,7 @@ using System.Threading;
 
 namespace ServidorJA
 {
-    class clsRouter
+    public class clsRouter
     {
         clsJuego juego;
         clsManejoPaquetes msjPaquete;
@@ -62,6 +62,12 @@ namespace ServidorJA
                     case "PROBAR_PALABRA":
                         mensaje = juego.enviaPalabra(nombre, mensaje.LetraPalabra);
                         controlaFallo(mensaje, nombre);
+                        break;
+
+                    case "SIGUIENTE_RONDA":
+                        //this.comienzaPartida();
+                        //Enviar a los jugadores una nueva ronda
+                        
                         break;
 
                 }

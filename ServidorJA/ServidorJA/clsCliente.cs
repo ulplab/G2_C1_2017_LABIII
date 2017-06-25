@@ -67,7 +67,7 @@ namespace ServidorJA
             stream = ntStream;
             streamw = sw;
             streamr = sr;
-            this.nick = nick; //Revisar NICK
+            this.nick = nick; 
             msjPaquete = new clsManejoPaquetes();
            clsMensajeBase m= new clsMensajeBase();
         }
