@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ClasesComunicacion
 {
-    public class clsMensajeSigRonda:clsMensajeBase
+    public class clsMensajeFinPartida:clsMensajeBase
     {
-        public clsMensajeSigRonda()
+        public clsMensajeFinPartida()
         {
-            Tipo = "MENSAJE_SIGUIENTE_RONDA";
+            Tipo = "MENSAJE_FIN_PARTIDA";
         }
     }
 }

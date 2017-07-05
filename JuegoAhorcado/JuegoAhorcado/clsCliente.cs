@@ -15,6 +15,7 @@ namespace JuegoAhorcado
     public delegate void enviaFrmJuegoAcerto(clsMensajeBase msj);
     public delegate void enviaFrmTime(clsMensajeBase msj);
     public delegate void enviaFrmJuegoFallo();
+    public delegate void enviaFrmFinJuego();
     public delegate void comienzo(clsMensajeBase msj);
     public delegate void problemasConServidor();
     public delegate void exitGame();
@@ -54,6 +55,7 @@ namespace JuegoAhorcado
         public event enviaFrmJuegoFallo falloLetra;
         public event enviaFrmJuegoAcerto acertoPalabra;
         public event enviaFrmJuegoFallo falloPalabra;
+        public event enviaFrmFinJuego finPartida;
         public event enviaFrmTime timeForm;
         public event problemasConServidor DesconexionServidor;//mandamos un mensaje al formulario que tenga problemas con la desconieccion con el servidor
         public event exitGame ExitGame;//mandamos un mensaje al formulario que tenga problemas con la desconieccion con el servidor
@@ -98,6 +100,11 @@ namespace JuegoAhorcado
                             {
                                 clsMensajeGanador mensajeGanador = (clsMensajeGanador)mensaje;
                                 acertoPalabra(mensajeGanador);
+                            } break;
+                        case "MENSAJE_FIN_PARTIDA":
+                            {
+                                clsMensajeFinPartida mensajeFinPartida = (clsMensajeFinPartida)mensaje;
+                                finPartida();
                             } break;
                         case "MENSAJE_TIMER":
                             {

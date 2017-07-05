@@ -20,6 +20,7 @@ namespace JuegoAhorcado
         string palabra;
         clsMensajeGanador ganador;
         clsMensajePartida msjPartida;
+        clsMensajeTimer msjTime;
 
         public frmJuego(clsCliente cliente,String nick,clsMensajeBase msjBase)
         {
@@ -34,6 +35,7 @@ namespace JuegoAhorcado
             cliente.acertoPalabra += habilitaPalabra;
             cliente.falloPalabra += fallaPalabra;
             cliente.timeForm += tiempo;
+            cliente.finPartida += finPartida;
             cliente.DesconexionServidor+=DesconexionServidor;
             cliente.ExitGame += ExitGame;
             palabra = cliente.Mensaje.PalabraAhorcado;
@@ -196,7 +198,6 @@ namespace JuegoAhorcado
         }
         private void habilitaPalabra(clsMensajeBase m)
         {
-            
             ganador = (clsMensajeGanador)m;
                          int cant = ganador.PalabraAhorcado.Length;
                          for (int i = 0; i < cant; i++)
@@ -274,6 +275,7 @@ namespace JuegoAhorcado
                          }
             frmGanador frmGana=new frmGanador(ganador.ListaJugadores[ganador.Indice_ganador].Nick.ToString(),cliente);
             frmGana.ShowDialog();
+            limpiarForm();
             //Reiniciar juego despues que muestre al ganador
              
         }
@@ -365,7 +367,7 @@ namespace JuegoAhorcado
         }
         private void tiempo(clsMensajeBase m)
         {
-            clsMensajeTimer msjTime = (clsMensajeTimer)m;
+            msjTime = (clsMensajeTimer)m;
             lbTime.Invoke((Action)(() => lbTime.Text = msjTime.Segundero.ToString()));
         }
         private void frmJuego_Load(object sender, EventArgs e)
@@ -398,32 +400,42 @@ namespace JuegoAhorcado
                 Application.Exit();
             }
         }
-
         void ExitGame()
         {
             //System.Diagnostics.Process.Start(Application.ExecutablePath);
             Application.Exit();
             Application.ExitThread();
         }
-
-        public void limpiarForm()
+        private void limpiarForm()
         {
-            tbLetra.Clear();
-            tbPalabra.Clear();
-            lb0.Text= "";
-            lb1.Text = "";
-            lb2.Text = "";
-            lb3.Text = "";
-            lb4.Text = "";
-            lb5.Text = "";
-            lb6.Text = "";
-            lb7.Text = "";
-            lb8.Text = "";
-            lb9.Text = "";
-            lb10.Text = "";
-            lb11.Text = "";
-            lb12.Text = "";
-            lb13.Text = "";
+                this.Invoke(new Action(() =>
+               {
+                    tbLetra.Clear();
+                    tbPalabra.Clear();
+                    lb0.Text= "";
+                    lb1.Text = "";
+                    lb2.Text = "";
+                    lb3.Text = "";
+                    lb4.Text = "";
+                    lb5.Text = "";
+                    lb6.Text = "";
+                    lb7.Text = "";
+                    lb8.Text = "";
+                    lb9.Text = "";
+                    lb10.Text = "";
+                    lb11.Text = "";
+                    lb12.Text = "";
+                    lb13.Text = "";
+                }));
+        }
+        private void finPartida()
+        {
+            this.Invoke(new Action(() =>
+            {
+                frmFinJuego frmFinJuego = new frmFinJuego();
+                frmFinJuego.ShowDialog();
+                this.Hide();
+            }));
         }
 
     }

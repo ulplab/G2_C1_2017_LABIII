@@ -50,6 +50,12 @@
   <ItemGroup>
     <Compile Include="clsCliente.cs" />
     <Compile Include="clsManejoPaquete.cs" />
+    <Compile Include="frmFinJuego.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFinJuego.Designer.cs">
+      <DependentUpon>frmFinJuego.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGanador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmFinJuego.resx">
+      <DependentUpon>frmFinJuego.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGanador.resx">
       <DependentUpon>frmGanador.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\2dgame.jpg" />
+    <None Include="Resources\finPartida.png" />
     <None Include="Resources\errorConexion.png" />
     <None Include="Resources\ganador.png" />
     <None Include="Resources\plk.jpg" />

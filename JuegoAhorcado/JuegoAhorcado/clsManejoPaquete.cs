@@ -35,6 +35,10 @@ namespace JuegoAhorcado
                     clsMensajeTimer retorno5 = JsonConvert.DeserializeObject<clsMensajeTimer>(mensaje);
                     return retorno5;
 
+                case "MENSAJE_FIN_PARTIDA":
+                    clsMensajeFinPartida retorno6 = JsonConvert.DeserializeObject<clsMensajeFinPartida>(mensaje);
+                    return retorno6;
+
                 default: return convertido;
 
             }

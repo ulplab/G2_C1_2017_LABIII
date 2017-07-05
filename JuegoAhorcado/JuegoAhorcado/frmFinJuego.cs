@@ -6,35 +6,34 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using ClasesComunicacion;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace JuegoAhorcado
 {
-    public partial class frmGanador : Form
+    public partial class frmFinJuego : Form
     {
-        clsCliente cliente;
-        public frmGanador(String ganador,clsCliente cliente)
+        public frmFinJuego()
         {
             InitializeComponent();
-            lbGanador.Text = ganador.ToUpper();
-            this.cliente = cliente;
-            Thread t = new Thread(sigRonda);
+            Thread t = new Thread(redireccionar);
             t.Start();
         }
-        public void sigRonda()
+
+        public void redireccionar()
         {
             for (int i = 5; i >= 0; i--)
             {
                 this.Invoke(new Action(() =>
-                    {
-                        lbTimeSigRonda.Text = i.ToString();
-                    }));
+                {
+                    lbTime.Text = i.ToString();
+                }));
                 Thread.Sleep(1000);
             }
             this.Invoke(new Action(() =>
             {
+                frmPrincipal frmPrincipal = new frmPrincipal();
+                frmPrincipal.ShowDialog();
                 this.Close();
             }));
 

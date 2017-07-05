@@ -45,12 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsJugador.cs" />
+    <Compile Include="clsMensajeFinPartida.cs" />
     <Compile Include="clsMensajeGanador.cs" />
     <Compile Include="clsMensajeJuego.cs" />
     <Compile Include="clsMensajePartida.cs" />
     <Compile Include="clsMensajeBase.cs" />
     <Compile Include="clsMensajePerdedor.cs" />
-    <Compile Include="clsMensajeSigRonda.cs" />
     <Compile Include="clsMensajeTimer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

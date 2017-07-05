@@ -93,6 +93,16 @@ namespace JuegoAhorcado.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap finPartida {
+            get {
+                object obj = ResourceManager.GetObject("finPartida", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ganador {
             get {
                 object obj = ResourceManager.GetObject("ganador", resourceCulture);

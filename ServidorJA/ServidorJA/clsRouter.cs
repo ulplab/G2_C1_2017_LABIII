@@ -14,6 +14,8 @@ namespace ServidorJA
         clsManejoPaquetes msjPaquete;
         List<clsCliente> listaCliente;
         int segundos=150;
+        int cantidadRondas=0;
+        Thread t;
         Object a=new object();
         internal List<clsCliente> ListaCliente
         {
@@ -42,7 +44,25 @@ namespace ServidorJA
                 msjP.PalabraAhorcado = juego.Palabra;
                 c.enviar(msjP);
             }
-            Thread t = new Thread(timer);
+            t= new Thread(timer);
+            t.Start();
+        }
+        public void reiniciaRonda()
+        {
+            segundos = 150;
+            juego.GeneraPalabra();
+            Console.WriteLine("Palabra a adivinar: " + juego.Palabra);
+            clsMensajePartida msjP = new clsMensajePartida();
+            foreach (clsCliente c in listaCliente)
+            {
+                c.MsjPaquete = msjPaquete;
+                msjP.Accion = "COMIENZA_PARTIDA";
+                msjP.ListaJugadores = juego.Jugadores;
+                msjP.Retorno = "START";
+                msjP.PalabraAhorcado = juego.Palabra;
+                c.enviar(msjP);
+            }
+            t = new Thread(timer);
             t.Start();
         }
         public void recibe(clsMensajeBase m, String nombre) //Revisar String nombre que viene JSON completo
@@ -63,13 +83,6 @@ namespace ServidorJA
                         mensaje = juego.enviaPalabra(nombre, mensaje.LetraPalabra);
                         controlaFallo(mensaje, nombre);
                         break;
-
-                    case "SIGUIENTE_RONDA":
-                        //this.comienzaPartida();
-                        //Enviar a los jugadores una nueva ronda
-                        
-                        break;
-
                 }
             }
         }
@@ -89,7 +102,22 @@ namespace ServidorJA
                 else
                 {
                     if (juego.Ganador != null)
-                        EnviarATodos(juego.Ganador);//ojo con este cambio !!! penvia clase ganador
+                    {
+                        EnviarATodos(juego.Ganador);
+                        Thread.Sleep(5000);
+                        t.Abort();
+                        if(cantidadRondas<2)
+                        {
+                            reiniciaRonda();
+                            cantidadRondas++;
+                        }
+                        else
+                        {
+                            clsMensajeFinPartida msjFinPartida=new clsMensajeFinPartida();
+                            EnviarATodos(msjFinPartida);
+                            clsServer server = new clsServer();
+                        }
+                    }
                     else
                         EnviarATodos(mensaje);
                 }
@@ -129,5 +157,6 @@ namespace ServidorJA
             }
 
         }
+
     }
 }
